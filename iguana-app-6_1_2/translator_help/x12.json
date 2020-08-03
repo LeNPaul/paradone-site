@@ -1,0 +1,96 @@
+{
+   "message": {
+      "ParameterTable": true,
+      "Usage": "x12.message{vmd=&#60;value&#62;, name=&#60;value&#62;}",
+      "Title": "x12.message",
+      "SummaryLine": "Create an empty X12 data tree to populate with data.",
+      "Desc": "Create an empty X12 data tree to populate with data.",
+      "Returns": [
+         {
+            "Desc": "An empty data tree representing an X12 message <u>X12 node tree</u>."
+         }
+      ],
+      "Examples": [
+         "local Msg = x12.message{vmd='example.vmd', name='841 Claim'}"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The x12 module - working with X12",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#x12"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         },
+         {
+            "Title": "X12: Parsing and Generation in the Protocols repository",
+            "Link": "http://help.interfaceware.com/v6/x12-parse-and-generate?v=6.0.0"
+         },
+         {
+            "Title": "Automatic TA1 acknowledgment to X12 messages",
+            "Link": "http://help.interfaceware.com/v6/automatic-ta1-acknowledgment-to-x12-messages?v=6.0.0"
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The name of a VMD schema file <u>string</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "The name of a message definition in the specified VMD file <u>string</u>."
+            }
+         }
+      ]
+   },
+   "parse": {
+      "ParameterTable": true,
+      "Usage": "x12.parse{vmd=&#60;value&#62;, data=&#60;value&#62;}",
+      "Title": "x12.parse",
+      "SummaryLine": "Parses an X12 message.",
+      "Desc": "Parses an X12 message.",
+      "Returns": [
+         {
+            "Desc": " The parsed message as a data tree <u>X12 node tree</u>."
+         }
+      ],
+      "Examples": [
+         "local Msg = x12.parse{vmd='demo.vmd', data=Data}"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The x12 module - working with X12",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#x12"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         },
+         {
+            "Title": "X12: Parsing and Generation in the Protocols repository",
+            "Link": "http://help.interfaceware.com/v6/x12-parse-and-generate?v=6.0.0"
+         },
+         {
+            "Title": "X12 Batch Processing Example",
+            "Link": "http://help.interfaceware.com/v6/working-with-x12?v=6.0.0#menu5"
+         },
+         {
+            "Title": "X12 Processing One Transaction Set at a Time",
+            "Link": "http://help.interfaceware.com/v6/working-with-x12?v=6.0.0#menu3"
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The name of a VMD schema file <u>string</u>."
+            }
+         },
+         {
+            "data": {
+               "Desc": "A string containing a message to be parsed"
+            }
+         }
+      ]
+   }
+}

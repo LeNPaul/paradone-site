@@ -1,0 +1,64 @@
+{
+   "enc": {
+      "Title": "filter.uri.enc",
+      "SummaryLine": "Encode URI component text.",
+      "Returns": [
+         {
+            "Desc": "An encoded string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Usage": "filter.uri.enc(data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to encode <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local Enc = filter.uri.enc(data)</pre>"
+      ],
+      "Desc": "Encode URI component text."
+   },
+   "dec": {
+      "Title": "filter.uri.dec",
+      "SummaryLine": "Decode URI encoded component text.",
+      "Returns": [
+         {
+            "Desc": "A decoded string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Usage": "filter.uri.dec (data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to decode <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local Dec = filter.uri.dec(data)</pre>"
+      ],
+      "Desc": "Decode URI encoded component text."
+   }
+}

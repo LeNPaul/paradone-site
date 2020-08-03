@@ -1,0 +1,3295 @@
+/******************************************************************************/
+/* -------------------------- IGUANA GUI LAYOUT ------------------------------*/
+
+#header {
+   background-color: #FFFFFF;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   z-index: 99;
+}
+
+#logo {
+   position: absolute;
+   top: 10px;
+   left: 28px;
+}
+
+#version {
+   color: #8BC34A;
+   font-size: 12px;
+   font-weight: 400;
+   position: absolute;
+   top: 29px;
+   left: 150px;
+}
+
+a {
+   cursor: pointer;
+}
+
+#version a{
+   color: #8BC34A;
+   text-decoration: none;
+}
+   
+#login {
+   position: absolute;
+   top: 30px;
+   right: 25px;
+   font-size: 11px;
+   font-weight: normal;
+   color: #999999;
+}
+
+#login a {
+   color: #8BC34A;
+}
+
+#change_skin {
+   position: absolute;
+   top: 75px;
+   right: 26px;
+   color: #244D02;
+   font-size: 10px;
+   font-weight: bold;
+}
+
+#change_skin a {
+   color: #244D02;
+}
+
+#skinning_window {
+   position: absolute;
+   width: 350px;
+   height: 250px;
+   z-index: 6000;
+   font-size: 11px;
+   font-weight: bold;
+   color: #78560F;
+   text-align: center;
+   background-color: #f9fdcb;
+   border-top: 2px solid #d5a95d;
+   border-left: 2px solid #d5a95d;
+   border-bottom: 2px solid #936d27;
+   border-right: 2px solid #936d27;
+}
+
+#skinning_window h3 {
+   color: #c46a00;
+   font-size: 11px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-top: 20px;
+   margin-bottom: 5px;
+   }
+
+#skinning_window img {
+   border: 0px;
+   margin-top: 15px;
+   margin-left: 8px;
+   margin-right: 8px;
+   }
+
+#help_button {
+   position: absolute;
+   top: 26px;
+   right: 26px;
+}
+
+#help_button a {
+   display: block;
+   height: 23px;
+   width: 56px;
+   background: url("/images/help_button.gif") 0 0 no-repeat;
+}
+
+#help_button a:hover {
+   background-position: 0 -23px;
+}
+
+#help_button a:active {
+   background-position: 0 -46px;
+}
+
+#tabs {
+   position: relative;
+   top: 96px;
+}
+
+body.tableft {
+   background: #D0D6B8; /* Light Beige Background for pages with Tabs on left side */
+}
+
+body.tabright {
+   background: #A5A798; /* Light Grey Background for pages with Tabs on right side */
+}
+
+/* ----- Zack's New Header ----- */
+
+header {
+    text-align: justify;
+    height: 60px;
+    padding: 0px 25px;
+    color: #000;
+    background: #FFFFFF;
+}
+
+header::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+header > div,
+header > div::before,
+header nav,
+header > div img,
+header > div span {  
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    border: none;
+}
+
+header > div {
+    height: 100%;
+}
+
+header > div::before {
+    content: '';
+    height: 100%;
+}
+
+header > div img.iguana_logo {
+    width: 120px;
+    height: 45px;
+}
+
+header > div span.version {
+    font-size: 12px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    margin-left: 5px;
+    padding-left: 15px;
+    color: #8BC34A;
+    font-weight: 400;
+}
+
+header > div span.version a{
+    text-decoration: none;
+    color: #8BC34A;
+}
+
+header nav .pages a {
+    padding: 0 1em;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: #388E3C;
+    font-weight: 600;
+}
+
+header nav a:hover {
+    color: #8BC34A;
+}
+
+header nav a:last-child {
+    padding-right: 0;
+}
+
+header nav .user {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    margin-left: 25px;
+    margin-right: 1px;
+    color: #37474F;
+}
+
+header nav {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+header nav a {
+    color: #37474F;
+}
+
+@media screen and (max-width: 720px){
+    
+    header {
+        height: auto;
+    }
+    
+    header > div,
+    header > div h1,
+    header nav {
+        height: auto;
+        width: auto;
+        display: block;
+        text-align: center;
+    }
+    
+}
+
+
+div.breadcrumb {
+    position: relative;
+    height: 5px;
+    /* GREEN Gradient Background */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#24ab3a+35,8BC34A+100 */
+    background: #4CAF50; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #4CAF50 35%, #8BC34A 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(35%,#4CAF50), color-stop(100%,#8BC34A)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg,  #4CAF50 35%,#8BC34A 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg,  #4CAF50 35%,#8BC34A 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg,  #4CAF50 35%,#8BC34A 100%); /* IE10+ */
+    background: linear-gradient(135deg,  #4CAF50 35%,#8BC34A 100%); /* W3C */
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-left: 25px;
+}
+
+div.breadcrumb span {
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+body.tableft, body.tabright {
+   background: #ECEFF1; /* Light Grey Background for pages with Tabs on left and right side */
+}
+
+/* ----- Member Menu Dropdown ----- */
+
+#menu{
+   list-style: none;
+   display: inline;
+   float: right;
+   margin: 0px;
+   padding: 1px 1px 0 0;
+   height: 0px;
+}
+
+#menu li{
+   float: left;
+   padding:0 0 10px 0;
+   position: relative;
+}
+
+#menu a{
+   float: right;
+   height: 20px;
+   padding:0 10px 0 10px;
+   color: #37474f;
+   text-decoration: none;
+}
+
+#menu li:hover > a{background:#EEE;
+   color: #37474f;
+   border-radius: 3px;
+}
+
+*html #menu li a:hover{ /* IE6 */
+   color: #FFF;
+}
+
+#menu li:hover > ul{
+   display: block;
+}
+
+/* Sub-menu */
+#menu ul{
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: none;
+   position: absolute;
+   top: 30px;
+   right: -10px;
+   z-index: 99999;
+   background: #78909c;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.5);
+}
+
+#menu ul li{
+   float: none;
+   margin:0;
+   padding: 0;
+   display: block;
+}
+
+#menu ul a{
+   padding: 10px 22px 5px 20px;
+   line-height: 1;
+   display: block;
+   white-space: nowrap;
+   float: none;
+   text-transform: none;
+   color: #FFF;
+   font-weight: 600;
+}
+
+#menu ul a img{
+   height: 12px;
+   width: 12px;
+   vertical-align: middle;
+   margin-right: 8px;
+   margin-bottom: 2px;
+   opacity: 0.8;
+}
+
+*html #menu ul a{ /* IE6 */
+   height: 10px;
+   width: 150px;
+}
+
+*:first-child+html #menu ul a{ /* IE7 */
+   height: 10px;
+   width: 150px;
+}
+
+#menu ul a:hover{
+   background: #546e7a;
+   color: #FFF;
+}
+
+#menu ul li:first-child a{
+   -moz-border-radius: 5px 5px 0 0;
+   -webkit-border-radius: 5px 5px 0 0;
+   border-radius: 5px 5px 0 0;
+   border-top: 7px solid #78909c;
+}
+
+#menu ul li:first-child a:after{
+   content: '';
+   position: absolute;
+   right: 16px;
+   top: -8px;
+   width: 0;
+   height: 0;
+   /* This code forms the triangle */
+   border-left: 8px solid transparent;
+   border-right: 8px solid transparent;
+   border-bottom: 8px solid #78909c;
+}
+
+#menu ul li:first-child a:hover:after{
+   border-bottom-color: #78909c;
+}
+
+#menu ul li:last-child a{
+   -moz-border-radius: 0 0 5px 5px;
+   -webkit-border-radius: 0 0 5px 5px;
+   border-radius: 0 0 5px 5px;
+   border-bottom: 7px solid #78909c;
+}
+
+
+
+
+/* ----- Main Workspace Area on Left Side ----- */
+
+#main {
+   margin: 0px 275px 25px 25px; /* The value for the right margin (275px) must equal to the width of the side panel (230px) + the side panel's right margin (25px) + the space between the main section and the side panel (20px) */
+   padding-top: 90px;
+}
+
+#main_panic {
+   margin: 25px 25px 25px 25px; /* The value for the right margin (275px) must equal to the width of the side panel (230px) + the side panel's right margin (25px) + the space between the main section and the side panel (20px) */
+   padding-top: 65px;
+}
+
+#iguana {
+   width: 100%;
+   font-size: 12px;
+   border: 1px solid rgba(0, 0, 0, 0.15);
+   border-spacing: 0px;
+   background: #FFFFFF;
+   border-radius: 4px;
+}
+
+#main_panic #iguana {
+   font-size: 12px;
+   border: 1px solid rgba(0, 0, 0, 0.15);
+   border-spacing: 0px;
+   background: #FFFFFF;
+   border-radius: 4px;
+   width: auto;
+   padding: 25px 50px 50px 50px;
+}
+
+/* ----- Side Panel Area on Right Side ----- */
+
+#side_panel {
+   position:absolute;
+   top:92px;
+   right:25px;
+   width:230px;
+   padding:0px;
+   border:0px;
+}
+
+#side_table {
+   background: #fafbfc;
+   border: 1px solid rgba(0, 0, 0, 0.15);
+   margin-bottom: 15px;
+   border-radius: 4px;
+   border-spacing: 0px;
+   width: 100%;
+}
+
+/* definitions for help links table, if we need them */
+#help_link_table {
+   padding: 0px;
+   border: 0px;
+}
+
+#help_link_icon {
+   padding: 0px;
+   border: 0px;
+   padding-top: 4px;
+   padding-right: 10px;
+   padding-bottom: 5px;
+   vertical-align: top;
+}
+
+#help_link_name {
+   padding: 0px;
+   border: 0px;
+   padding-bottom: 5px;
+}
+
+#help_log_link_icon {
+   padding: 0px;
+   border: 0px;
+   padding-top: 4px;
+   padding-right: 10px;
+   vertical-align: top;
+}
+
+#help_log_link_name {
+   padding: 0px;
+   border: 0px;
+}
+
+
+
+ul.help_link_icon {
+   list-style-type: none;
+   padding-left: 0;
+   margin-left: 0;
+}
+
+ul.help_link_icon li {
+   list-style-image: none;
+   background-image: url(/images/help_icon.gif);
+   background-repeat: no-repeat;
+   background-position: 0px 1px;
+   padding-left: 20px;
+   padding-bottom: 4px;
+}
+
+ul.help_link_icon li a {
+   font-size: 11px;
+   font-weight: normal;
+   /*color: #6e4402;*/
+}
+
+/* If we want to change the color of the links on mouseover */
+/*
+ul.help_link_icon li a:hover {
+   color: #6d6500;
+}
+*/
+
+
+#side_header,
+#popup_header {
+   background-color: #fafbfc;
+   background-image: none;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color: #78909C;
+   text-align: left;
+   font-size: 12px;
+   font-weight: 300;
+   text-transform: none;
+   letter-spacing: 0em;
+   height:38px;
+   border-radius: 4px;
+}
+
+#popup_header {
+   border-radius: 0;
+}
+
+#side_body,
+#popup_body,
+.side_item {
+   padding-top: 0px;
+   padding-bottom: 15px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color: #455A64;
+   text-align: left;
+   font-size: 11px;
+   font-weight: normal;
+   line-height: 1.5em;
+   border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+h4.side_title, h4.side_title a {
+    color: #8bc34a;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+
+
+/* Tabular data - left and right aligned on the same row */
+
+div.textrow {
+   clear: both;
+   margin: 0px;
+   height: 16px;
+}
+
+p.alignleft {
+   float: left;
+   margin: 0px;
+}
+
+p.alignright  {
+   float: right;
+   margin: 0px;
+   font-weight: bold;
+}
+
+
+/* Form Field styles */
+
+input, select, textarea {
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	padding-left: 4px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	border-style: none; 	/* This removes the border from radio buttons & checkboxes, but of course, does not work in IE6 */
+        background:transparent;
+} 
+
+input.no_style {
+	border: none;
+	background: none;
+}
+
+
+/* ----- Pop-Up Windows ----- */
+
+
+#popup_window {
+   background: #fafbfc !important;
+   border-spacing: 10px !important;
+   border-collapse: collapse !important;
+}
+
+/* Need this to overwrite the black colour used by .ui-widget-content. */
+#import-popup a {
+   color: #215fa3 !important;
+}
+
+.ui-widget {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.ui-widget-content {
+    background-color: #fafbfc !important;
+    background-image: none !important;
+    color: #666666 !important;
+}
+
+.ui-dialog {
+   padding: 0px !important;
+   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: 1em 2em !important;
+}
+
+.ui-widget-header {
+    border: none !important;
+    border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+    background: #f5f5f5 !important;
+    font-weight: 400 !important;
+    color: #78909c !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.ui-button-text-only {
+	background-color: #82BF56 !important;
+	border-bottom: 2px solid #669644 !important;
+	text-shadow: 0px -1px #669644 !important;
+    font-weight: 400 !important;
+    border: 0px !important;
+    background-image: none !important;
+}
+
+.ui-button-text-only:hover {
+	color: #FFFFFF !important;
+}
+
+.ui-button-icon-only:hover {
+    background: none !important;
+}
+
+/******************************************************************************/
+/* ---------------------------- NAVIGATION TABS ------------------------------*/
+
+
+    #tabs_left {
+      float:left;
+      width:64%;
+      font-size: 11px;
+      font-weight: bold;
+      line-height:13px;
+      }
+    #tabs_left ul {
+     margin:0;
+     padding:0px 25px 0 25px;
+     list-style:none;
+      }
+    #tabs_left li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabs_left a {
+      float:left;
+      background:url("/images/tableft.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 5px;
+      text-decoration:none;
+      }
+    #tabs_left a span {
+      float:left;
+      display:block;
+      background:url("/images/tabright.gif") no-repeat right top;
+      height:13px;	  
+      width:20px;
+      padding:6px 15px 5px 6px;
+      color:#244d02; /* Dark Green */
+      margin-right: 1px;
+      }
+      /* folowing rule ignored by IE6 */
+      html>body #tabs_left a span { 
+      width: auto; 
+      }
+    #tabs_left a.current {
+      float:left;
+      background:url("/images/tableft_left_current.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 5px;
+      text-decoration:none;
+      }
+    #tabs_left a.current span {
+      float:left;
+      display:block;
+      background:url("/images/tabright_left_current.gif") no-repeat right top;
+      height:13px;	  
+      width:20px;
+      padding:6px 15px 5px 6px;
+      color:#30302C;
+      margin-right: 1px;
+      }     
+      /* folowing rule ignored by IE6 */
+      html>body #tabs_left a.current span { 
+      width: auto; 
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    #tabs_left a span {float:none;}
+    /* End IE5-Mac hack */
+    #tabs_left a:hover span {
+      color:#30302C;
+      }
+    #tabs_left a:hover {
+      background-position:0% -24px;
+      }
+    #tabs_left a:hover span {
+      background-position:100% -24px;
+      }
+      
+      
+      
+    #tabs_right {
+      float:right;
+      width:35%;
+      font-size:11px;
+      font-weight: bold;
+      line-height:13px;
+      }
+    #tabs_right ul {
+      float: right;
+     margin:0;
+     padding:0px 25px 0 25px;
+     list-style:none;
+      }
+    #tabs_right li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabs_right a {
+      float:left;
+      background:url("/images/tableft.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 5px;
+      text-decoration:none;
+      }
+    #tabs_right a span {
+      float:left;
+      display:block;
+      background:url("/images/tabright.gif") no-repeat right top;
+      height:13px;	 
+      width:20px;
+      padding:6px 15px 5px 6px;
+      color:#244d02; /* Dark Green */
+      }	  
+      /* folowing rule ignored by IE6 */
+      html>body #tabs_right a span { 
+      width: auto; 
+      }
+    #tabs_right a.current {
+      float:left;
+      background:url("/images/tableft_right_current.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 5px;
+      text-decoration:none;
+      }
+    #tabs_right a.current span {
+      float:left;
+      display:block;
+      background:url("/images/tabright_right_current.gif") no-repeat right top;
+      height:13px;	  
+      width:20px; /* folowing rule ignored by IE6 */
+      padding:6px 15px 5px 6px;
+      color:#30302C;
+      }
+      /* folowing rule ignored by IE6 */
+      html>body #tabs_right a.current span { 
+      width: auto; 
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    #tabs_right a span {float:none;}
+    /* End IE5-Mac hack */
+    #tabs_right a:hover span {
+      color:#30302C;
+      }
+    #tabs_right a:hover {
+      background-position:0% -24px;
+      }
+    #tabs_right a:hover span {
+      background-position:100% -24px;
+      }
+
+/* ----- New Navigation Tab Style - END ----- */
+
+
+
+
+
+/******************************************************************************/
+/* -------------------------- DASHBOARD LAYOUT ------------------------------*/
+
+
+#dashboard_body {
+   border: 0px solid #A0A0A0;
+   background-color: #FFFFFF;
+   background-repeat: no-repeat;
+   background-position: bottom right;
+   padding: 10px;
+   padding-bottom: 10px;
+   margin-bottom: 0px;
+   color: #000000;
+   vertical-align: top;
+   text-align: left;
+   border-radius: 4px;
+}
+
+#cookie_crumb {
+   background-color: #fafbfc;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color: #78909C;
+   text-align: left;
+   font-size: 12px;
+   font-weight: 300;
+   border-bottom: 1px solid #EEEEEE;
+   height:38px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+#dashboard_footer {
+   background-color: #CCCCCC;
+   padding-top: 7px;
+   padding-bottom: 7px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color: #444444;
+   text-align: right;
+}
+
+
+
+
+
+
+/******************************************************************************/
+/* ----------------- STANDARD STYLES FOR COMMONLY USED TAGS ----------------- */
+
+body {
+   font-family: 'Open Sans', Verdana, Arial, Helvetica, Geneva, Lucida, sans-serif;
+   background: #FFFFFF;
+   margin: 0px;
+   padding: 0px;
+}
+
+a {
+   color: #215fa3;      /* Blue */
+}
+
+a span.text{
+   text-decoration:underline;
+}
+
+h1 {
+    color: #7cb342;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+h2 {
+   color: #367900;      /* Green */
+   font-size: 16px;
+   margin-top: 15px;
+}
+
+h3 {
+   color: #37485A;      /* Greyish-Blue */
+   font-size: 14px;
+}
+
+
+/* ----- Tables ----- */
+
+th {
+   background: #cfd8dc;
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: 400;
+   font-size: 10px;
+   letter-spacing: 0.08em;
+   color: #455A64 ;
+   padding: 6px 6px 6px 6px;
+}
+
+table.grid_table th, {
+   border-right: 1px solid #FFFFFF;
+}
+
+th.sortable
+{
+   cursor: pointer;
+}
+
+th.sortable_hover
+{
+   cursor: pointer;
+   background: #8BC34A;
+}
+
+td
+{
+   font-size: 12px;
+   padding-top: 5px;
+   padding-bottom: 3px;
+   padding-left: 8px;
+   padding-right: 8px;
+}
+
+td.left
+{
+   text-align: left;
+}
+
+td.right
+{
+   text-align: right;
+}
+
+td.center
+{
+   text-align: center;
+}
+
+table.configuration
+{
+   width: 80%;
+   color: #000000;
+   border: 0px #adb1a5 solid;
+   border-collapse: collapse;
+   border-spacing: 0px;
+   text-align: left;
+}
+
+table.configuration th
+{
+    text-transform: none;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: normal;
+    color: #7CB342;
+    border-top:    0px;
+    border-right:  0px;
+    border-bottom: 2px solid #C5E1A5;
+    border-left:   0px;
+    padding: 10px;
+    background: transparent;
+    text-align: left;
+}
+
+table.configuration td
+{
+    text-align: left;
+    font-weight: normal;
+    font-size: 12px;
+    color: #424242;
+    padding: 10px;
+    border-top:    0px;
+    border-right:  0px;
+    border-bottom: 1px solid #EEEEEE;
+    border-left:   0px;
+}
+
+table.configuration td.repository_entry {
+   padding: 20px 6px;
+}
+
+table.configuration table td
+{
+    border: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+table.configuration td.left_column
+{
+   width: 33%;
+   font-weight:bold;
+   text-align:left;
+}
+
+table.configuration td a.button
+{
+   margin-left: 10px;
+}
+
+.admin_only_privilleges
+{
+   color:#000000;
+   text-align:center;
+}
+
+
+tr.first
+{
+   background-color: #FEFEFE; /* Alternating row colours */
+}
+
+tr.second
+{
+   background-color: #F5F5F5; /* Alternating row colours */
+}
+
+
+/* ----- Tooltips ----- */
+
+.tooltip
+{
+   position: absolute;
+   visibility: hidden;
+   z-index: 3;
+}
+
+.tooltip_top
+{
+   background-repeat: no-repeat;
+   height: 18px;
+   position: relative;
+   top: 2px;
+   width: 1px;
+}
+
+.tooltip_bottom
+{
+   background-repeat: no-repeat;
+   height: 18px;
+   position: relative;
+   top: -2px;
+   width: 1px;
+}
+
+.tooltip_body
+{
+   font-size: 11px;
+   color: #333333;
+   background-color: #ffc;
+   border: 2px solid #c5c6a4;
+   padding: 8px;
+   -moz-border-radius: 8px;
+}
+
+
+
+/* Style for Tooltips with tabular data */
+table.IGUlogUsageToolTip {
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
+
+table.ComponentToolTip th.ToolTipHeading {
+   border-bottom: 1px solid #c5c6a4;
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: normal;
+   letter-spacing: 0.05em;
+   padding-top: 2px;
+   padding-bottom: 6px;
+}
+
+table.IGUlogUsageToolTip th,
+table.ComponentToolTip th,
+table.ComponentToolTip span.fakeTh {
+   border: 0px;
+   background: none;
+   color: #505040;
+   font-size: 10px;
+   font-weight: bold;
+   text-align: right;
+   text-transform: none;
+   padding-top: 6px;
+   padding-bottom: 0px;
+   vertical-align: top;
+}
+
+/*
+ * The "table.configuration table.ComponentToolTip td" is present to
+ * Prevent the style of "table.configuration table td" from
+ * overriding this style.
+ */
+table.IGUlogUsageToolTip td,
+table.ComponentToolTip td,
+table.configuration table.ComponentToolTip td {
+   background: none;
+   color: #222;
+   font-size: 10px;
+   text-align: left;
+   text-transform: none;
+   padding-top: 6px;
+   padding-bottom: 0px;
+   padding-left: 0px;
+   line-height: 13px;
+   white-space:pre;
+}
+
+
+
+/******************************************************************************/
+/* ------------------------------ PROGRESS BARS ----------------------------- */
+/* See send_validation_email.cs for an example of how to use the progress bar */
+
+div.progress_bar_container {
+   border: 1px solid #757671;
+   width: 202px;
+   height: 18px;
+   text-align: left;
+}
+
+/*
+ * Put the progress bar inside the progress bar container and set its src to
+ * some image (for example, "./images/progress_bar.gif").  Then use some
+ * AJAX to query the progress, and change the img's width with javascript.
+ * The maximum width should be 200px.
+ */
+img.progress_bar { /* starts with no progress (width: 0px) */
+   width: 0px;
+   height: 16px;
+   position: relative;
+   top: 1px;
+   left: 1px;
+}
+
+div.percent_used_container {
+   border: 1px solid rgba(0,0,0,0.2);
+   background: #fafafa;
+   width: 200px;
+   height: 12px;
+   text-align: left;
+}
+
+/*
+ * Put the progress bar inside the progress bar container and set its src to
+ * some image (for example, "./images/progress_bar.gif").  Then use some
+ * AJAX to query the progress, and change the img's width with javascript.
+ * The maximum width should be 200px.
+ */
+img.percent_used { /* starts with no progress (width: 0px) */
+   width: 0px;
+   height: 12px;
+   position: relative;
+   left: 0px;
+   bottom: 1px;
+}
+
+
+
+
+/******************************************************************************/
+/* ------------- 3D BUTTONS INSTEAD OF HYPERLINKS/SUBMIT BUTTONS ------------ */
+
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+a.button {
+    background: transparent url('/images/bg_button_a.gif') no-repeat scroll top right;
+    color: #4d7500;
+    display: block;
+    float: left;
+    font: bold 10px verdana, arial, sans-serif;
+    height: 22px;
+    margin-right: 0px;
+    padding-right: 14px; /* sliding doors padding */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a.button span {
+    background: transparent url('/images/bg_button_span.gif') no-repeat;
+    display: block;
+    line-height: 12px;
+    padding: 5px 0 5px 14px;
+    white-space: nowrap;
+    height:12px;
+}
+/* Make sure the span's vertical padding (5 + 5) and line-height (12) amount to the total height of the button (22). Using a different padding, means setting a different height. */
+
+
+/* ----- Button Press ----- */
+
+a.button:active {
+    background-position: bottom right !important;
+    color: #385500;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:active span {
+    background-position: bottom left !important;
+    padding: 6px 0 4px 14px; /* push text down 1px */
+} 
+
+
+/* ----- Button Hover ----- */
+
+a.button:hover {
+    background-position: center right;
+    color: #385500;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:hover span {
+    background-position: center left;
+} 
+
+
+/* ----- Changing Submit Buttons ----- */
+
+/*
+ * Submit buttons will be present but hidden, so that fancy buttons
+ * can be shown instead.
+ */
+input.hidden_submit {
+   display: none;
+}
+
+
+/* ----- Centering the Special 3D Buttons - they need to be put in a table with the 'buttons' ID ----- */
+
+#buttons td {
+   padding: 4px;
+}
+
+/* ----- Icons inside the buttons ----- */
+
+a.button span img {
+   border-width: 0px;
+   margin-left: -6px;
+   margin-top: -2px;
+   margin-bottom: -4px;
+}
+
+div.button_disable {
+    background: transparent url('/images/bg_button_a_disable.gif') no-repeat scroll top right;
+    color: #b4b4b4;
+    display: block;
+    float: left;
+    font: bold 10px verdana, arial, sans-serif;
+    height: 22px;
+    margin-right: 0px;
+    padding-right: 14px; /* sliding doors padding */
+    text-decoration: none;
+    cursor: default;
+}
+
+div.button_disable span {
+    background: transparent url('/images/bg_button_span_disable.gif') no-repeat;
+    display: block;
+    line-height: 12px;
+    padding: 5px 0 5px 14px;
+    white-space: nowrap;
+}
+
+div.button_disable span img {
+   border-width: 0px;
+   margin-left: -6px;
+   margin-top: -2px;
+   margin-bottom: -4px;
+}
+
+
+
+/******************************************************************************/
+/* ---------------------------  NAVIGATION TABS ------------------------------*/
+
+
+/* div container both the tabs (navcontainer) AND the tab contents */
+div.tabs_and_contents {
+   background-color: #ffffff;
+   border-bottom: 1px solid rgba(0,0,0,0.1);
+   margin-left: -10px;
+   margin-right: -10px;
+   margin-top: -10px;
+   margin-bottom: -10px;
+   border-bottom-left-radius: 4px;
+   border-bottom-right-radius: 4px;
+   padding-bottom: 30px;
+}
+
+.navcontainer {
+   /* The following two properties are to stop the tabs from disappearing due to an IE6 bug */
+   z-index: 1;
+   position: relative;
+   background-color: #ffffff;
+   padding-bottom: 5px;
+   border-bottom: 2px solid #c5e1a5;
+}
+
+.navcontainer h2 {
+	font-weight: 400;
+	font-size: 22px;
+	color: #4caf50;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.navcontainer a {
+	font-weight: 600;
+	font-size: 10px;
+    letter-spacing: 0.105em;
+    text-transform: uppercase;
+	padding: 6px 14px;
+	color: #949494;
+	background-color: #ffffff; 
+	text-decoration: none;
+	border: 0px;
+	border-bottom: none;
+	margin-left: 1px;
+	margin-right: 0px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.navcontainer a:hover {
+	color: #8BC34A;
+	background-color: #F1F8E9;
+	border: 0px solid #888;
+}
+
+.navcontainer a.current {
+	color: #388E3C;
+    font-weight: 600;
+	background-color: #DCEDC8; 
+	/*background: #f1f2ef url("/images/config_tab_bg.gif") repeat-x top;*/
+	border: 0px solid #888;
+	border-bottom: 0px solid #388E3C;
+}
+
+.navcontainer a span.icon_warning {
+	margin-bottom: -2px;
+	border: none;
+}
+
+.navcontainer a img.icon_error,
+.navcontainer a img.icon_warning {
+   margin-bottom: -2px;
+   border: none;
+}
+
+
+
+/******************************************************************************/
+/* -----------------------  ERROR & WARNING MESSAGES -------------------------*/
+
+div.info_message
+{
+   background-color: #C7DEC8;
+   background-image: url('/images/iguana_icon.png');
+   background-repeat: no-repeat;
+   background-position: 15px 12px;
+   height: auto;
+   text-align: left;
+   padding-left: 58px;
+   padding-right: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border: 1px solid rgba(0,0,0,0.1);
+   border-radius: 4px;
+   margin: none;
+}
+
+div.info_heading
+{
+	color: #225D24;		/* Green Info heading */
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 3px;
+	display: block;
+}
+
+div.info_text
+{
+   color: #5F9461;		/* Green Info text */
+   font-weight: bold;
+}
+
+
+div.warning_message
+{
+   background-color: #f9fdcb;
+   background-image: url('/images/icon_warning_large.gif');
+   background-repeat: no-repeat;
+   background-position: 15px 12px;
+   height: auto;
+   text-align: left;
+   padding-left: 58px;
+   padding-right: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border: 1px solid rgba(0,0,0,0.1);
+   border-radius: 4px;
+   margin: none;
+}
+
+div.warning_heading
+{
+	color: #e84c3d;		/* Red Warning heading */
+	font-weight: bold;
+	font-size: 10px;
+	margin-bottom: 3px;
+	display: block;
+}
+
+div.warning_text
+{
+   color: #99804c;		/* Brown Warning text */
+   font-weight: bold;
+}
+
+
+div.error_message
+{
+   background-color: #ffdcdb; 		/* Light Red Background */
+   background-image: url('/images/icon_error_large.gif');
+   background-repeat: no-repeat;
+   background-position: 15px 12px;
+   height: auto;
+   text-align: left;
+   padding-left: 58px;
+   padding-right: 8px;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   border: 1px solid rgba(0,0,0,0.1);
+   border-radius: 4px;
+   margin: none;
+}
+
+div.error_heading
+{
+	color: #e84c3d;		/* Red Error heading */
+	font-weight: bold;
+	font-size: 10px;
+	margin-bottom: 3px;
+	display: block;
+}
+
+div.error_text
+{
+   color: #343434;		/* Grey Error text */
+   font-weight: bold;
+}
+
+div.error_text.panic
+{
+   font-weight: 600;
+   font-size: 11pt;
+}
+
+tr.error_row {
+background-color: #ffdcdb;       /* Light Red Background */
+}
+
+span.validation_error_message_container {
+white-space: nowrap;
+color: #FF0000;     /* Red text */
+line-height: 18px;
+}
+
+span.validation_error_message_container img
+{
+   vertical-align: middle;
+   margin-bottom: .25em;
+}
+
+.config_warning {
+   display: inline-block;
+   padding: 0 20px;
+   font-style: italic;
+   color: #999;
+}
+
+/******************************************************************************/
+/* ---------------------------  PATH PREVIEWS --------------------------------*/
+
+
+div.path_preview {
+   padding: 3px 3px 3px 0px;
+   margin: 0px;
+   color: #777777;
+   font-size: 11px;
+}
+
+
+
+
+/******************************************************************************/
+/* ------------------------  ADVANCED_SETTINGS.CS ----------------------------*/
+
+/* ----- Rollover Buttons - START ----- */
+
+a.settings_button img {
+   margin: 4px 4px 4px 4px;
+}
+
+#button_container {
+   /* 
+   max-width: 665px;
+   width:expression(document.body.clientWidth > 1000? "665px": "auto" );
+   */
+}
+
+/* ----- Rollover Buttons - END ----- */
+
+
+
+
+
+/******************************************************************************/
+/* ------------------------------ CHANNEL.CS ---------------------------------*/
+
+/* Table containing configuration tabs.  Make it 100% width so the width doesn't change as we change active tabs */
+table#configuration_tabs_table {
+   width: 100%;
+   margin-top: 15px;
+}
+
+td.no_padding {
+padding: 0px;
+text-align: center;
+}
+
+table#channel_configuration_table {
+/*width: 1000px;*/
+margin-top: 0px;
+padding: 10px 20px;
+}
+
+table#channel_configuration_table tr {
+padding-top: 0px;
+margin-top: 0px;
+height:25px;
+}
+
+div#channel_configuration_container {
+overflow-x: hidden;
+overflow-y: auto;
+position: relative; /* so that nested "position:relative" items are displayed properly in ie6 */
+}
+
+
+/* Heading inside the tab contents, (eg, "Source: LLP Listener") */
+td.component_label
+{
+   text-align: center;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 10px;
+   letter-spacing: 0.05em;
+   padding-top: 7px;
+   padding-bottom: 7px;
+   padding-left: 8px;
+   padding-right: 8px;
+}
+
+
+/* ----- Ignored Messages ----- */
+
+table tr.ignored_message_row td
+{
+   padding-top: 2px;
+   padding-bottom: 2px;
+   line-height: 18px;
+}
+
+a.ignored_message {
+    background: transparent url('/images/bg_recipient_a.gif') no-repeat scroll top right;
+    color: #555555;
+    display: block;
+    float: left;
+    font: normal 10px verdana, arial, sans-serif;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-right: 11px; /* sliding doors padding */
+    text-decoration: none;
+    cursor: default;
+}
+
+a.ignored_message span {
+    background: transparent url('/images/bg_recipient_span.gif') no-repeat;
+    display: block;
+    line-height: 20px;
+    padding: 0px 0 0px 11px;
+    white-space: nowrap;
+}
+
+
+/* Styles for Tables that contain form fields */
+
+table.channel_configuation_form {
+  /*width: 70%;*/
+   margin-top: -5px;
+   padding-top: 0px;
+
+}
+
+table.channel_configuation_form th {
+	background: none;
+	color: #4f9100;
+	text-transform: none;
+	letter-spacing: 0em;
+	font-size: 11px;
+	padding-top: 0px;
+}
+
+table.channel_configuation_form td
+{
+   border-top: 1px #eeeeee solid;
+   text-align: left;
+   font-weight: normal;
+   font-size: 12px;
+   color: #555555;
+   padding: 10px 10px 10px 0px;
+   /*vertical-align: top;*/
+}
+
+table.channel_configuation_form td.first_row
+{
+   border-top: 0px;   
+}
+
+table.channel_configuation_form table td
+{
+   border: 0px;
+}
+
+table.channel_configuation_form td.left_column
+{
+   font-weight:bold;
+   text-align:left;
+}
+
+span.configurationFillerText
+{
+   color: #777777;
+}
+
+tr.channel_configuration_section_heading_row td
+{
+   border-top: 0px;
+   vertical-align: middle;
+}
+
+tr.channel_configuration_section_heading_row td table
+{
+   padding: 0px;
+   width: 100%;
+}
+
+tr.channel_configuration_section_heading_row td table td
+{
+}
+
+tr.channel_configuration_section_heading_row td table td.channel_configuration_section_heading
+{
+   white-space: nowrap;
+   color: #4caf50;
+   padding: 0px;
+   text-transform: none; 
+   font-size: 18px;
+   font-weight: 300;
+}
+
+tr.channel_configuration_section_heading_row hr {
+    height: 1px;
+    background: #C5E1A5;
+    border: none;
+}
+
+table.channel_configuation_form tbody#tableGroupsBody td {
+   padding: 0;
+   margin: 0;
+}
+
+/* Message Import */
+
+/******************************************************************************/
+/* -------------------------- COMPONENT_MACROS.CS ----------------------------*/
+
+input.file {
+   position: relative;
+   text-align: left;
+   z-index: 1;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+
+
+
+
+/******************************************************************************/
+/* ------------------------- COMPONENT_TO_FILE.CS ----------------------------*/
+
+
+span.invalidFilenameMaskCharacter {
+   background-color: pink;
+   color: red;
+}
+
+
+
+
+
+
+/******************************************************************************/
+/* ----------------------------- DASHBOARD.CS --------------------------------*/
+
+
+div.left_align
+{
+   text-align: left;
+}
+
+div.center_align
+{
+   text-align: center;
+}
+
+
+/* WARNING message styles */
+
+div.ajax_warning
+{
+   background-color: #f9fdcb;
+   background-image: url('/images/icon_warning_large.gif');
+   background-repeat: no-repeat;
+   background-position: 15px 12px;
+   height: auto;
+   text-align: left;
+   padding-left: 60px;
+   padding-right: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border: 1px solid #d5a95d;
+   margin-left: 2px;
+   margin-bottom: 10px;
+}
+
+
+/* ERROR message styles */
+div.ajax_error
+{
+   background-color: #ffdcdb; 		/* Light Red Background */
+   background-image: url('/images/icon_error_large.gif');
+   background-repeat: no-repeat;
+   background-position: 15px 12px;
+   height: auto;
+   text-align: left;
+   padding-left: 58px;
+   padding-right: 15px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border: 1px solid #FFA19C;
+}
+
+span.ajax_error_heading
+{
+	color: #FF0000;		/* Red Error heading */
+	font-weight: bold;
+}
+
+div.ajax_error_text
+{
+   color: #343434;		/* Grey Error text */
+   font-weight: bold;
+}
+
+div.dashboard_channel_list
+{
+   height: 100%;
+   text-align: left;
+   overflow-y: auto;
+   overflow-x: auto;
+}
+
+table.dashboard_channel_list_table
+{
+   width: 100%;
+}
+
+div.no_channels_message
+{
+   text-align: center;
+   width: 100%;
+}
+
+div.dashboard_channel_headings
+{
+   text-align: left;
+   position: absolute;
+   background-color: #FFFFFF;
+   overflow: hidden;
+}
+
+table.dashboard_channel_headings_table
+{
+   position: relative;
+   overflow: hidden;
+}
+
+input.pause_or_resume_button
+{
+   background-color: #DDDDDD;
+   border: #BBBBBB 1px solid;
+   font-family: verdana;
+   font-size: 7pt;
+   color: #787a77;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   margin-left: 4px;
+}
+
+/* Search field */
+
+table.search_field_container
+{
+   float: right;
+}
+
+div.search_field
+{
+   border: 1px solid #DDDDDD;
+   border-radius: 3px;
+   background-color: #FFFFFF;
+   height: 20px;
+   padding-right: 2px;
+}
+
+div.search_field img
+{
+   position: relative;
+   top: 3px;
+}
+
+div.search_field img#imgClearFilterIcon
+{
+   visibility: hidden;
+   cursor: pointer;
+}
+
+div.search_field img#imgMagnifyingGlass
+{
+   left: 3px;
+    opacity: 0.7;
+}
+
+div.search_field input#inputChannelFilter
+{
+   border-width: 0px;
+   color: #343434;
+   position: relative;
+   left: 2px;
+   top: 1px;
+   width: 100px;
+   font-size: 11px;
+}
+
+/* Remove 'x' in IE10+ */
+div.search_field input#inputChannelFilter::-ms-clear {
+    display: none;
+}
+
+
+span.dashboard_search_match
+{
+   background-color: #FFFF00;
+}
+
+td.channel_name span.dashboard_search_match
+{
+   text-decoration: underline;
+}
+
+/******************************************************************************/
+/* --------------------------  EMAIL_RULE_EDIT.CS -----------------------------*/
+
+
+table.configuration tr td table.time_filter_table {
+	border-collapse: separate;
+	border-spacing: 1px;
+	font-family: Arial, Tahoma, Verdana;
+	color: #52544e; /* table font colour */
+}
+
+
+table.configuration tr td tr.time_filter_row {
+}
+
+table.configuration tr td tr.time_filter_row_weekend  div.off {
+	background-color: #bdbfb2;	/* weekend background colour */
+}
+
+div.off {
+	height: 12px;
+	width: 17px;
+	background-color: #cccec1;  /* weekday background colour */
+}
+
+div.on {
+	height: 12px;
+	width: 17px;
+	background: #629b02 url('/images/green_fade.gif') repeat-x scroll left top;  /* selected background color */
+}
+
+table.configuration tr td td.time_filter_cell {
+	padding: 0px;
+	font-size: 9px;
+	text-align: center;
+}
+
+table.configuration tr td td.time_filter_cell_day {
+	padding: 0px 5px 0px 0px;
+	font-size: 9px;
+	text-transform: uppercase;
+}
+
+
+
+/******************************************************************************/
+/* --------------------------  EMAIL_SETTINGS.CS -----------------------------*/
+
+td.radio_button
+{
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 0px;
+   padding-right: 5px;
+}
+
+#recipient_text_area
+{
+   font-family: Verdana, Arial, Helvetica, Geneva, Lucida, sans-serif;
+   font-size: 12px;
+   overflow: auto;
+}
+
+
+
+
+
+
+/***********************************************************************************/
+/* --------------------------  EMAIL_SETTINGS_VIEW.CS -----------------------------*/
+
+ul.configuration_table_list
+{
+   padding-left: 15px;
+   margin: 0px;
+}
+
+#email_details_panel
+{
+   height: 300px;
+   width: 480px;
+   overflow: auto;
+   border-width: 1px;
+   text-align: left;
+   border: 1px solid #757671;
+   background-color:  #eeefea;
+   white-space: nowrap
+}
+
+span.client_message
+{
+   color: blue;
+}
+
+span.server_message
+{
+   color: purple;
+}
+
+table tr.recipient_row td
+{
+   padding-top: 2px;
+   padding-bottom: 2px;
+   line-height: 18px;
+}
+
+
+
+.clear { /* generic container (i.e. div) for floating buttons */
+	overflow: hidden;
+	width: 100%;
+}
+
+
+/* ----- Recipient Background ----- */
+
+a.recipient {
+    background: transparent url('/images/bg_recipient_a.gif') no-repeat scroll top right;
+    color: #555555;
+    display: block;
+    float: left;
+    font: normal 10px verdana, arial, sans-serif;
+    height: 20px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-right: 11px; /* sliding doors padding */
+    text-decoration: none;
+}
+
+a.recipient_broken {
+   color: red;
+}
+
+a.recipient_no_link {
+    cursor: default;
+}
+
+a.recipient span {
+    background: transparent url('/images/bg_recipient_span.gif') no-repeat;
+    display: block;
+    line-height: 20px;
+    padding: 0px 0 0px 11px;
+    white-space: nowrap;
+}
+
+/* ----- Recipient Background Hover ----- */
+
+a.recipient:hover {
+    background-position: bottom right;
+    color: #000000;
+    outline: none; /* hide dotted outline in Firefox */
+}
+
+a.recipient:hover span {
+    background-position: bottom left;
+} 
+
+
+/******************************************************************************/
+/* ---------------------------  EXPORT_TABLES.CS -----------------------------*/
+
+textarea.export_error
+{
+   background-color: #EDF0F4;
+   width: 90%;
+   height: 150px;
+   color: red;
+   padding: 10px;
+}
+
+textarea.export_status
+{
+   background-color: #EDF0F4;
+   width: 90%;
+   height: 150px;
+   color: black;
+   padding: 10px;
+}
+
+textarea.export_preview
+{
+   background-color: #EDF0F4;
+   width: 90%;
+   height: 150px;
+   padding: 10px;
+}
+
+
+
+
+
+
+/******************************************************************************/
+/* ---------------------------  LOG_BROWSE.CS --------------------------------*/
+
+/* Style for Hex View of Logs */
+div.ho
+{  
+   background-color: #C8C8EF;
+}
+
+font.hst
+{
+   background-color: #A0A0D0;
+}
+
+
+/* Style for Tooltip table on logs page */
+table.IGUlogUsageToolTip {
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
+
+table.IGUlogUsageToolTip th {
+   background: none;
+   color: #505040;
+   font-size: 10px;
+   font-weight: bold;
+   text-align: right;
+   text-transform: none;
+   padding-top: 2px;
+   padding-bottom: 3px;
+}
+
+table.IGUlogUsageToolTip td {
+   background: none;
+   color: #222;
+   font-size: 10px;
+   text-align: left;
+   text-transform: none;
+   padding-top: 2px;
+   padding-bottom: 3px;
+   padding-left: 0px;
+}
+
+div.entryViewPleaseWaitBar
+{
+   padding: 3px;
+   border: 1px solid #CCCC00;
+   background-color: #FFFF33;
+   color: #555500;
+   text-align: center;
+   opacity: 0.75;
+}
+
+div#entryArea pre,
+div#resubmitPreview pre,
+div#textViewContainer
+{
+   margin: 0px;
+   padding: 10px;
+}
+
+div#entryArea pre pre.innerPreChunk,
+div#resubmitPreview pre pre.innerPreChunk
+{
+   padding-left: 0;
+}
+
+div.viewSelectDropdown
+{
+   height: 32px;
+}
+
+div.dropdownButtonWrapper
+{
+   width: 40px;
+   height: 30px;
+   overflow-y: visible;
+}
+
+img.ViewDropdownButton
+{
+   cursor: pointer;
+}
+
+div#logViewSelectDropdown,
+div#logPreviewSelectDropdown
+{
+   position: absolute;
+   z-index: 1;
+   background-color: #FFFFFF;
+   border: 1px solid #757671;
+}
+
+a.logViewDropdownOption
+{
+   display: block;
+   height: 28px;
+   width: 16em;
+   padding-right: 10px;
+   border-bottom: solid #666666 1px;
+   cursor: pointer;
+}
+
+a.logViewDropdownOption img
+{
+   margin-right: 5px;
+}
+
+a.logViewDropdownOption span
+{
+   position: relative;
+   top: -9px;
+}
+
+div.logViewDropdownDivider
+{
+   height: 1px;
+   width: 16em;
+   padding-right: 10px;
+   background-color: #AAAAAA;
+   border-bottom: solid #666666 1px;
+}
+
+a.logViewDropdownOption:hover
+{
+   background-color: #D6E7D2;
+}
+
+a.logViewDropdownOption.disabled
+{
+   color: #B5B6B1;
+}
+
+a.logViewDropdownOption.disabled:hover
+{
+   background-color: inherit;
+}
+
+
+/* Styles for Segment View */
+
+div#SegmentViewErrorPanelControls
+{
+   border-top: 1px solid #BBBBBB;
+}
+
+div#SegmentViewErrorPanel
+{
+   width: 100%;
+   height: 72px;
+   overflow: auto;
+   border-top: 1px solid #BBBBBB;
+   background-color: #F2F5A9;
+}
+
+div.errorPannelHeader
+{
+   padding: 2px;
+   background-color: #EEEFEA;
+   border-bottom: 1px solid #BBBBBB;
+}
+
+div#SegmentViewErrorItems div
+{
+   padding-left: 5px;
+   padding-top: 2px;
+   white-space: nowrap;
+   color: #000000;
+   cursor: text;
+}
+
+div#SegmentViewErrorItems div.clickable
+{
+   cursor: pointer;
+}
+
+div#SegmentViewErrorItems div.clickable.hover
+{
+   color: #215FA3;
+}
+
+div#SegmentViewErrorItems div.errorItem,
+div#SegmentViewErrorItems div.warningItem
+{
+   padding: 3px 0 0 22px;
+   background-repeat: no-repeat;
+   background-position: 4px 2px;
+}
+
+div#SegmentViewErrorItems div.errorItem
+{
+   background-image: url(/images/icon_error.gif);
+}
+
+div#SegmentViewErrorItems div.warningItem
+{
+   background-image: url(/images/icon_warning.gif);
+}
+
+
+/* Styles for Table View */
+
+table.parsedTableView tr td.header
+{
+   background-color: #DDDDDD;
+}
+
+table.parsedTableView tr td
+{
+   white-space: nowrap;
+   background-color: #FFFFFF;
+   
+   /* Give the cells a somewhat "3D" look. */
+   border-top: solid #B0B0B0 1px;
+   border-left: solid #B0B0B0 1px;
+   border-bottom: solid #606060 1px;
+   border-right: solid #606060 1px;
+}
+
+table.parsedTableView tr td.empty
+{
+   background: inherit;
+   border: none;
+}
+
+div#reparseWarning
+{
+   padding-top: 4px;
+   color: #666666;
+}
+
+span.tableCountOfRow
+{
+   color: #666666;
+}
+
+
+/* Styles Log Resubmit Page */
+
+textarea#messageEditor
+{
+   overflow: auto;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   font-size: 11px;
+   font-family: "Arial Monospaced", monospace;
+   resize: none;
+}
+
+div#resubmitTopControls
+{
+   background-color: #E4E5E0;
+   border-bottom: 1px solid #757671;
+   vertical-align: center;
+   color: #686A67;
+   font-weight: bold;
+}
+
+div#resubmitTopControls div
+{
+   padding: 7px;
+}
+
+div#resubmitEditControls
+{
+   padding-top: 10px;
+}
+
+div#resubmitComplete
+{
+   width:100%;
+   height:30px;
+}
+
+/* Nested divs allow us to align to the bottom of the dialog, even in IE7 */
+div#resubmitComplete div
+{
+   width: 100%;
+   position: absolute;
+   bottom: 12px;
+}
+
+div#resubmitPreview
+{
+   overflow: auto;
+   background-color:#eeefea;
+   border: 1px solid #BBBBBB;
+   margin-bottom: 10px;
+}
+
+iframe#resubmitFrame, iframe#popoutErrorFrame
+{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   z-index: 1;
+   border: 0;
+   opacity: 0.8;
+   filter: alpha(opacity=80);
+}
+
+div#resubmitDialog
+{
+   position: absolute;
+   top: 75px;
+   left: 36px;
+   z-index: 2;
+   background-color: #FFFFFF;
+   border: solid #606060 5px;
+   font-size: 11px;
+   overflow: visible; /* If logPreviewSelectDropdown goes outside of the dialog, it should be displayed. */ 
+}
+
+div.resubmit_toolbar_heading
+{
+   float: left; 
+   color: #3D8204; 
+   font-weight: bold;
+}
+
+div.resubmit_toolbar_heading a
+{
+   color: #3D8204; 
+   text-decoration: none;
+}
+
+div.preview_mode_text
+{
+   color: #949494;
+   padding: 8px 5px 0 0;
+   font-weight: bold;
+}
+
+
+/******************************************************************************/
+/* ------------------------------  LOGS.CS -----------------------------------*/
+
+td.log_description
+{
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 5px;
+   padding-right: 0px;
+   text-align: left;
+}
+
+td.log_number
+{
+   padding: 0px;
+   text-align: right;
+}
+
+td.log_export
+{
+   width: 16px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 5px;
+   padding-right: 0px;
+}
+
+td.log_trash
+{
+   width: 16px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+
+
+
+/******************************************************************************/
+/* ------------------------------  LOG_USAGE_STATISTICS.CS -----------------------------------*/
+
+
+table.log_statistics
+{
+   margin-top: 7px;
+   margin-bottom: 7px;
+}
+
+table.log_statistics tr
+{
+   line-height: 18px;
+}
+
+table.log_statistics td
+{
+   font-size: 12px;
+   line-height: 2em;
+}
+
+table.log_statistics td.right
+{
+   /*text-align   : right;*/
+   text-align: left;
+   padding-right: 6px;
+}
+
+table.configuration tr.sub_header
+{
+   background: #cfd8dc;
+}
+
+table.configuration tr.sub_header td
+{
+   border: 1px #FFF solid;
+}
+
+table.configuration tr.sub_header td
+{
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 10px;
+   color: #455a64;
+}
+
+table.configuration tr.footer
+{
+   border: 1px #adb1a5 solid;
+}
+
+
+/******************************************************************************/
+/* ----------------------  MULTI_SELECT_CHOOSER.JS----------------------------*/
+
+div.MSCunselected
+{
+color: #000000;
+}
+
+div.MSCselected
+{
+background-color: #71ae39;
+}
+
+div.custom_multi_select
+{
+    border: 1px solid #BBBBBB;
+    padding: 5px;
+    overflow: auto;
+    cursor: default;
+}
+
+div.custom_multi_select_edit
+{
+    border: 1px solid #BBBBBB;
+    background: #FFFFFF;
+    padding: 5px;
+    overflow: auto;
+    cursor: default;
+}
+
+span.search_match
+{
+   background-color: #eeff00;
+   
+}
+
+div.filter_field input
+{
+   border-width: 0px;
+   color: #343434;
+   position: relative;
+   left: 2px;
+   top: 1px;
+   width: 100px;
+   font-size: 11px;
+}
+
+table.filter_field_container
+{
+   float: left;
+}
+
+div.filter_field
+{
+   border: 1px solid #BBBBBB;
+   background-color: #FFFFFF;
+   height: 20px;
+   padding-right: 2px;
+}
+
+div.filter_field img
+{
+   position: relative;
+   top: 3px;
+}
+
+div.filter_field img[name="imgClearFilterIcon"]
+{
+   visibility: hidden;
+   cursor: pointer;
+}
+
+div.filter_field img[name="imgMagnifyingGlass"]
+{
+   left: 3px;
+}
+
+/******************************************************************************/
+/* ------------------------------  ROUTING.CS --------------------------------*/
+
+tr.header2
+{
+   background-color: #71ae39;
+   text-align: center;
+   text-transform: none;
+}
+
+td.header2
+{
+   font-weight: bold;
+   font-size: 10px;
+   letter-spacing: 0.10em;
+   padding: 7px;
+   color: #1b3704;
+}
+
+
+
+
+
+
+/******************************************************************************/
+/* --------------------------  ROUTING_STATUS.CS -----------------------------*/
+
+table.routing_statistics
+{
+   width: 500px;
+}
+
+
+
+
+
+
+/******************************************************************************/
+/* -----------------------  ROUTING_STATUS_ENTRY.CS --------------------------*/
+
+td.status_title
+{
+   font-weight: bold;
+   text-align: center;
+}
+
+textarea.status_message
+{
+   width: 650px;
+   height: 100px;
+}
+
+
+
+
+
+
+/******************************************************************************/
+/* --------------------------  VIEW_LOG_ENTRY.CS -----------------------------*/
+
+td.error_message
+{
+   background-color: #88bbff;
+   text-align: left;
+}
+
+textarea.error_message
+{
+   background-color: #B5C3D2;
+   width: 650px;
+   height: 200px;
+}
+
+textarea.trace_message
+{
+   background-color: #EDF0F4;
+   width: 650px;
+   height: 200px;
+}
+
+/******************************************************************************/
+/* ----------------  STARTUP.CS, LICENSE_SETTINGS.CS -------------------*/
+
+#startup_status_panel, #status_panel {
+   height: 300px;
+   width: 720px;
+   overflow: auto;
+   border-width: 1px;
+   text-align: left;
+   border: 1px solid #757671;
+   background-color:  #eeefea;
+   white-space: nowrap;
+   word-wrap: break-word;
+}
+
+/******************************************************************************/
+/* ---------------------  PLUGIN_EXECUTABLE_OUTPUT.CS ------------------------*/
+
+#plugin_executable_output_panel
+{
+   font-family: monospace;
+   overflow: auto;
+   border-width: 1px;
+   text-align: left;
+   border: 1px solid #757671;
+   background-color:  #eeefea;
+   white-space: nowrap;
+   word-wrap: break-word;
+}
+
+/******************************************************************************/
+/* ---------------------------- Modal Windows --------------------------------*/
+div.modalPopupWindow {
+      position: absolute;
+      background-color: #f9fdcb;
+      border-top: 2px solid #d5a95d;
+      border-left: 2px solid #d5a95d;
+      border-bottom: 2px solid #936d27;
+      border-right: 2px solid #936d27;
+      padding: 12px;
+      text-align: left;
+      z-index: 1;
+   }
+   
+div.modalPopupWindow h3 {
+   color: #c46a00;
+   font-size: 11px;
+   font-weight: bold;
+   text-transform: uppercase;
+   margin-top: 0px;
+   margin-bottom: 2px;
+   }
+   
+td.modalIcon
+   {
+      padding-top: 8px;
+      vertical-align: top;
+   }
+   
+.modalText
+   {
+      font-size: 11px;
+      font-weight: bold;
+      color: #78560f;
+      text-align: left;
+      line-height: 16px;
+      margin-bottom: -10px;
+   }
+
+
+/******************************************************************************/
+/* -----------------------------  VIEW_LOG.CS --------------------------------*/
+
+tr.resubmitted
+{
+   background-color: #999999;
+   color: #ffffff;
+}
+
+/******************************************************************************/
+/* -----------------------------  UPDATE_REPOSITORY_SETITNGS.CS --------------*/
+
+table.Repos {
+   border: 1px #adb1a5 solid;
+}
+
+table.Repos td {
+   padding: 8px;
+}
+
+table.Adder {
+   margin-top: 20px;
+}
+
+td.RepoButton {
+   width: 100px;
+}
+
+td.RepoButton a {
+   text-align: center;
+   float: none;
+}
+
+#buttons {
+   padding: 20px;
+   text-align: center;
+}
+
+#buttons a.button,
+#button .button_disable {
+   float: none;
+   display: inline-block;
+}
+
+/******************************************************************************/
+/* --------------------------IMPORTS / EXPORTS -------------------------------*/
+#RepoSelect {
+   font-size: 12px;
+   margin: 20px 5px;
+   display: block;
+}
+
+#RepoSelector{
+  margin-left: 5px;
+}
+
+#SCMloadWheelContainer{
+  display: none;
+  width: 100%;
+  height: 55px;
+  text-align: center;
+}
+
+#SCMloadWheel{
+  display: inline-block;
+  height: 50px;
+  width: 40px;
+}
+
+#ImEmBody {
+   clear: both;
+   margin-top: 20px;
+   padding-top: 20px;
+   min-height: 100px;
+}
+
+/******************************************************************************/
+/* ----------------------------  MISCELLANEOUS -------------------------------*/
+
+/* This seems to be used anywhere a channel name column is found in a table */
+td.channel_name
+{
+   font-weight: bold;
+   text-align: left;
+}
+
+/* Style for Error Count on Dashboard and Channel Info */
+.error
+{
+   color: #c92c2c;      /* RED colour */
+   font-weight: bold;
+}
+
+td.routing_status_title
+{
+   background-color: #9BACBE;
+   font-weight: bold;
+   text-align: center;
+}
+
+textarea.message
+{
+   width: 650px;
+   height: 200px;
+}
+
+tr.sub_header
+{
+   background-color: #b0b0b0;
+   font-weight: bold;
+}
+
+td.sub_header
+{
+   background-color: #b0b0b0;
+   font-weight: bold;
+}
+
+div.fileinput {
+   position: relative;
+}
+
+div.fakefile {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   z-index: 2;
+}
+
+input.file_hidden {
+   /* used to specify "width: 400px" here  but 
+      now the width of these text inputs are
+      set in the TSL ("size=63") so that we can specify
+      them in characters (not pixels or percentages).
+      This is so even when the text size is changed on
+      a webpage (e.g., in Firefox), this text input
+      element continues to cover the file input element.
+   */
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+a.button {
+   cursor: pointer;
+}
+
+label {
+   font-weight: bold;
+}
+
+/****** For mini-login.cs ******/
+
+div#login-popup td#login-message {
+   font-size: small;
+   font-weight: bold;
+}
+
+/******************************************************************************/
+/* -----------------------------  EDIT_LICENSE_SETTINGS.CS --------------------------------*/
+
+form table.configuration textarea
+{
+   width: 100%;
+}
+
+/******************************************************************************/
+/* -----------------------------  REMOTE_IGUANA_CONFIG.CS --------------------------------*/
+
+td.remote_iguana_entry input 
+{
+   width: 95%;
+}
+
+
+/******************************************************************************/
+/*-- ADVANCED_SETTINGS.CS --*/
+
+.settings_list {
+   width: 80%;
+   margin: 0px auto;
+}
+
+.settings_list h1 {
+   border-bottom: 2px solid #c5e1a5;
+   margin: 50px 10px 30px 0px;
+   font-size: 20px;
+}
+
+.settings_list h2 {
+   margin: 30px 0px 10px 0px;
+   font-size: 14px;
+}
+
+.settings_list h2 a {
+   text-decoration: none;
+   border-bottom: 1px solid #c5e1a5;
+   color: #367900;
+}
+
+.settings_list p {
+   font-size: 12px;
+   color: #666666;
+}
+
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 5%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 47.5%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 980 PIXELS */
+
+@media only screen and (max-width: 980px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
+/*-- /ADVANCED_SETTINGS.CS --*/
+
+
+
+/******************************************************************************/
+
+
+/*-- Repository Settings --*/
+
+ul#RepoSelector-menu {
+   max-height: 430px;
+}
+
+.repository_entry {
+   overflow: auto;
+}
+
+.repo_form_field {
+   overflow: auto;
+}
+
+.repository_entry label {
+   float: left;
+   display: block;
+   padding: 8px 0;
+}
+
+.repository_entry label span {
+   float: left;
+   width: 90px;
+   text-align: left;
+   padding: 5px;
+}
+
+.repository_entry label input {
+   float: right;
+   padding: 5px;
+
+}
+
+a.file_browse_button {
+   background: #fafbfc;
+   border: 1px solid #b0bec5;
+   border-radius: 4px;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+   color: #607d8b;
+   font-size: 10px;
+   letter-spacing: 0.03em;
+   padding: 3px 5px;
+   text-decoration: none;
+}
+
+a.file_download_button {
+   background: #fafbfc;
+   border: 1px solid #b0bec5;
+   border-radius: 4px;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+   color: #607d8b;
+   font-size: 10px;
+   letter-spacing: 0.02em;
+   padding: 3px 3px;
+   text-decoration: none;
+   float: auto;
+   margin-left: 2px;
+}
+
+a.RepoBrowse:hover {
+   color: #215fa3;
+}
+
+a.repo_action_button {
+   float: left;
+  /* margin: 15px 0 2px 5px;*/
+}
+
+.repo_error {
+   margin-left: 5px;
+   padding-top: 8px;
+   color: red;
+   font-weight: bold;
+}
+
+.remove_repo {
+   display: inline-block;
+}
+
+div#repo_protocol_radios label {
+   margin-right: 15px;
+   line-height: 28px;
+}
+
+/*-- /Repository Settings --*/
+
+.wait_for_sc {
+   background: white url(/js/mapper/images/spinner_big_green.gif) no-repeat center center;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   overflow: hidden;
+}
+
+.sc_spinner_container {
+    position: relative;
+}
+
+/*-- Settings Page Forms --*/
+
+form.settings * {
+   box-sizing: border-box;
+}
+
+form.settings h1 {
+   padding-left: 0px;
+   margin-bottom: 25px;
+}
+
+form.settings > div {
+   clear: both;
+   overflow: hidden;
+   margin: 0 0 15px 0;
+   text-align: left;
+}
+
+form.settings > div > label {
+   width: 25%;
+   float: left;
+   padding-right: 10px;
+   line-height: 28px;
+}
+
+form.settings > div > div {
+   width: 75%;
+   float: right;
+}
+
+
+input[type=text].full_length,
+input[type=email].full_length,
+input[type=url].full_length,
+input[type=password].full_length,
+textarea.full_length {
+   width: 100%;
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+   width: 80%;
+   border: 1px solid #dddddd;
+   font-size: 12px;
+   height: 28px;
+   margin-right: 5px;
+}
+
+select {
+   height: 28px;
+}
+
+select#Type {
+   height: auto;
+}
+
+textarea {
+   height: 100px;
+   resize: none;
+   overflow: auto;
+}
+
+input.one-half{
+   width: 40%;
+}
+
+input.number_field {
+   width: 50px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+   outline: 0;
+   border-color: #4697e4;
+}
+
+@media (max-width: 800px) {
+   form.settings {
+      width: 90%;
+      margin: 0 auto;
+   }
+   form.settings > div {
+      margin: 0 0 15px 0; 
+   }
+   form.settings > div > label,
+   legend {
+      width: 100%;
+      float: none;
+      margin: 0 0 5px 0;
+   }
+   form.settings > div > div,
+   form.settings > div > fieldset > div {
+      width: 100%;
+      float: none;
+   }
+   input[type=text],
+   input[type=email],
+   input[type=url],
+   input[type=password],
+   textarea,
+   select {
+      width: 100%; 
+   }
+}
+
+@media (min-width: 800px) {
+   form.settings {
+      width: 80%;
+      margin: 0 auto;
+   }
+}
+
+@media (min-width: 1500px) {
+  form > div > label,
+	legend {
+  	text-align: right;
+  }
+}
+
+#repo-list-table th {
+   border: none;
+}
+
+
+/******************************************************************************/
+/* ----------------------  LOG_LOCKER_SETTINGS.CS ---------------------------*/
+/******************************************************************************/
+
+#dashboard_body.log_locker_settings tr {
+  height: 53px;
+}
+
+.iguana_toggle {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 201px;
+  height: 25px;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.iguana_toggle .toggle_element.is_selected {
+  background: #7CB342;
+  color: #fefefe;
+}
+
+.iguana_toggle .toggle_element {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: white;
+  color: #78909C;
+  background: transparent;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-flex: 1 0 0;
+    -ms-flex: 1 0 0px;
+        flex: 1 0 0;
+}
+
+.create_new_locker, .unlock_existing_locker {
+  display: none;
+}
+
+div#log_locker_update_dialog td#log_locker_update_dialog {
+   font-size: small;
+   font-weight: bold;
+}
+
+.log_locker_update_dialog input#current_password,
+.log_locker_update_dialog input#new_password,
+.log_locker_update_dialog input#new_password_confirmation {
+  width: 200px !important;
+}
+
+.log_locker_update_dialog input#password{
+  width: 275px !important;
+}

@@ -1,0 +1,38 @@
+{
+   "load": {
+      "Title": "cache.load",
+      "SummaryLine": "Load a value associated with the current sample message.",
+      "Usage": "cache.load()",
+      "Returns": [
+         {
+            "Desc": "Either the node tree or string associated with the current sample message <u>node tree or string</u>."
+         },
+         {
+            "Desc": "Or nil if none exists or if the script is running in production <u>nil</u>."
+         }
+      ],
+      "Desc": "Load a value associated with the current sample message (returns nil when running in production).<br><br>This can be useful if you have data which is very slow to create, or perhaps not available on your development machine. Once the data is associated with a message (using <code>cache.save</code>) it can be accessed at anytime in the editor using using <code>cache.load()</code>.",
+      "Examples": [
+         "local cd = cache.load()",
+         "-- do not do this as the condition will always be true in production<br>if not cache.load() then<br>   -- do something I do not want to do in production<br>end"
+      ],
+      "Parameters": []
+   },
+   "save": {
+      "Title": "cache.save",
+      "SummaryLine": "Save a value associated with the current sample message",
+      "Usage": "cache.save(Data)",
+      "Returns": [],
+      "Desc": "Save a value associated with the current sample message (does nothing outside the editor).<br><br>This can be useful if you have data which is very slow to create, or perhaps not available on your development machine. Once the data is associated with a message it can be accessed at anytime int the editor using using <code>cache.load()</code>.",
+      "Examples": [
+         "cache.save('Add you data string here')<br>local cd = cache.load() --&gt; returns \"Add your data string here\""
+      ],
+      "Parameters": [
+         {
+            "Data": {
+               "Desc": "The node tree or string to save <u>node tree or string</u>."
+            }
+         }
+      ]
+   }
+}

@@ -1,0 +1,439 @@
+{
+   "lines": {
+      "Title": "io.lines",
+      "SummaryLine": "Reads a file one line at a time.",
+      "Usage": "io.lines([filename])",
+      "Examples": [
+         "<pre>local iterator = io.lines([filename])</pre>",
+         "<pre>-- read the Iguana configuration file\nlocal config = io.lines('IguanaConfiguration.xml')\nfor line in config do\n   trace(line)\n   -- add processing here\nend</pre>"
+      ],
+      "Parameters": [
+         {
+            "filename": {
+               "Desc": "Name of the file to open <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The next line of data from the file, or nil when eof reached <u>string or nil</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Load and Save a File.",
+            "Link": "http://help.interfaceware.com/v6/load-and-save-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Read from a file.",
+            "Link": "http://help.interfaceware.com/code/details/read-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.lines.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.lines"
+         }
+      ],
+      "Desc": "Opens the given file name in read mode and returns an iterator function that, each time it is called, returns a new line from the file. Therefore, the construction<pre>\n   for line in io.lines(filename) do <em>body</em> end </pre>will iterate over all lines of the file. When the iterator function detects the end of file, it returns <b>nil</b> (to finish the loop) and automatically closes the file.<br><br>The call <code>io.lines()</code> (with no file name) is equivalent to <code>io.input():lines()</code>; that is, it iterates over the lines of the default input file. In this case it does not close the file when the loop ends."
+   },
+   "close": {
+      "Title": "io.close",
+      "SummaryLine": "Closes <code>file</code>, equivalent to <code>file:close()</code>.",
+      "Usage": "io.close([file])",
+      "Examples": [
+         "<pre>-- close \"myFile\"<br>io.close(myFile)</pre>",
+         "<pre>-- close the default output file\nio.close()</pre>"
+      ],
+      "Parameters": [
+         {
+            "file": {
+               "Desc": "Handle of the file to close <u>object</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "True if file is closed, false is never returned as an error is raised instead <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Load and Save a File.",
+            "Link": "http://help.interfaceware.com/v6/load-and-save-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Read from a file.",
+            "Link": "http://help.interfaceware.com/code/details/read-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.close.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.close"
+         }
+      ],
+      "Desc": "Closes a <code>file</code>.  If a <code>file</code> is not specified, it closes the default output file. <br><br>Note that files are automatically closed when their handles are garbage collected, but that takes an unpredictable amount of time to happen. It is usually best to call close() explicitly. <br><br>Equivalent to <code>file:close()</code>."
+   },
+   "type": {
+      "Title": "io.type",
+      "SummaryLine": "Checks whether <code>obj</code> is a valid file handle.",
+      "Usage": "io.type(obj)",
+      "Examples": [
+         "<pre>local status = io,type()</pre>"
+      ],
+      "Parameters": [
+         {
+            "obj": {
+               "Desc": "Object to be checked <u>object</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "String indicating file status, or nil if \"obj\" is not a file  <u>string or nil</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.type.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.type"
+         }
+      ],
+      "Desc": "Checks whether <code>obj</code> is a valid file handle. Returns the string <code>\"file\"</code> if <code>obj</code> is an open file handle, <code>\"closed file\"</code> if <code>obj</code> is a closed file handle, or <b>nil</b> if <code>obj</code> is not a file handle."
+   },
+   "write": {
+      "Title": "io.write",
+      "SummaryLine": "Write to the default output file.",
+      "Usage": "io.write(&#60;value&#62; [, &#60;value&#62;] [, &#60;value&#62;] [, ...])",
+      "Examples": [
+         "<pre>local status = io.write('Write some ', strings and numbers', 1, 2, 3, 'to a file')</pre>",
+         "<pre>io.output('myFile')\nio.input('myFile')\nio.write('Write a string and then a number',23)\nio.flush()\nio.read()</pre>"
+      ],
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Multiple parameters: Values to write to the file <u>string or integer</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "True if file is written, false is never returned as an error is raised instead <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Documenting an HL7 interface.",
+            "Link": "http://help.interfaceware.com/documenting-an-hl7-interface.html?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.write.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.write"
+         }
+      ],
+      "Desc": "Writes the value of each of its arguments to the file. The arguments must be strings or numbers. To write other values, use tostring or string.format before write. Equivalent to <code>io.output():write</code>."
+   },
+   "flush": {
+      "Title": "io.flush",
+      "SummaryLine": "Flushes the default output file to disk.",
+      "Usage": "io.flush()",
+      "Examples": [
+         "<pre>local status = io.flush() </pre>"
+      ],
+      "Parameters": [],
+      "Returns": [
+         {
+            "Desc": "True if file is written, false is never returned as an error is raised instead <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Write to a file.",
+            "Link": "http://help.interfaceware.com/code/details/writeappend-data-to-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.flush.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.flush"
+         }
+      ],
+      "Desc": "Saves any written data to <code>file</code>, equivalent to <code>file:flush</code> over the default output file."
+   },
+   "open": {
+      "Title": "io.open",
+      "SummaryLine": "Opens a file as specified by the <code>mode</code> string.",
+      "Usage": "io.open(filename [, mode])",
+      "Examples": [
+         "<pre>local f, error = io.open('myFile')</pre>",
+         "<pre>local f=io.open('myFile.txt','w+')\nf:write('Write a string and then a number',23)\nf:close()\nlocal f=io.open('myFile.txt','r')<br>f:read()</pre>",
+      ],
+      "Parameters": [
+         {
+            "file": {
+               "Desc": "Name of the file to opened <u>string</u>."
+            },
+         },
+         {
+            "mode": {
+               "Desc": "Mode to open the file <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A new file handle, or, in case of errors, <b>nil</b> <u>file handle object or nil</u>."
+         },
+         {
+            "Desc": "An error message if an error occurs <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Load and Save a File.",
+            "Link": "http://help.interfaceware.com/v6/load-and-save-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Read from a file.",
+            "Link": "http://help.interfaceware.com/code/details/read-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.open.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.open"
+         }
+      ],
+      "Desc": "This function opens a file, in the mode specified in the string <code>mode</code>. It returns a new file handle, or, in case of errors, <b>nil</b> plus an error message.<br><br> The <code>mode</code> string can be any of the following:<table class=\"Basic\" style=\"width:100%\"> <tr><th>Format</th><th>Description</th></tr> <tr><td>\"r\"</td><td>read mode (the default).</td></tr> <tr><td>\"w\"</td><td>write mode.</td></tr> <tr><td>\"a\"</td><td>append mode.</td></tr> <tr><td>\"r+\"</td><td>update mode, all previous data is preserved.</td></tr> <tr><td>\"w+\"</td><td>update mode, all previous data is erased.</td></tr><tr><td>\"a+\"</td><td>append update mode, previous data is preserved, writing is only allowed at the end of file.</td></tr> </table><br>The <code>mode</code> string can also have a '<code>b</code>' at the end, which is needed in some systems to open the file in binary mode. This string is exactly what is used in the standard&nbsp;C function <code>fopen</code>."
+   },
+   "output": {
+      "Title": "io.output",
+      "SummaryLine": "Set the default output file.",
+      "Usage": "io.output([file])",
+      "Parameters": [
+         {
+            "file": {
+               "Desc": "Name of the new output file <u>string or nil</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A new file handle to the default output file, or, in case of errors, <b>nil</b> <u>file handle object or nil</u>."
+         }
+      ],
+      "Examples": [
+         "<pre>-- use a file handle to set the default\nlocal result = io.output(myFile)</pre>",
+         "<pre>-- open the named file and set it to default\nlocal result = io.output(\"myFile\")</pre>"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Documenting an HL7 interface.",
+            "Link": "http://help.interfaceware.com/documenting-an-hl7-interface.html?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.output.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.output"
+         }
+      ],
+      "Desc": "When called with a file name, it opens the named file (in text mode), and sets its handle as the default output file. When called with a file handle, it simply sets this file handle as the default output file. When called without parameters, it returns the current default output file.   <br><br> In case of errors this function raises the error, instead of returning an error code."
+   },
+   "read": {
+      "Title": "io.read",
+      "SummaryLine": "Read from default input file.",
+      "Usage": "io.read(format)",
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Format <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A string (or a number) with the characters read, or nil if it cannot read data using the specified format <u>string, number or nil</u>."
+         }
+      ],
+      "Examples": [
+         "<pre>local result = io.read('*a')</pre>",
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Create a SQLite database and tables.",
+            "Link": "http://help.interfaceware.com/code/details/channel-create-a-sqlite-database-and-tables?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.read.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.read"
+         }
+      ],
+      "Desc":  "Reads the default input file, according to the given format, which specify what to read. For each format, the function returns a string (or a number) with the characters read, or nil if it cannot read data with the specified format. When called without formats, it uses a default format that reads the entire next line (see below).<br><br>The available formats are:<table class=\"Basic\" style=\"width:100%\"> <tr><th>Format</th><th>Description</th></tr> <tr><td>\"*n\"</td><td>reads a number: this is the only format that returns a number instead of a string.</td></tr> <tr><td>\"*a\"</td><td>reads the whole file, starting at the current position. On end of file, it returns the empty string.</td></tr> <tr><td>\"*l\"</td><td>reads the next line (skipping the end of line), returning nil on end of file. This is the default format.</td></tr> <tr><td>number</td><td>reads a string with up to this number of characters, returning nil on end of file. If number is zero, it reads nothing and returns an empty string, or nil on end of file.</td></tr> </table><br>Equivalent to <code>io.input():read</code>."
+   },
+   "input": {
+      "Title": "io.input",
+      "SummaryLine": "Set the default input file.",
+      "Usage": "io.input([file])",
+      "Parameters": [
+         {
+            "file": {
+               "Desc": "Name of the new default file or a file handle <u>string or file handle object</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Examples": [
+         "<pre>-- use a file handle to set the default\nlocal result = io.input(myFile)</pre>",
+         "<pre>-- open the named file and set it to default\nlocal result = io.input(\"myFile\")</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "A new file handle to the default input file, or, in case of errors, <b>nil</b> <u>file handle object or nil</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Create a SQLite database and tables.",
+            "Link": "http://help.interfaceware.com/code/details/channel-create-a-sqlite-database-and-tables?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.input.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.input"
+         }
+      ],
+      "Desc": "When called with a file name, it opens the named file (in text mode), and sets its handle as the default input file. When called with a file handle, it simply sets this file handle as the default input file. When called without parameters, it returns the current default input file.   <br><br> In case of errors this function raises the error, instead of returning an error code."
+   },
+   "popen": {
+      "Title": "io.popen",
+      "SummaryLine": "Run a program in a separate process.",
+      "Usage": "io.popen(prog [, mode])",
+      "Parameters": [
+         {
+            "prog": {
+               "Desc": "Program to run <u>string</u>."
+            },
+         },
+         {
+            "mode": {
+               "Desc": "Mode to run the program <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [],
+      "Returns": [
+         {
+            "Desc": "A file handle that you can use to read/write data from this program</u>."
+         }
+      ],
+      "Examples": [
+         "<pre>local h = io.popen('myProgram')\nlocal result = h:read()</pre>"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io module - file operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io"
+         },
+         {
+            "Title": "Using <code>io.popen()</code>.",
+            "Link": "http://help.interfaceware.com/v6/invoking-external-programs?v=6.0.0"
+         },
+         {
+            "Title": "Using Iguana to Import Backed Up Logs: The code has three simple examples of <code>io.popen()</code>.",
+            "Link": "http://help.interfaceware.com/using-iguana-to-import-backed-up-logs.html?v=6.0.0"
+         },
+         {
+            "Title": "Streaming and Filtering Data: The code uses <code>io.popen()</code> in a more sophisticated manner .",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for io.popen.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-io.popen"
+         }
+      ],
+      "Desc": "Starts program <code>prog</code> in a separated process and returns a file handle that you can use to read data from this program (if <code>mode</code> is <code>\"r\"</code>, the default) or to write data to this program (if <code>mode</code> is <code>\"w\"</code>).   <br><br> This function is system dependent and is not available on all platforms."
+   },
+}

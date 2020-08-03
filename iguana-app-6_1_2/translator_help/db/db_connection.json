@@ -1,0 +1,425 @@
+{
+   "begin": {
+      "Examples": [
+         "<pre>local conn = db.connect{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}\nconn:begin{}</pre>"
+      ],
+      "Usage": "conn:begin{[live=true|false]}",
+      "Title": "begin",
+      "SummaryLine": "Begins a transaction on the database.",
+      "Returns": [
+      ],
+      "Parameters": [        
+         {
+            "live": {
+               "Desc": "if true, the command (begin transaction) will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "</pre>Begins a transaction on the database (if transactions are supported by the database engine). If a transaction is already in progress, the behaviour is database specific.<br/><br/>Probably the most commonly used database that does not support transactions is MySQL <em>when it used with the MyISAM database engine</em> (the newer InnoDB engine for MySQL has transaction support).<br/><br/><strong>Note</strong>: If transactions are not supported, then <code>conn:begin{}</code>, <code>conn:commit{}<code> and </code>conn:rollback{}</code> have <em>no effect</em>. This is not regarded as an error condition, so no error is raised in the Translator. When transactions are not supported, then each individual SQL statement is committed separately. For example: A call to <code>conn:execute{}</code> that contains three SQL statements, will be run as three independent commands (one for each SQL statement)."
+   },
+   "close": {
+      "Examples": [
+         "<pre>local conn = db.connect{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}\nlocal res = conn:query{sql = 'SHOW TABLES'}\nconn:close()</pre>"
+      ],
+      "Usage": "conn:close()",
+      "Title": "close",
+      "SummaryLine": "Close the connection.",
+      "Returns": [         
+      ],
+      "Parameters": [
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Closes the connection, and causes errors to be thrown for any subsequent database operations using the connection handle."
+   },
+   "check": {
+      "Examples": [
+         "<pre>if not Conn or not Conn:check() then\n   if Conn then Conn:close() end --close off any stale connection\n   Conn = db.connect{\n      api=db.MY_SQL, name='test@localhost',\n      user='root', password='secret'\n   }\nend</pre>"
+      ],
+      "Usage": "conn:check()",
+      "Title": "check",
+      "SummaryLine": "Check whether database is accessible.",
+      "Returns": [
+	 {
+            "Desc": "whether database is accessible <u>boolean</u>."
+         }         
+      ],
+      "Parameters": [
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Checks whether database is accessible. The connection must be open and responsive for check() to return true. Inside the Translator, check() for a non-live connection will return false."
+   },
+   "rollback": {
+      "Examples": [
+         "<pre>conn:rollback{}</pre>"
+      ],
+      "Usage": "conn:rollback{[live=true|false]}",
+      "Title": "rollback",
+      "SummaryLine": "Rollback a transaction, if one has begun.",
+      "Returns": [
+      ],
+      "Parameters": [
+         {
+            "live": {
+               "Desc": "if true, the rollback will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Rollback a transaction, if one has begun (if transactions are supported by the database engine).<br/><br/>Probably the most commonly used database that does not support transactions is MySQL <em>when it used with the MyISAM database engine</em> (the newer InnoDB engine for MySQL has transaction support).<br/><br/><strong>Note</strong>: If transactions are not supported, then <code>conn:begin{}</code>, <code>conn:commit{}<code> and </code>conn:rollback{}</code> have <em>no effect</em>. This is not regarded as an error condition, so no error is raised in the Translator. When transactions are not supported, then each individual SQL statement is committed separately. For example: A call to <code>conn:execute{}</code> that contains three SQL statements, will be run as three independent commands (one for each SQL statement)."
+   },
+   "query": {
+      "SummaryLine": "Executes an ad hoc SQL query against a database.",
+      "Returns": [
+         {
+            "Desc": "The first result set <u>result_set node tree</u>."
+         },
+         {
+            "Desc": "An array containing all the result sets <u>table</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "sql": {
+               "Desc": "a string containing the SQL select statement\n"
+            }
+         },
+         {
+            "live": {
+               "Desc": " if true, the statement will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+      ],
+      "Title": "query",
+      "Usage": "conn:query{sql=&#60;value&#62; [, live=true|false]} <b>or</b> conn:query(sql)",
+      "Examples": [
+         "local conn = db.connect{api=db.MY_SQL, name='test@localhost', user='root', password='secret'}<br><br>local Result = conn:query('SELECT * FROM Patient WHERE Flag = \"F\"')",
+         "-- Return an array containing multiple results sets, one for each query<br>-- Note: Some DBs do not support multiple queries in a single \"sql\" string<br><br>local Result = conn:query('SELECT * FROM Patient; SELECT * FROM Kin')",
+      "-- trap the database error thrown by <code>conn:query</code><br>-- Note: The \"conn.query\" syntax is required to pass the \"conn\" object to pcall (conn:query does not work)<br><br>local Success, Error = pcall(conn.query, conn, {sql = 'Select * from Not_a_table'}) -- \"conn\" as 1st param<br>local Success, Error = pcall(conn:query, {sql = 'Select * from Not_a_table'})       -- this does not work<br><br>trace(Success)                 -- false in this case<br>trace(Error)                   -- view the pcall Error return as a table<br>local DbError = Error.message  -- copy the DB error message string from Error<br>trace(DbError)                 -- view the DB error message"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Executes an ad hoc SQL query against a database.\nInsert or update statements are not allowed (for these, use the <code>conn:execute</code> method).<br><br>Both <code> conn:query()</code> and <code> conn:execute()</code> throw errors if a database error is encountered. The errors are regular Lua errors and will cause the execution of the script to halt, unless they are caught by Lua error handling using <code>pcall</code> or <code>xpcall</code>. The error thrown is a table with two fields:<ul><li><b>message</b>: a string with the description of the error</li><li><b>code</b>: an integer error code returned by the database.</li></ul>Currently, error codes from ODBC sources and MySQL databases are supported."
+   },
+   "execute": {
+      "SummaryLine": "Executes an ad hoc SQL statement that can alter the database.",
+      "Returns": [
+         {
+            "Desc": "<b>For queries:</b> the first result set <u>result_set node tree</u>."
+         },
+         {
+            "Desc": "<b>For queries:</b> An array containing all the result sets <u>table</u>."
+         }
+      ],
+      "Parameters": [         
+         {
+            "sql": {
+               "Desc": "a string containing the SQL statement <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": " if true, the statement will be executed in the editor (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+      ],
+      "Title": "execute",
+      "Usage": "conn:execute{sql=&#60;value&#62; [, live=true|false]} <b>or</b> conn:execute(sql)",
+      "Examples": [
+         "local conn = db.connect{api=db.MY_SQL, name='test@localhost', user='root', password='secret'}<br><br>conn:execute('INSERT INTO Patient (FirstName, LastName) VALUES(\"Fred\", \"Smith\")')",
+         "-- Return an array containing multiple results sets, one for each query<br>-- Note: Some DBs do not support multiple queries in a single \"sql\" string<br><br>local Result = conn:execute{sql = 'SELECT * FROM Patient; SELECT * FROM Kin', live = true}",
+      "-- trap the database error thrown by <code>conn:execute</code><br>-- Note: The \"conn.execute\" syntax is required to pass the \"conn\" object to pcall (conn:execute does not work)<br><br>-- try to insert a duplicate key = \"Primary Key Violation\" error<br>local TryDuplicateKey = 'INSERT INTO [dbo].[Patient] (Id,FirstName, LastName) VALUES (1, 'Fred', 'Smith')'<br><br>local Success, Error = pcall(conn.execute, conn, {sql = TryDuplicateKey, live = true}) -- \"conn\" as 1st param<br>local Success, Error = pcall(conn:execute, {sql = TryDuplicateKey, live = true})       -- this does not work<br><br>trace(Success)                 -- false in this case<br>trace(Error)                   -- view the pcall Error return as a table<br>local DbError = Error.message  -- copy the DB error message string from Error<br>trace(DbError)                 -- view the DB error message"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "db conn execute{} - Writing to a Database",
+            "Link": "http://help.interfaceware.com/v6/database-fundamentals?v=6.0.0#menu3"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Executes an ad hoc SQL statement that can alter the database.<br><br>Both <code>conn:execute()</code> and <code>conn:query()</code> throw errors if a database error is encountered. The errors are regular Lua errors and will cause the execution of the script to halt, unless they are caught by Lua error handling using <code>pcall</code> or <code>xpcall</code>. The error thrown is a table with two fields:<ul><li><b>message</b>: a string with the description of the error</li><li><b>code</b>: an integer error code returned by the database.</li></ul>Currently, error codes from ODBC sources and MySQL databases are supported."
+   },
+   "commit": {
+      "Examples": [
+         "<pre>local conn = db.connect{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}\nconn:begin{}\nconn:execute{\n   sql='INSERT INTO Patient VALUES(\"Fred\", \"Smith\")'\n}conn:commit{}</pre>"
+      ],
+      "Usage": "conn:commit{[live=true|false]}",
+      "Title": "commit",
+      "SummaryLine": "Commits a transaction, if one has begun.",
+      "Returns": [
+      ],
+      "Parameters": [
+         {
+            "live": {
+               "Desc": "if true, the commit will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Commits a transaction, if one has begun (if transactions are supported by the database engine).<br/><br/>Probably the most commonly used database that does not support transactions is MySQL <em>when it used with the MyISAM database engine</em> (the newer InnoDB engine for MySQL has transaction support).<br/><br/><strong>Note</strong>: If transactions are not supported, then <code>conn:begin{}</code>, <code>conn:commit{}<code> and </code>conn:rollback{}</code> have <em>no effect</em>. This is not regarded as an error condition, so no error is raised in the Translator. When transactions are not supported, then each individual SQL statement is committed separately. For example: A call to <code>conn:execute{}</code> that contains three SQL statements, will be run as three independent commands (one for each SQL statement)."
+   },
+   "merge": {
+      "Examples": [
+         "<pre>conn:merge{\n   data=Out, bulk_insert=true, transaction=false\n}</pre>"
+      ],
+      "Usage": "conn:merge{data=&#60;value&#62; [, bulk_insert=true|false] [, ...]} <b>or</b> conn:merge(data)",
+      "Title": "merge",
+      "SummaryLine": "Merges table records into the database.",
+      "Desc": "Merges the database tables created by db.tables() into the database.",
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Returns": [
+      ],
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "set to a node table tree created using db.tables <u>node tree</u>."
+            }
+         },
+         {
+            "bulk_insert": {
+               "Desc": "set to true to use bulk insert logic (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "transaction": {
+               "Desc": "set to false to disable inserting/updating all rows as a transaction (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "live": {
+               "Desc": "if true, the merge will be executed in the editor (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+      ]
+   },
+   "quote": {
+      "Examples": [
+         "<pre>local Sql = 'SELECT * FROM MyTable WHERE Name = '..conn:quote(MyString)</pre>"
+      ],
+      "Usage": "conn:quote(data)",
+      "Title": "quote",
+      "SummaryLine": "Returns an escaped string surrounded by single quotes.",
+      "Desc": "Accepts a single string argument, and returns an escaped string surrounded by single quotes. Escaping is database specific, characters are escaped specifically to match each database API.",      
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "An escaped string surrounded by single quotes <u>string</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string to escape <u>string</u>."
+            }
+         }
+      ]
+   },
+   "info": {
+      "Examples": [
+         "<pre>conn_info = conn:info()</pre>"
+      ],
+      "Usage": "conn:info()",
+      "Title": "info",
+      "SummaryLine": "Returns a table with the database connection parameters.",
+      "Desc": "Returns a table with the database connection parameters.",      
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A table with the database connection parameters <u>table</u>."
+         }
+      ],
+      "Parameters": [
+      ]
+   }
+}

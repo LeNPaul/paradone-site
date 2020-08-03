@@ -1,0 +1,76 @@
+{
+   "enc": {
+      "Returns": "an encoded string (or stream) <u>string or stream</u>.",
+      "ParameterTable": false,
+      "Title": "filter.uuencoding.enc",
+      "SummaryLine": "Encode data for a Unix to Unix transfer (uuencode).",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to encode <u>string or stream</u>."
+            }
+         },
+         {
+            "filename": {
+               "Desc": "The file name to put in the output <u>string</u>."
+            }
+         },
+         {
+            "mode": {
+               "Opt": true,
+               "Desc": "The octal file mode (default = 644) <u>integer</u>."
+            }
+         }
+      ],
+      "Usage": "filter.uuencoding.enc(data, filename [, mode])",
+      "Examples": [
+         "<pre>local inp = stream.fromFile(name)\nlocal out = filter.uuencoding.enc(inp, name)</pre>"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Desc": "Encode data for a Unix to Unix transfer (uuencode)."
+   },
+   "dec": {
+      "Returns": [
+         {
+            "Desc": "A decoded string (or stream) <u>string or stream</u>"
+         },
+         {
+            "Desc": "An object with the 'filename' and 'mode' of the decoded file (when using streams these fields are available after decoding) <u>uudecode_info table</u>."
+         }
+      ],
+      "ParameterTable": false,
+      "Title": "filter.uuencoding.dec",
+      "SummaryLine": "Decode a Unix to Unix transfer (uudecode).",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to decode <u>string or stream</u>."
+            }
+         }
+      ],
+      "Usage": "filter.uuencoding.dec(data)",
+      "Examples": [
+         "<pre>local out, info = filter.uuencoding.dec(inp)\nstream.toFile('output.tmp', out)\nos.rename('output.tmp', info.filename)</pre>"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Desc": "Decode a Unix to Unix transfer (uudecode)."
+   }
+}

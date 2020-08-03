@@ -1,0 +1,1149 @@
+html, body {
+   height: 100%;
+}
+
+.EDTtoolbar_wrapper a {
+   cursor: pointer;
+}
+
+#SCMstagePanelAndDiff {
+   position: absolute;
+   top: 43px;
+   left: 0px;
+   right: 0px;
+   bottom: 130px;
+}
+
+#SCMreviewPanelAndDiff,
+#SCMreviewPanelAndPreview {
+   position: absolute;
+   top: 30%;
+   left: 0px;
+   right: 0px;
+   bottom: 60px;
+   border-top: 1px solid #909090;
+}
+
+#SCMpanelAndDiff {
+   position: absolute;
+   top: 30%;
+   left: 0px;
+   right: 0px;
+   bottom: 60px;
+   border-top: 1px solid #909090;
+}
+
+div#SCMpanel {
+   position:absolute;
+   width: 280px;
+   left:0px;
+   top:0px;
+   bottom:0px;
+   background-color: #ebf4f6;
+   padding-top: 10px;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+/* Styling Project File Tree - START */
+/* http://www.cssscript.com/minimalist-tree-view-pure-css/ */
+
+ul.tree {
+   position: relative;
+}
+
+.tree li {
+   list-style-type: none;
+   margin: 5px;
+   position: relative;
+   color: #606060;
+   font-size: 12px;
+}  
+
+.tree label {
+   font-weight: normal;
+}
+
+.tree li label:hover {
+   font-weight: 600;
+   cursor: pointer;
+   cursor: hand;
+}  
+      
+.tree input {
+   margin-right: 7px;
+}
+      
+.tree li::before {
+   content: "";
+   position: absolute;
+   top:-7px;
+   left:-10px;
+   border-left: 1px solid #ccc;
+   border-bottom:1px solid #ccc;
+   border-radius:0 0 0 0px;
+   width:10px;
+   height:15px;
+}
+      
+.tree li::after {
+   position:absolute;
+   content:"";
+   top:8px;
+   left:-10px;
+   border-left: 1px solid #ccc;
+   border-top:1px solid #ccc;
+   border-radius:0px 0 0 0;
+   width:10px;
+   height:100%;
+}   
+      
+.tree li:first-child  {
+   left: -18px;
+   font-size: 15px;
+   padding-bottom: 10px;
+   color: #546E7A;
+}
+
+.tree li:first-child label {
+   font-weight: 600;
+
+}
+      
+.tree li:first-child::after  {
+   display: none;
+}
+
+.tree li:last-child::after  {
+   display:none;
+}
+      
+ul.tree>li:first-child::before {
+   display:none;
+}
+
+.tree label.c {
+   color: #03a9f4;
+   font-weight: 600;
+}
+      
+/* Styling Project File Tree - END */
+
+
+div.projects_affected {
+   position: relative;
+   bottom: 0px;
+   width: 190px;
+   height: auto;
+   margin: 35px 30px 25px 30px;
+   padding: 15px 15px 5px 15px;
+   background-color: #f3f8fa;
+   -moz-box-shadow:    inset 0px 1px 2px rgba(0,0,0,0.2);
+   -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.2);
+   box-shadow:         inset 0px 1px 2px rgba(0,0,0,0.2);
+   border-radius: 3px;
+   font-size: 11px;
+   color: #606060;
+}
+      
+div.projects_affected .label {
+   border-bottom: 1px solid #d4e6ea;
+   font-weight: 600;
+   font-size: 11px;
+   padding: 0px 0px 10px 0px;
+   margin-bottom: 10px;
+}
+      
+div.projects_affected ul {
+   padding: 0px;
+}
+      
+div.projects_affected ul li {
+   list-style-type: none;
+   margin-left: 0px;
+   padding-left: 18px;
+   text-indent: -18px;
+   line-height: 1.75em;
+}
+      
+div#SCMdiffAndControls,
+div#SCMpreviewAndControls {
+   position:absolute;
+   min-width: 770px;
+   left:280px;
+   right: 0px;
+   top: 0px;
+   bottom: 0px;
+   background-color: #e3eef1;
+   padding: 25px;
+}
+
+div#SCMdiffAndControls.single,
+div#SCMpreviewAndControls.single {
+   left: 0px;
+}
+     
+div#SCMdiffTank,
+div#SCMpreviewTank {
+   position: relative;
+   background-color: #FFFFFF;
+   border: 1px solid rgba(0,0,0,0.2);
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+   box-shadow: 0px 1px 1px rgba(84,110,122,0.5);
+}
+      
+div.diff_toolbar,
+div.preview_toolbar {
+   height: 28px;
+   line-height: 28px;
+   padding: 7px 18px;
+   border-bottom: 1px solid rgba(0,0,0,0.2);
+   color: #546E7A;
+   background-color: #FAFAFA;
+   overflow: visible;
+}
+      
+div.toolbar_filename {
+   display: inline-block;
+   padding-right: 18px;
+   font-size: 14px;
+   font-weight: 600;
+   color: #03A9F4;
+}
+      
+div.toolbar_lines {
+   display: inline-block;
+   padding-left: 15px;
+   border-left: 1px solid rgba(0,0,0,0.1);
+   font-size: 11px;
+}     
+      
+div.diff_toolbar span.label,
+div.preview_toolbar span.label
+{
+   text-transform: uppercase;
+   font-size: 10px;
+   letter-spacing: 0.05em;
+   margin-right: 7px;
+   margin-left: 7px;
+} 
+      
+div.toolbar_lines .lines_info {
+   margin: 0 7px;
+} 
+      
+div.toolbar_lines .lines_info .lines_added {
+   color: #58c003; /* green */
+   font-weight: 600;
+} 
+      
+div.toolbar_lines .lines_info .lines_deleted {
+   color: #fe5331; /* red */
+   font-weight: 600;
+} 
+      
+div.toolbar_lines .lines_info .lines_changed {
+   color: #aaaaaa; /* grey */
+   font-weight: 600;
+} 
+      
+div.toolbar_display, div.toolbar_comparison {
+   float: right;
+}
+
+.action-button {
+   color: #fff !important;
+} 
+
+#SCMstageControls,
+#SCMreviewControls {
+   position:absolute;
+   bottom: 0px;
+   left: 0px;
+   right: 0px;
+   background: #eaeaea;
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+   box-sizing: border-box;         /* Opera/IE 8+ */
+   padding: 20px 0px 30px 0px;
+   border-top: 2px solid rgba(0,0,0,0.1);
+}
+
+#SCMstageControls a,
+#SCMreviewControls a {
+   cursor: pointer;
+}
+#SCMstageControls {
+   height: 130px;
+}
+
+#SCMreviewControls {
+   height: 60px;
+}
+
+div.milestone_description {
+   height: 100%;
+   overflow: hidden;
+   padding: 0 30px;
+}
+      
+div.milestone_description label {
+   display: block;
+   margin-bottom: 5px;
+   font-weight: 600;
+   color: #546E7A;
+}
+      
+div.milestone_description textarea {
+   width: 100%;
+   height: 50px;
+   border: 1px solid #CCC;
+   font-size: 13px;
+   padding: 10px;
+}
+      
+div.stage-actions {
+   line-height: 85px;
+   float: right;
+   text-align: right;
+   padding: 0px 30px;
+   border-left: 1px solid rgba(0,0,0,0.1);
+   padding-top:5px
+}
+
+div.review-actions {
+   padding: 0px 30px;
+} 
+      
+/* Styling Select Box - START */
+/* https://coderwall.com/p/w7npmq/fully-custom-select-box-simple-css-only */
+      
+.select-style {
+   border: 1px solid #DDDDDD;
+   width: 150;
+   border-radius: 2px;
+   overflow: hidden;
+   background: #FFFFFF; /*url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 90% 50%; */
+}
+
+span.select-style {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.select-style select {
+   font-size: 11px;
+   color: #546E7A;
+   padding: 6px 8px;
+   border: none;
+   box-shadow: none;
+   background: transparent;
+}
+
+.select-style select:focus {
+   outline: none;
+}      
+
+/* Styling Select Box - END */
+
+
+/* Styling import repo selector - START */
+
+#RepoSelector-menu .ui-menu-item {
+   padding: 10px 4px 0px 46px;
+   height: 30px;
+}
+
+#RepoSelector-menu .ui-icon {
+   width: 25px;
+   height: 25px;
+   left: 13px;
+}
+
+#RepoSelector-menu .ui-icon.undefined {
+   background-image: none;
+}
+
+#RepoSelector-button {
+   vertical-align: middle;
+   margin-left: 8px;
+}
+
+#RepoSelector-button.ui-state-default {
+   background: none;
+   color: #000;
+   border-color: #ddd;
+}
+
+#RepoSelector-menu .ui-state-hover,
+#RepoSelector-menu .ui-widget-content .ui-state-hover,
+#RepoSelector-menu .ui-widget-header .ui-state-hover,
+#RepoSelector-menu .ui-state-focus,
+#RepoSelector-menu .ui-widget-content .ui-state-focus,
+#RepoSelector-menu .ui-widget-header .ui-state-focus {
+    background: #eceff1;
+    border: none;
+    color: #414042;
+    font-weight: bold;
+}
+
+/* Styling import repo selector - END */
+
+
+div.SCMstageLabel {
+   text-align: left;
+   padding: 8px 5px;
+   background-color: #e1edf0;
+   border-top:    1px solid #d2dee2;
+   border-bottom: 1px solid #d2dee2;
+   white-space: nowrap;
+   font-weight: bold;
+}
+
+#SCMpanel span.select {
+   cursor: pointer;
+}
+
+#SCMpanel label {
+   cursor: default;
+}
+
+#SCMpanel span.project-files span.project-file {
+   display: block;
+   font-weight: 600;
+   padding-left: 30px;
+}
+
+#SCMpanel .projects_affected li.project.NEW,
+#SCMpanel span.project-file.new,
+#SCMpanel label.unchanged {
+   font-style: oblique;
+   opacity: 0.6;
+}
+
+#SCMpanel .h {
+   background-color: #DFF4FC;
+   border: 1px solid #c1e4fb !important;
+   border-radius: 4px;
+   -moz-border-radius: 4px;
+}
+
+#SCMdiff,
+#SCmpreview {
+   position: relative;
+   height: 100%;
+}
+
+#SCMdiff.stage {
+   height: 70%;
+   margin: 20px;
+   border:1px solid red;
+}
+
+#SCMdiff.review {
+   height: 85%;
+}
+
+#SCMdiff.changesOnly {
+   overflow: auto;
+}
+
+#SCMdiff .noDiff {
+   padding: 20px;
+   font-size: 14px;
+}
+
+#SCMdiff .noDiff span{
+   font-weight: bold;
+}
+
+.diffTank .changeLabel {
+   border: 1px solid #c5c5c5;
+   border-radius: 2px;
+   box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+   cursor: default;
+   font-size: 9px;
+   padding: 3px 8px;
+   position: absolute;
+   text-align: center;
+   text-transform: uppercase;
+   white-space: normal;
+   z-index: 2;
+   background-color: white;
+   color: #444;
+   font-weight: bold;
+   letter-spacing: 0.05em;
+   right: 30px;
+   top: 8px;
+   opacity: 0.9;
+   transition: all 0.5s ease-in-out;
+}
+
+.diffTank .changeLabel:hover {
+   cursor: none;
+   opacity: 0;
+   transition: all 0.3s ease-in-out;
+}
+
+.ruler {
+   height: 0;
+   border-top: 1px solid #c6c6c6;
+}
+
+#SCMcommitInfo {
+   margin: 11px;
+}
+
+#SCMcommitInfo span {
+   font-size: 10px;
+   font-weight: bold;
+}
+#SCMcommitNoteError {
+   color: #c92c2c;
+}
+ins, .insDiff {
+   background-color: #E0EFC2;
+}
+
+del, .delDiff {
+   background-color: #FCDFDF;
+}
+
+.chgDiff {
+   background-color: #F4F4F4; 
+}
+
+.dumDiff {
+   background-color: #EAEAEA;
+}
+
+.diffTank {
+   position: relative;
+   height: 49.75%;
+   overflow: hidden;
+}
+
+.diffTank.vrt {
+   width: 49.75%; 
+}
+
+.diffDivider {
+   height: 0.5%; 
+   background-color: #C6C6C6;
+}
+
+.diffDivider.vrt {
+   width: 0.5%;
+}
+
+.diffCling {
+   height: 100%;
+   overflow: auto;
+}
+
+.vrt {
+   display: inline-block !important;
+   height: 100% !important;
+}
+
+/*************************************************/
+
+#SCMreview {
+   height: 100%;
+}
+
+#HistoryBody {
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   min-width: 1100px;
+   margin-top: 47px;
+}
+
+#SCMcommitList {
+   position: absolute;
+   top: 44px;
+   left: 0px;
+   right: 0px;
+   height: 30%;  /* May be adjusted by JS if panel / diff box is resized */
+}
+
+#SCMreview #SCMcommitList {
+   top: 0px;
+} 
+
+#SCMcommitList .fixed {
+   position: absolute;
+   width: 100%;
+   border-bottom: 1px solid #bbbbbb;
+}
+
+#SCMcommitList .scroller {
+   position: relative;
+   overflow: auto;
+   bottom: 0;
+   height: 100%;
+}
+
+#SCMcommitList #channel_update_warning_messge {
+   position: relative;
+   bottom: 10px;
+   left: 10px;
+}
+
+table.diffTable, table.previewTable, table.commitTable, table.filesTable, table.extension_list, table.bumpTable, table.ixportTable,
+table.CollisionTable, table.Repos{
+   background-color:#FFFFFF;
+   border-collapse:collapse;
+   vertical-align:middle;
+   width: 100%;
+}
+
+table.diffTable, table.previewTable, table.filesTable, table.extension_list, table.bumpTable, table.ixportTable, table.commitTable.commitChoices, table.CollisionTable {
+   font-size:14px;
+   border:1px solid #BBB;
+}
+
+table.ixportTable {
+   line-height: 18px;
+}
+
+td.ixportLabel {
+   font-size: 12px;
+}
+
+td.ixportNote {
+   font-size: 0.9em;
+   line-height: 20px;
+}
+
+#ImportTrigger,
+#ExportTrigger {
+   float: right;
+}
+
+#ExportTrigger {
+   margin-top: 0px;
+}
+
+#ImportTrigger {
+   margin-top: 10px;
+}
+
+table.diffTable td,
+table.previewTable td {
+   font-size: 13px;
+   padding: 3px;
+}
+
+table.commitTable {
+   font-size:12px;
+}
+
+.commitTable td, .commitTable th {
+   padding: 5px;
+   text-align: left;
+}
+
+.commitTable th { padding-top: 10px; }
+
+.commitTable th { font-size: 11px; }
+#SCMcommitList .commitTable .note      { width: 50%; }
+#SCMcommitList .commitTable .user      { width: 13%;  }
+#SCMcommitList .commitTable .date      { width: 13%;  }
+#SCMcommitList .commitTable .commit_id {
+   width: 24%;
+   font-size: 10px;   
+}
+
+#SCMcommitList tr.current,
+tbody tr.IxportChannel.selected {
+   background-color: #E0EFC2 !important;
+}
+
+.fixed .commitTable {
+   background-color: transparent;
+}
+
+#SCMreviewFilesCollection {
+   position: relative;
+   height: 100%;
+   top: 0px;
+   bottom: 0px;
+   width: 350px;
+   overflow: auto;
+}
+
+table.extension_list {
+    width: 50%;
+    margin-right: auto;
+    margin-left: 20px;
+    margin-top:20px;
+}
+
+table.legendTable {
+   font-size:14px;
+   border:none;
+   vertical-align:middle;
+   margin-left: auto;
+   margin-right: auto;
+   display:inline;
+}
+
+table.legendTable td {
+   border:1px solid #BBB;
+   vertical-align:middle; 
+   padding-left:3px;
+   padding-right:3px;
+}
+
+table.filesTable th, table.extension_list th {
+   background:url("th_bg.gif") repeat-x scroll left bottom #DEDEDE;
+   border-color:#BBBBBB #BBBBBB #B1B1B1;
+   border:1px solid #BBB;
+   color:#666666;
+   font-size:14px;
+   font-weight:bold;
+   padding:3px 3px;
+   text-shadow:0 1px 1px #F7F7F7;
+   vertical-align:top;
+}
+
+table.diffTable th.commitNote {
+   text-align: left;
+}
+
+table.extension_list td  {
+   color:#222222;
+   font-size:12px;
+   vertical-align:top;
+}
+
+table.diffTable tr,
+table.previewTable tr {
+   height: 17px;
+}
+
+.ui-selecting { background: #ccffee; }
+.ui-selected { background: #ccffee; }
+
+table#testTable td{
+	height: 17px;
+	width: 40px;
+	border: 1px solid black;
+}
+
+table.Repos tbody tr:nth-child(even),
+table.filesTable tbody tr:nth-child(even),
+table.commitTable tbody tr:nth-child(even),
+table.ixportTable tbody tr:nth-child(even)  {
+   background-color: #eeeeee;
+}
+
+table.filesTable td  {
+   color:#222222;
+   height: 20px;
+}
+
+table.filesTable td.FilePath {
+   width: 30%;
+}
+table.filesTable td.StatusWarning {
+   width: 40%;
+}
+table.filesTable td.StatusWarning span {
+   font-weight: bold;
+   display: block;
+   padding: 0 0 5px 10px;
+}
+
+table.diffTable td.ln,
+table.previewTable td.ln {
+   text-align: right;
+   background: #EAEAEA;
+   width: 1px; /* Narrow as possible, but will expand to hold numbers */
+   border: 1px solid #C6C6C6;
+}
+
+table.diffTable,
+table.previewTable {
+    white-space: pre-wrap; 
+    font-family: monospace; 
+    font-size: 12px;
+    padding: 0; 
+    margin: 0; 
+}
+
+table.diffTable span.highlight {
+   font-weight:bolder; 
+}
+
+table#diffFrom.diffTable span.highlight {
+   background-color: #FCDFDF;
+   border: 1px solid #fe5331;
+}
+
+table#diffTo.diffTable span.highlight {
+   background-color: #E0EFC2;
+   border: 1px solid #58c003;
+}
+
+table.diffTable td.center, 
+table.filesTable td.center,
+table.previewTable td.center {
+   text-align:center;
+}
+table.diffTable a, 
+table.filesTable a, 
+table.diffTable a {
+   color:#3151A2;
+}
+table.diffTable img, table.filesTable img,
+table.previewTable img {
+   border-style:none;
+   cursor:pointer;
+   padding-left:10px;
+   vertical-align:middle;
+}
+
+table.tag_table td {
+   border:0px;
+}
+
+#milestoneFromNameSideBySide, #milestoneNameSideBySide {
+   width: 47%;
+}
+
+.CommitChoices {
+   overflow: auto;
+}
+
+.CommitChoices td.date {
+   font-size: 10px;
+}
+
+table.bumpTable,
+table.CollisionTable {
+   font-size: 12px;
+}
+
+.CommitChoices thead tr,
+table.bumpTable thead tr, 
+table.ixportTable thead tr,
+table.CollisionTable thead tr {
+   background-color: #ddd;
+}
+
+.CommitChoices table.commitTable td,
+table.bumpTable td, 
+table.ixport td,
+table.CollisionTable td {
+   padding: 5px;
+   font-size: 1em;
+}
+
+.CommitChoices table.commitTable th, 
+table.bumpTable th, 
+table.ixportTable th,
+table.CollisionTable th {
+   padding: 5px;
+   vertical-align: center;
+   border-right : 1px solid #BBB;
+   font-weight: bold;
+   text-align: left;
+   color: #000;
+   font-size: auto;
+   background: #dddddd;
+   text-transform: none;
+   letter-spacing: normal;
+   font-size: 12px;
+}
+
+#SCMcommitList table.CollisionTable th {
+   border-right: none;
+   padding: 7px;
+}
+
+table.bumpTable th.notecol {
+   width: 200px;
+}
+
+table.ixportTable .ixportNote {
+   width: 62%;
+}
+
+.CommitChoices tbody tr:hover,
+.commitTable.mouseworthy tbody tr:hover,
+tbody tr.IxportChannel:hover {
+   background-color: #cbe892 !important;
+}
+
+.commitTable tr, 
+tbody tr.IxportChannel {
+  cursor: pointer; 
+}
+
+#commit_list_title {
+  font-size:20px;
+  padding-bottom:5px;
+}
+
+#bump_list th.BumpLabel,
+#bump_list td.BumpLabel {
+   width: 30%;
+}
+
+#bump_list .BumpNote{
+   text-align: center;
+}
+
+table.CollisionTable th.CollisionLabel,
+table.CollisionTable td.CollisionLabel {
+   width: 25%;
+}
+
+table.bumpTable th.tick.status,
+table.bumpTable td.tick.status,
+table.CollisionTable th.tick.status,
+table.CollisionTable td.tick.status,
+table.ixportTable .tick.control {
+   width: 5%;
+   padding-right: 4px;
+   padding-left: 4px;
+   text-align: center;
+}
+
+table.bumpTable th.tick.control,
+table.bumpTable td.tick.control
+{
+   width: 30%;
+   text-align: center;
+}
+
+table.CollisionTable th.action,
+table.CollisionTable td.action {
+   width: 20%;
+   text-align: center;
+}
+
+table.CollisionTable select.dropdown_opt,
+table.CollisionTable select.dropdown_opt {
+   text-align: center;
+}
+
+table.CollisionTable th.notecol,
+table.CollisionTable td.notecol{
+   width: 50%;
+   text-align: center;
+}
+
+table.CollisionTable th.newnamecol, 
+table.CollisionTable td.newnamecol {
+   text-align: center;
+   display: none;
+   width: 25%;
+}
+
+table.CollisionTable th.newnamecol input, 
+table.CollisionTable td.newnamecol input{
+   width: 90%;
+   text-align: left;
+}
+
+
+table.bumpTable th.notecol, 
+table.bumpTable td.notecol{
+   width: 30%;
+   text-align: center;
+}
+
+table#bump_file_list th.bumpLabel,
+table#bump_file_list td.bumpLabel {
+   width: 40%;
+}
+
+table#bump_file_list th.bumpLabel,
+table#bump_file_list td.bumpLabel {
+   width: 40%;
+}
+
+#SCMcommitList .fixed table {
+   border: none;
+   font-size: 1em;
+}
+
+#SCMcommitList .fixed table thead tr, 
+#SCMcommitList .fixed table thead tr th {
+   background: #ffffff;
+   color: #000000;
+   text-transform:none;
+}
+
+td#diffLink {
+   vertical-align: center;
+   text-align: center;
+}
+
+table.bumpTable td.tick,
+table.bumpTable th.tick {
+   text-align: center;
+}
+
+table.bumpTable td.type,
+table.CollisionTable td.type{
+   font-size: 0.9em;
+}
+
+tr.BumpChannel,
+tr.IxportChannel,
+tr.CollisionChannel {
+   background-color: #FFFFFF;
+   border-top: 1px solid #C8C8C8;
+}
+
+tr.BumpChannel td,
+tr.IxportChannel td,
+tr.CollisionChannel td{
+   padding-top: 7px;
+}
+
+tbody tr.IxportChannel:hover {
+
+}
+
+tr.BumpTranslator {
+   background-color: #F2F2F2;
+}
+
+div.sc_error
+{
+    font-size:14px;
+    padding:7px;
+}
+
+div.sc_error_inline
+{
+    color:red;
+}
+
+div.sc_info
+{
+    font-family:monospace;
+    font-size:12px;
+    white-space:pre-wrap;
+}
+
+div.sc_output
+{
+    font-family:monospace;
+    font-size:12px;
+    white-space:pre-wrap;
+}
+
+span.clickable_link {
+   border-bottom: 1px solid #aaaaaa;
+   cursor: pointer;
+   color: #000;
+}    
+
+span.clickable_link:hover {
+   border-bottom: 1px solid #000000;
+}
+
+#switch_view, #toggle_unchanged
+{
+    width: 160px;
+    float: right;
+}
+
+input#commitNote {
+    width: 100%;
+}
+
+tr.odd 
+{
+    background-color: #eee;
+}
+
+#toggleButton {
+	height: 18px;
+	margin-bottom: 5px;
+}
+
+.SCMloading {
+   background: white url(/js/mapper/images/spinner_big_green.gif) no-repeat center center;
+   opacity: 0.7;
+   -moz-opacity: 0.7;
+}
+
+.conflictedSharedFileHeader{
+   color: black;
+   font-size: 16px;
+   margin-bottom: 10px;
+   display: inline-block;
+}
+
+.conflictedSharedFileVersionContainer{
+   width: 90%;
+   margin-bottom: 10px;
+   margin-left: 10px;
+}
+
+.conflictedSharedFileVersionBox{
+   height: 100%;
+   width: 93%;
+   display: table-cell;
+   padding: 10px;
+   background-color: #f0f0f0;
+   border: 1px solid black;
+   border-radius: 5px;
+}
+
+.conflictedSharedFileLetter{
+   height: 100%;
+   width: 2%;
+   padding: 10px;
+   display: table-cell;
+   vertical-align: middle;
+}
+
+
+/* Channel Restore */
+
+#invalidRestoreCommitMessage {
+   margin-left: 20px;
+}
+
+#SCMpanel #restoreChannelNames span.select {
+   cursor: default;
+}
+
+#SCMpanel #restoreChannelNames span.select:hover {
+   font-weight: normal;
+}
+
+/* Channel Versions */
+
+#ChannelVersionSelect {
+   font-weight: bold;
+   font-size: 14px;
+   margin: 0px 5px 20px 5px;
+   text-align: center;
+   display: inline-block;
+   width: 100%;
+}
+
+.ChannelVersionSelector {
+   padding-right: 20px;
+}
+
+.ChannelVersionRadio {
+   width: 15px;
+   height: 15px;
+   cursor: pointer;
+}
+

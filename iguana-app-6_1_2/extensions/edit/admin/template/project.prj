@@ -1,0 +1,9 @@
+{
+   "Name": "Test (To Translator)",
+   "LuaDependencies": [
+      "snarko"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}

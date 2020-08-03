@@ -1,0 +1,33 @@
+<!--4382A7D9E695EFEF15EC977D999A1413-->
+<queue_file_meta
+   version="1.13"
+   name="20200803"
+   queue_file_guid="F516DF6AC5292E5BF62B231C773BE205"
+   meta_read_position="2325">
+   <queue_meta>
+      <queue
+         name="Iguana"
+         queue_guid="2411013446CE02EEE13E6A34BC9BD9D5"
+         queue_id="0">
+         <statistics
+            total_messages="0"
+            total_message_size="0"
+            all_log_entries_total="23"/>
+      </queue>
+      <queue
+         name="AWS Health Check"
+         queue_guid="3E4B2BFD02E3CCB960A556E38F8C6E4A"
+         queue_id="1">
+         <statistics
+            total_messages="0"
+            total_message_size="0"
+            all_log_entries_total="0"/>
+      </queue>
+   </queue_meta>
+   <channel_positions>
+   </channel_positions>
+   <file_consumer_indices>
+   </file_consumer_indices>
+   <file_producer_positions>
+   </file_producer_positions>
+</queue_file_meta>

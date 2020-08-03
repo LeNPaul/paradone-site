@@ -1,0 +1,1110 @@
+{
+   "module": {
+      "Title": "module",
+      "SummaryLine": "<b>Deprecated:</b> Creates a module.",
+      "Parameters": [
+         {
+            "name": {
+               "Desc": "Name of the module <u>string</u>."
+            },
+         },
+         {
+            "func": {
+               "Desc": "Multiple parameters: Function to be applied over the module <u>function</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "module(name [, ...])",
+      "Returns": [],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Our recommendations for module structure",
+            "Link": "http://help.interfaceware.com/v6/recommended-module-structure?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for module",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-module"
+         }
+      ],
+      "Desc": "<b>Deprecated:</b> Use the <a href=\"http://help.interfaceware.com/v6/recommended-module-structure?v=6.0.0\"> recommended module structure </a> instead. The <code>module</code> function is deprecated in Lua 5.2 and will be removed in 5.3.<br><br>Creates a module. If there is a table in <code>package.loaded[name]</code>, this table is the module. Otherwise, if there is a global table <code>t</code> with the given name, this table is the module. Otherwise creates a new table <code>t</code> and sets it as the value of the global <code>name</code> and the value of <code>package.loaded[name]</code>. This function also initializes <code>t._NAME</code> with the given name, <code>t._M</code> with the module (<code>t</code> itself), and <code>t._PACKAGE</code> with the package name (the full module name minus last component; see below). Finally, <code>module</code> sets <code>t</code> as the new environment of the current function and the new value of <code>package.loaded[name]</code>, so that <code>require</code> returns <code>t</code>.<br><br>If <code>name</code> is a compound name (that is, one with components separated by dots), <code>module</code> creates (or reuses, if they already exist) tables for each component. For instance, if <code>name</code> is <code>a.b.c</code>, then <code>module</code> stores the module table in field <code>c</code> of field <code>b</code> of global <code>a</code>.<br><br> This function can receive optional <em>options</em> after the module name, where each option is a function to be applied over the module."
+   },
+   "xpcall": {
+      "Title": "xpcall",
+      "SummaryLine": "This function is similar to pcall, except that you can set a new error handler.",
+      "Parameters": [
+         {
+            "f": {
+               "Desc": "Function to call <u>function</u>."
+            },
+         },
+         {
+            "err": {
+               "Desc": "Error handler <u>function</u>."
+            }
+         }
+      ],
+      "Usage": "xpcall(f, err)",
+      "Examples": [
+         "<pre>local Status, Result = xpcall(MainFunction, ErrorHandler)</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "Status code <u>boolean</u>."
+         },
+         {
+            "Desc": "<u>On success</u>: multiple returns: The results from the function call <u>any type</u> <b>OR</b> <u>on failure</u>: error message returned by error handler <u>any type</u>.<br /><br /><strong>Note</strong>: Database error returns are tables with an error code and a message."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for xpcall",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-xpcall"
+         }
+      ],
+      "Desc": "This function is similar to pcall, except that you can set a new error handler.<br><br>xpcall calls function f in protected mode, using err as the error handler. Any error inside f is not propagated; instead, xpcall catches the error, calls the err function with the original error object, and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In this case, xpcall also returns all results from the call, after this first result. In case of any error, xpcall returns false plus the result from err. "
+   },
+   "tostring": {
+      "Title": "tostring",
+      "SummaryLine": "Receives an argument of any type and converts it to a string in a reasonable format.",
+      "Parameters": [
+         {
+            "e": {
+               "Desc": "Argument to convert to a string <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "tostring(e)",
+      "Returns": [
+         {
+            "Desc": "Result of the conversion <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+          {
+             "Title": "Global functions - print, pcall, require etc",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+          },
+          {
+             "Title": "String conversion S() or nodeValue()?",
+             "Link": "http://help.interfaceware.com/v6/string-conversion-s-or-nodevalue?v=6.0.0"
+          },
+         {
+            "Title": "Online documentation for tostring",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-tostring"
+         }
+      ],
+      "Desc": "Receives an argument of any type and converts it to a string in a reasonable format. For complete control of how numbers are converted, use <code>string.format</code>.<br><br> If the metatable of <code>e</code> has a <code>\"__tostring\"</code> field, then <code>tostring</code> calls the corresponding value with <code>e</code> as argument, and uses the result of the call as its result.<br><br><b>Note:</b> The builtin <code>node.S()</code> function is equivalent to <code>tostring()</code>."
+   },
+   "print": {
+      "Title": "print",
+      "SummaryLine": "Receives any number of arguments, and prints their values out as a log entry (info type) in the log.",
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Multiple parameters: Values to print <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "print(&#60;value&#62;, ...)",
+      "Examples": [
+         "<pre>print('a','b','c') --&gt; 'a','b','c'</pre>",
+         "<pre>print('a'..'b'..'c') --&gt; 'abc'</pre>"
+      ],
+      "Returns": [],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Why not to use print() for debugging",
+            "Link": "http://help.interfaceware.com/v6/using-trace-for-debugging?v=6.0.0#print"
+         },
+         {
+            "Title": "Using trace() to view data for debugging",
+            "Link": "http://help.interfaceware.com/v6/using-trace-for-debugging?v=6.0.0#trace"
+         },
+         {
+            "Title": "Online documentation for print",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-print"
+         }
+      ],
+      "Desc": "Recommended best practices: <ul><li>For logging informational messages: <a href=\"http://help.interfaceware.com/api/?v=6.0.0#iguana_logDebug\">use  <code>iguana.logInfo</code> instead.</a></li><li>For debugging: <a href=\"http://help.interfaceware.com/v6/using-the-translator?v=6.0.0#navigation\">use a <code>trace()</code> function instead.</a></li></ul>Receives any number of arguments, converts them to strings, concatenates them - then prints that values out as a log entry (info type) in the log. It uses the <code>tostring</code> function to convert the arguments to strings.<br><br>If you need to formatted output, use <code>string.format</code>.<br><br><b>Note:</b> The <code>iguana.logInfo</code> function does exactly the same thing as <code>print</code>."
+   },
+   "rawget": {
+      "Title": "rawget",
+      "SummaryLine": "Gets the real value of a field from a table, without invoking any metamethod.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Name of table <u>string</u>."
+            },
+         },
+         {
+            "index": {
+               "Desc": "Index for table <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "rawget(table, index)",
+      "Returns": [
+         {
+            "Desc": "Value from the specified field <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for rawget",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-rawget"
+         }
+      ],
+      "Desc": "Gets the real value of <code>table[index]</code>, without invoking any metamethod. <code>table</code> must be a table; <code>index</code> may be any value."
+   },
+   "require": {
+      "Title": "require",
+      "SummaryLine": "Loads the given module.",
+      "Parameters": [
+         {
+            "modname": {
+               "Desc": "Name of the module to load <u>string</u>."
+            }
+         }
+      ],
+      "Examples": [
+         "<pre>require('stream')</pre>",
+         "<pre>-- also works without braces\nrequire 'stream'</pre>"
+      ],
+      "Usage": "require(modname)",
+      "Returns": [
+         {
+            "Desc": "Final value of package.loaded[modname] <u>boolean or table</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Working with shared modules",
+            "Link": "http://help.interfaceware.com/v6/project-files?v=6.0.0#modules"
+         },
+         {
+            "Title": "Online documentation for require",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-require"
+         }
+      ],
+      "Desc": "Loads the given module. It is equivalent to \"include\" in C\\C++. Iguana's implementation of require adds the module to the project if it is not already included.<br><br><b>All you need to know:</b> add \"require statements\" at the top of a module to include other modules.<br><br>For technical detail on how it works, read on.<br><br>The function starts by looking into the <code>package.loaded</code> table to determine whether <code>modname</code> is already loaded. If it is, then <code>require</code> returns the value stored at <code>package.loaded[modname]</code>. Otherwise, it tries to find a <em>loader</em> for the module.<br><br>To find a loader, <code>require</code> is guided by the <code>package.loaders</code> array. By changing this array, we can change how <code>require</code> looks for a module. The following explanation is based on the default configuration for <code>package.loaders</code>.<br><br>First <code>require</code> queries <code>package.preload[modname]</code>. If it has a value, this value (which should be a function) is the loader. Otherwise <code>require</code> searches for a Lua loader using the path stored in <code>package.path</code>. If that also fails, it searches for a C loader using the path stored in <code>package.cpath</code>. If that also fails, it tries an <em>all-in-one</em> loader (see <code>package.loaders</code>).<br><br> Once a loader is found, <code>require</code> calls the loader with a single argument, <code>modname</code>. If the loader returns any value, <code>require</code> assigns the returned value to <code>package.loaded[modname]</code>. If the loader returns no value and has not assigned any value to <code>package.loaded[modname]</code>, then <code>require</code> assigns <b>true</b> to this entry. In any case, <code>require</code> returns the final value of <code>package.loaded[modname]</code>.<br><br>If there is any error loading or running the module, or if it cannot find any loader for the module, then <code>require</code> signals an error."
+   },
+   "unpack": {
+      "Title": "unpack",
+      "SummaryLine": "Returns the elements from the given table.",
+      "Parameters": [
+         {
+            "list": {
+               "Desc": "Table name <u>string</u>."
+            },
+         },
+         {
+            "i": {
+               "Desc": "Start of range <u>integer</u>.",
+               "Opt": true
+            },
+         },
+         {
+            "j": {
+               "Desc": "End of range <u>integer</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "unpack(list [, i [, j]])",
+      "Examples": [
+         "<pre>t={'a','b','c'}\nunpack(t) --&gt; 'a','b','c'\nunpack(t,1,2) --&gt; 'a','b'\nreturn t[1], t[2] --&gt; 'a','b'</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "Multiple returns: One for each item in the range <u>any type</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for unpack",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-unpack"
+         }
+      ],
+      "Desc": "Returns the elements from the given table. This function is equivalent to:<pre>\n     return list[i], list[i+1], ..., list[j]<br></pre>Except that the above code can be written only for a fixed number of elements. By default, <code>i</code> is 1 and <code>j</code> is the length of the list, as defined by the length operator (#)."
+   },
+   "getmetatable": {
+      "Title": "getmetatable",
+      "SummaryLine": "Returns the metatable of an object.",
+      "Parameters": [
+         {
+            "object": {
+               "Desc": "Object to return metatable for <u>table</u>."
+            }
+         }
+      ],
+      "Usage": "getmetatable(object)",
+      "Returns": [
+         {
+            "Desc": "Metatable if it exists, otherwise nil <u>table or nil</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for getmetatable",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-getmetatable"
+         },
+         {
+            "Title": "Online documentation for metatable",
+            "Link": "http://www.lua.org/pil/13.html"
+         },
+         {
+            "Title": "Online documentation for Library-Defined Metamethods",
+            "Link": "http://www.lua.org/pil/13.3.html"
+         },
+         {
+            "Title": "Online documentation for Lua Classes With Metatable",
+            "Link": "http://lua-users.org/wiki/LuaClassesWithMetatable"
+         }
+      ],
+      "Desc": "Returns the metatable of the given table, if the table does not have a metatable it returns nil.<br><br><b>Note:</b> If the table's metatable has a \"__metatable\" field then this value is returned instead."
+   },
+   "load": {
+      "Title": "load",
+      "SummaryLine": "Loads a chunk using a function to get its pieces.",
+      "Parameters": [
+         {
+            "func": {
+               "Desc": "Function to use to load chunk <u>function</u>."
+            },
+         },
+         {
+            "chunkname": {
+               "Desc": "Name of chunk to load <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "load(func [, chunkname])",
+      "Returns": [
+         {
+            "Desc": "The compiled chunk as a function, otherwise nil <u>function or nil</u>.",
+         },
+         {
+            "Desc": "Error message (only on failure) <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for load",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-load"
+         }
+      ],
+      "Desc": "Loads a chunk using function <code>func</code> to get its pieces. Each call to <code>func</code> must return a string that concatenates with previous results. A return of an empty string, <b>nil</b>, or no value signals the end of the chunk.<br><br>If there are no errors,  returns the compiled chunk as a function; otherwise, returns <b>nil</b> plus the error message. The environment of the returned function is the global environment.<br><br><code>chunkname</code> is used as the chunk name for error messages and debug information. When absent, it defaults to \"<code>=(load)</code>\"."
+   },
+   "pcall": {
+      "Title": "pcall",
+      "SummaryLine": "Calls a function in protected mode, using the supplied arguments.",
+      "Parameters": [
+         {
+            "f": {
+               "Desc": "Function to call <u>function</u>."
+            },
+         },
+         {
+            "arg": {
+               "Desc": "Multiple parameters: Argument to the function <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "pcall(f, arg1, ...)",
+      "Examples": [
+         "<pre>local Status, Result = pcall(MainFunction, MainErrorMessage)</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "Status code <u>boolean</u>."
+         },
+         {
+            "Desc": "<u>On success</u>: multiple returns: The results from the function call <u>any type</u> <b>OR</b> <u>on failure</u>: error message <u>string or table</u>.<br /><br /><strong>Note</strong>: Database error returns are tables with an error code and a message."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Raising and catching errors",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#errors"
+         },
+         {
+            "Title": "Online documentation for pcall",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-pcall"
+         }
+      ],
+      "Desc": "Calls function <code>f</code> with the given arguments in <em>protected mode</em>. This means that any error inside <code>f</code> is not propagated; instead, <code>pcall</code> catches the error and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In such case, <code>pcall</code> also returns all results from the call, after this first result. In case of any error, <code>pcall</code> returns <b>false</b> plus the error message."
+   },
+   "getfenv": {
+      "Title": "getfenv",
+      "SummaryLine": "Returns the current environment in use by the function.",
+      "Parameters": [
+         {
+            "f": {
+               "Desc": "Function to return environment for <u>function or integer</u>."
+            }
+         }
+      ],
+      "Usage": "getfenv([f])",
+      "Examples": [
+         "<pre>-- compare function environment to global environment \"_G\"\nmain()\n   myFunc()   \nend\n\nfunction myFunc()\n   if (getfenv(0)      == _G) then print ('Match') end --&gt; \"Match\" to global environment _G\n   if (getfenv(1)      == _G) then print ('Match') end --&gt; \"Match\" to environment for calling function\n   if (getfenv(main)   == _G) then print ('Match') end --&gt; \"Match\" to environment for main\n   if (getfenv(2)      == _G) then print ('Match') end --&gt; \"Match\" to environment for this function\n   if (getfenv(myFunc) == _G) then print ('Match') end --&gt; \"Match\" to environment for myFunc (this function)\nend</pre>",
+         "<pre>-- change function environment and then compare to global environment\nmain()\n   myFunc(_G)\nend\n\nfunction myFunc(env)\n   if (getfenv(myFunc) == _G) then print ('Match') end --&gt; \"Match\" to environment for myFunc (this function)\n\n   -- change the environment for this function\n   setfenv(myFunc,{my_getfenv = _G.getfenv, my_print = _G.print, myFunc = _G.myFunc})\n\n   -- compare to global environment (_G passed as parameter \"env\") now fails\n   if (my_getfenv(2)      ~= env) then my_print ('No Match') end --&gt; \"No Match\" to environment for this function\n   if (my_getfenv(myFunc) ~= env) then my_print ('No Match') end --&gt; \"No Match\" to environment for myFunc (this function)\nend</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "Function environment <u>table</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for getfenv",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-getfenv"
+         },
+         {
+            "Title": "Online documentation for Variables",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#2.3"
+         },
+         {
+            "Title": "Online documentation for The Environment",
+            "Link": "http://www.lua.org/pil/14.html"
+         },
+         {
+            "Title": "<b>Advanced:</b> sandboxing - running untrusted Lua code in a restricted Lua environment",
+            "Link": "http://lua-users.org/wiki/SandBoxes"
+         }
+      ],
+      "Desc": "Returns the current environment in use by the function. <code>f</code> can be a Lua function or a number that specifies the function at that stack level: Level 1 is the function calling <code>getfenv</code>. If the given function is not a Lua function, or if <code>f</code> is 0, <code>getfenv</code> returns the global environment. The default for <code>f</code> is 1.<br><br>All global variables live as fields in ordinary Lua tables, called environment tables or simply environments.<br><br>Each function written in Lua (a Lua function) has its own reference to an environment, so that all global variables in that function will refer to that environment table. When a function is created, it inherits the environment from the function that created it (usually in Iguana this will be the global environment). To change or get the environment table of a Lua function, you call setfenv or getfenv.<br><br><b>Note:</b> Any functions written in C and exported to Lua (C functions) all share the common global environment (_G)."
+   },
+   "unwind_protect": {
+      "Title": "unwind_protect",
+      "SummaryLine": "Execute action() then cleanup(), even if action() fails with an error, timeout or interupt.",
+      "Parameters": [
+         {
+            "action": {
+               "Desc": "Function to execute <u>function</u>."
+            },
+         },
+         {
+            "cleanup": {
+               "Desc": "Function execute when \"action\" fails <u>function</u>."
+            }
+         }
+      ],
+      "Usage": "unwind_protect(action, cleanup)",
+      "Returns": [
+         {
+            "Desc": "The values returned from action() <u>any type</u>."
+         },
+         {
+            "Desc": "Errors thrown by either action() or cleanup() will be thrown again by unwind_protect(); errors thrown from cleanup() will take precedence. <u>any type</u>."
+         }
+      ],
+      "Desc": "Execute action() and then cleanup(), even when action() fails due to an error, timeout or interupt.  When cleanup() is called, it is passed the results from pcall(action), and given at least a minute to complete--you can extend this with iguana.setTimeout() but its effect will be local to cleanup().",
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         }
+      ]
+   },
+   "type": {
+      "Title": "type",
+      "SummaryLine": "Returns the type of its argument.",
+      "Parameters": [
+         {
+            "v": {
+               "Desc": "Value to check the type of <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "type(v)",
+      "Examples": [
+         "<pre>t = type(value)</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "Type of argument <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for type",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-type"
+         }
+      ],
+      "Desc": "Returns the type of its only argument, coded as a string. The possible results of this function are \"<code>nil</code>\"(a string, not the value <b>nil</b>), \"<code>number</code>\", \"<code>string</code>\", \"<code>boolean</code>\", \"<code>table</code>\", \"<code>function</code>\", \"<code>thread</code>\", and \"<code>userdata</code>\".  <br><br>The 'node tree' objects in Iguana are of the userdata type."
+   },
+   "setmetatable": {
+      "Title": "setmetatable",
+      "SummaryLine": "Sets the metatable for the given table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to set metable for <u>table</u>."
+            },
+         },
+         {
+            "metatable": {
+               "Desc": "Metatable to set to <u>table</u>."
+            }
+         }
+      ],
+      "Usage": "setmetatable(table, metatable)",
+      "Returns": [
+         {
+            "Desc": "Original table <u>table</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for setmetatable",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-setmetatable"
+         },
+         {
+            "Title": "Online documentation for metatable.",
+            "Link": "http://www.lua.org/pil/13.html"
+         },
+         {
+            "Title": "Online documentation for Library-Defined Metamethods",
+            "Link": "http://www.lua.org/pil/13.3.html"
+         },
+         {
+            "Title": "Online documentation for Lua Classes With Metatable",
+            "Link": "http://lua-users.org/wiki/LuaClassesWithMetatable"
+         }
+      ],
+      "Desc": "Sets the metatable for the given table. If metatable is nil it removes the metatable of the given table. If the original metatable has a \"__metatable\" field then an error is raised.<br><br><b>Note:</b> You can only change the metatables of tables from Lua, metatables of other types can be changed from C."
+   },
+   "next": {
+      "Title": "next",
+      "SummaryLine": "Allows a program to traverse all fields of a table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to be traversed <u>table</u>."
+            },
+         },
+         {
+            "index": {
+               "Desc": "Index position to start at <u>any type</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "next(table [, index])",
+      "Returns": [
+         {
+            "Desc": "Next value in array <u>any type</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for next",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-next"
+         }
+      ],
+      "Desc": "Allows a program to traverse all fields of a table. Its first argument is a table and its second argument is an index in this table. <code>next</code> returns the next index of the table and its associated value. When called with <b>nil</b> as its second argument, <code>next</code> returns an initial index and its associated value. When called with the last index, or with <b>nil</b> in an empty table, <code>next</code> returns <b>nil</b>. If the second argument is absent, then it is interpreted as <b>nil</b>. In particular, you can use <code>next(t)</code> to check whether a table is empty.<br><br>The order in which the indices are enumerated is not specified, <em>even for numeric indices</em>. (To traverse a table in numeric order, use a numerical <b>for</b> or the <code>ipairs</code> function.)<br><br>The behavior of <code>next</code> is <em>undefined</em> if, during the traversal, you assign any value to a non-existent field in the table. You may however modify existing fields. In particular, you may clear existing fields."
+   },
+   "select": {
+      "Title": "select",
+      "SummaryLine": "Return all arguments starting with \"index\" or return count of arguments.",
+      "Parameters": [
+         {
+            "index": {
+               "Desc": "Start index <u>integer</u>."
+            }
+         }
+      ],
+      "Usage": "select(index, ...)",
+      "Returns": [
+         {
+            "Desc": "Multiple returns: Arguments starting with \"index\"<u>string</u>. <strong>OR</strong> a count of the arguments <u>integer</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for select",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-select"
+         }
+      ],
+      "Desc": "If <code>index</code> is a number, returns all arguments after argument number <code>index</code>. Otherwise, <code>index</code> must be the string <code>\"#\"</code>, and <code>select</code> returns the total number of extra arguments it received."
+   },
+   "assert": {
+      "Title": "assert",
+      "SummaryLine": "Issues an  error when the value of its argument is false",
+      "Parameters": [
+         {
+            "v": {
+               "Desc": "Argument to check for validity <u>any type</u>."
+            },
+         },
+         {
+            "message": {
+               "Desc": "Error message <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "assert(v [, message])",
+      "Examples": [
+         "<pre>flag, msg = myFunc()\nassert(flag) --&gt; ERROR: assertion failed!</pre>",
+         "<pre>flag, msg = myFunc()\nassert(flag,'myFunc returned false') --&gt; ERROR: myFunc returned false</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "Multiple returns: All parameters passed in <u>any type</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for assert",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-assert"
+         }
+      ],
+      "Desc": "Issues an  error when the value of its argument <code>v</code> is false (i.e., <b>nil</b> or <b>false</b>); otherwise, returns all its arguments. <code>message</code> is an error message; when absent, it defaults to \"assertion failed!\""
+   },
+   "dofile": {
+      "Title": "dofile",
+      "SummaryLine": "Opens the named file and executes its contents as a Lua chunk.",
+      "Parameters": [
+         {
+            "filename": {
+               "Desc": "Name of the file to execute <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "dofile(filename)",
+      "Returns": [
+         {
+            "Desc": "Multiple returns: All values returned by the chunk <u>any type</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for dofile",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-dofile"
+         }
+      ],
+      "Desc": "Opens the named file and executes its contents as a Lua chunk. When called without arguments, <code>dofile</code> tries to execute the contents of the standard input (<code>stdin</code>).  This is not supported within Iguana. Returns all values returned by the chunk. In case of errors, <code>dofile</code> propagates the error to its caller (that is, <code>dofile</code> does not run in protected mode)."
+   },
+   "ipairs": {
+      "Title": "ipairs",
+      "SummaryLine": "Used to iterate numerically indexed elements of a table (stops at the first non-numeric index).",
+      "Parameters": [
+         {
+            "t": {
+               "Desc": "Table to iterate <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "ipairs(t)",
+      "Examples": [
+         "-- the index number 3 intentionally missing\nt={[1]=1,[2]=2,[4]=4}<br><br>-- ipairs(t) exits after t[3] (because t[3] does not exist)<br>-- values are returned in key order <br>for i,j in ipairs(t) do<br>   trace(i,j)<br>   -- do something<br>end<br><br>-- pairs(t) iterates through all values\nfor k,v in pairs(t) do<br>   trace(k,v)<br>   -- do something<br>end<br>t[3]=3 -- add the third index<br><br><br>-- ipairs(t) now also iterates through all indexes (because the sequence is unbroken)<br>-- values are returned in key order <br>for i,j in ipairs(t) do<br>   trace(i,j)<br>   -- do something<br>end"
+      ],
+      "Returns": [
+         {
+            "Desc": "Iterator function <u>function</u>."
+         },
+         {
+            "Desc": "The table <u>table</u>."
+         },
+         {
+            "Desc": "Zero <u>0</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for ipairs",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-ipairs"
+         },
+         {
+            "Title": "Online documentation for pairs",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-pairs"
+         }
+      ],
+      "Desc": "Use <code>ipairs()</code> to read the elements from a table in <i>numeric key order</i>.<br><br>The <code>ipairs()</code> function returns three values: An iterator function, the table <code>t</code>, and 0, so that the construction<pre>\n     for i,v in ipairs(t) do <em>body</em> end<br></pre>will iterate over the pairs (<code>1,t[1]</code>), (<code>2,t[2]</code>), ..., up to the first integer key absent from the table.<br><br>If your table has missing numeric key(s) then <code>ipairs()</code> will only a return a subset of the data. To return all the values in a table you should use the <code>pairs()</code> function."
+   },
+   "pairs": {
+      "Title": "pairs",
+      "SummaryLine": "Used to iterate all elements of a table.",
+      "Parameters": [
+         {
+            "t": {
+               "Desc": "Table to iterate <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "pairs(t)",
+      "Examples": [
+         "-- the index number 3 is intentionally missing\nt={[1]=1,[2]=2,[4]=4}<br><br>-- pairs(t) iterates through all values<br>-- the order that values are returned is not specified<br>for k,v in pairs(t) do<br>   trace(k,v)<br>   -- do something<br>end<br><br>-- ipairs(t) exits after t[2] (because t[3] does not exist)<br>-- values are returned in key order <br>for i,j in ipairs(t) do<br>   trace(i,j)<br>   -- do something<br>end"
+      ],
+      "Returns": [
+         {
+            "Desc": "Next function <u>function</u>."
+         },
+         {
+            "Desc": "The table <u>table</u>."
+         },
+         {
+            "Desc": "Nil <u>nil</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for pairs",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-pairs"
+         },
+         {
+            "Title": "Online documentation for next",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-next"
+         },
+         {
+            "Title": "Online documentation for ipairs",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-ipairs"
+         }
+      ],
+      "Desc": "Use <code>pairs()</code> to read <i>all the elements</i> in a table.<br><br>The <code>pairs()</code> function returns three values: The <code>next()</code> function, the table t, and nil, so that the construction<pre>\n     for k,v in pairs(t) do body end</pre>will iterate over all key value pairs of table t. <br><br>The order that the indices are enumerated/returned is not specified (even for numeric keys). If you need to traverse a table in numerical order you can use either the <code>ipairs()</code> function or a numerical for statement.<br><br><strong>Note</strong>: You <i>must not add new field(s) to the table</i> within the loop, if you do then the iteration may not work correctly (because the behaviour of the <code>next()</code> function is undefined in these circumstances).
+"
+   },
+   "loadstring": {
+      "Title": "loadstring",
+      "SummaryLine": "Loads and runs a chunk from a string (similar to load).",
+      "Parameters": [
+         {
+            "string": {
+               "Desc": "String to load chunk from <u>string</u>."
+            },
+         },
+         {
+            "chunkname": {
+               "Desc": "Name of chunk <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "loadstring(string [, chunkname])",
+      "Returns": [
+         {
+            "Desc": "The compiled chunk as a function, otherwise nil <u>function or nil</u>.",
+         },
+         {
+            "Desc": "Error message (only on failure) <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for loadstring",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-loadstring"
+         }
+      ],
+      "Desc": "Similar to <code>load</code>, but gets the chunk from the given string.<br><br>To load and run a given string, use the idiom<pre>\n     assert(loadstring(s))()</pre>When absent, <code>chunkname</code> defaults to the given string."
+   },
+   "tonumber": {
+      "Title": "tonumber",
+      "SummaryLine": "Tries to convert its argument to a number.",
+      "Parameters": [
+         {
+            "e": {
+               "Desc": "Value to convert to number <u>any type</u>."
+            },
+         },
+         {
+            "base": {
+               "Desc": "Base to use for conversion <u>integer or string</u>."
+            }
+         }
+      ],
+      "Usage": "tonumber(e [, base])",
+      "Returns": [
+         {
+            "Desc": "Result of conversion <u>number</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for tonumber",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-tonumber"
+         }
+      ],
+      "Desc": "Tries to convert its argument to a number. If the argument is already a number or a string convertible to a number, then <code>tonumber</code> returns this number; otherwise, it returns <b>nil</b>.<br><br>An optional argument specifies the base to interpret the numeral. The base may be any integer between 2 and 36, inclusive. In bases above 10, the letter '<code>A</code>' (in either upper or lower case) represents 10, '<code>B</code>' represents 11, and so forth, with '<code>Z</code>' representing 35. In base 10 (the default), the number can have a decimal part, as well as an optional exponent part. In other bases, only unsigned integers are accepted."
+   },
+   "rawequal": {
+      "Title": "rawequal",
+      "SummaryLine": "Checks whether two values are equal, without invoking any metamethod.",
+      "Parameters": [
+         {
+            "v1": {
+               "Desc": "First value <u>any type</u>."
+            },
+         },
+         {
+            "v2": {
+               "Desc": "Second value <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "rawequal(v1, v2)",
+      "Returns": [
+         {
+            "Desc": "Result (true or false) <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for rawequal",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-rawequal"
+         }
+      ],
+      "Desc": "Checks whether <code>v1</code> is equal to <code>v2</code>, without invoking any metamethod. Returns a boolean."
+   },
+   "setfenv": {
+      "Title": "setfenv",
+      "SummaryLine": "Sets the environment to be used by the given function.",
+      "Parameters": [
+         {
+            "f": {
+               "Desc": "Function to set the environment for <u>function or integer</u>."
+            },
+         },
+         {
+            "table": {
+               "Desc": "New environment table  <u>table</u>."
+            }
+         }
+      ],
+      "Usage": "setfenv(f, table)",
+      "Examples": [
+         "<pre>-- change function environment and then compare to global environment\nmain()\n   myFunc(_G)\nend\n\nfunction myFunc(env)\n   if (getfenv(myFunc) == _G) then print ('Match') end --&gt; \"Match\" to environment for myFunc (this function)\n\n   -- change the environment for this function\n   setfenv(myFunc,{my_getfenv = _G.getfenv, my_print = _G.print, myFunc = _G.myFunc})\n\n   -- compare to global environment (_G passed as parameter \"env\") now fails\n   if (my_getfenv(2)      ~= env) then my_print ('No Match') end --&gt; \"No Match\" to environment for this function\n   if (my_getfenv(myFunc) ~= env) then my_print ('No Match') end --&gt; \"No Match\" to environment for myFunc (this function)\nend</pre>"
+      ],
+      "Returns": [
+         {
+            "Desc": "The given function <u>function</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for setfenv",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-setfenv"
+         },
+         {
+            "Title": "Online documentation for Variables",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#2.3"
+         },
+         {
+            "Title": "Online documentation for The Environment",
+            "Link": "http://www.lua.org/pil/14.html"
+         },
+         {
+            "Title": "<b>Advanced:</b> sandboxing - running untrusted Lua code in a restricted Lua environment",
+            "Link": "http://lua-users.org/wiki/SandBoxes"
+         }
+      ],
+      "Desc": "Sets the environment to be used by the given function. f can be a Lua function or a number that specifies the function at that stack level: Level 1 is the function calling setfenv. setfenv returns the given function.<br> As a special case, when f is 0 setfenv changes the environment of the running thread. In this case, setfenv returns no values.<br><br>All global variables live as fields in ordinary Lua tables, called environment tables or simply environments.<br><br>Each function written in Lua (a Lua function) has its own reference to an environment, so that all global variables in that function will refer to that environment table. When a function is created, it inherits the environment from the function that created it (usually in Iguana this will be the global environment). To change or get the environment table of a Lua function, you call setfenv or getfenv.<br><br><b>Note:</b> Any functions written in C and exported to Lua (C functions) all share the common global environment (_G)."
+   },
+   "collectgarbage": {
+      "Title": "collectgarbage",
+      "SummaryLine": "This function is a generic interface to control the garbage collector.",
+      "Parameters": [
+         {
+            "opt": {
+               "Desc": "Function to perform <u>string</u>."
+            },
+         },
+         {
+            "arg": {
+               "Desc": "Argument used with some options <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "collectgarbage(opt [, arg])",
+      "Returns": [
+         {
+            "Desc": "Result returned for some options <u>string or boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for collectgarbage",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-collectgarbage"
+         }
+      ],
+      "Desc": "This function is a generic interface to control the garbage collector. It performs different functions according to its first argument, <code>opt</code>:<ul><li><b>\"stop\":</b> stops the garbage collector. </li><li><b>\"restart\":</b> restarts the garbage collector. </li><li><b>\"collect\":</b> performs a full garbage-collection cycle. </li><li><b>\"count\":</b> returns the total memory in use by Lua (in Kbytes). </li><li><b>\"step\":</b> performs a garbage-collection step. The step \"size\" is controlled by <code>arg</code> (larger values mean more steps) in a non-specified way. If you want to control the step size you must experimentally tune the value of <code>arg</code>. Returns <b>true</b> if the step finished a collection cycle. </li><li><b>\"setpause\":</b> sets <code>arg</code> as the new value for the <em>pause</em> of the collector. Returns the previous value for <em>pause</em>. </li><li><b>\"setstepmul\":</b> sets <code>arg</code> as the new value for the <em>step multiplier</em> of the collector. Returns the previous value for <em>step</em>. </li></ul>Tuning of the garbage collection parameters should be undertaken with caution. You will need to experiment until you find out what works best for your circumstances (which may also vary from program to program).<br><br>The garbage-collector <b>pause</b> controls how long the collector waits before starting a new cycle. Larger values make the collector less aggressive. Values smaller than 100 mean the collector will not wait to start a new cycle. The default value of 200 means that the collector waits for the total memory in use to double before starting a new cycle.<br><br>The <b>step multiplier</b> controls the relative speed of the collector <i>relative to memory allocation</i>. Larger values make the collector more aggressive but also increase the size of each incremental step. Values smaller than 100 make the collector too slow and may result in the collector never finishing a cycle (which can slow down or freeze a program). The default value of 200 means that the collector runs at “twice” the speed of memory allocation.<br><br><b>Note:</b> Use <code>collectgarbage(\"count\")</code> instead of the the deprecated <code>gcinfo()</code> function."
+   },
+   "rawset": {
+      "Title": "rawset",
+      "SummaryLine": "Sets the real value of a table element, without invoking any metamethod",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Value to use <u>any type</u>."
+            },
+         },
+         {
+            "index": {
+               "Desc": "Index to use <u>any type</u>."
+            },
+         },
+         {
+            "value": {
+               "Desc": "Target table name <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "rawset(table, index, value)",
+      "Returns": [
+         {
+            "Desc": "The updated table <u>table</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for rawset",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-rawset"
+         }
+      ],
+      "Desc": "Sets the real value of <code>table[index]</code> to <code>value</code>, without invoking any metamethod. <code>table</code> must be a table, <code>index</code> any value different from <b>nil</b>, and <code>value</code> any Lua value.<br><br>This function returns <code>table</code>."
+   },
+   "error": {
+      "Title": "error",
+      "SummaryLine": "Terminates the last protected function called and returns an error message.",
+      "Parameters": [
+         {
+            "message": {
+               "Desc": "Error message <u>any type</u>."
+            },
+         },
+         {
+            "level": {
+               "Desc": "Level to raise the error <u>integer</u>."
+            }
+         }
+      ],
+      "Usage": "error(message [, level])",
+      "Examples": [
+         "<pre>-- error is raised inline, where error() is called\nerror('My error message') --&gt; ERROR: My error message\nerror('My error message',1) --&gt; ERROR: My error message</pre>",
+         "<pre>-- error is raised at the calling function\nmain()\n   errorTest() --&gt; ERROR: My error message\nend\n\nfunction errorTest()\n   error('My error message',2)\nend</pre>"
+      ],
+      "Returns": [],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Raising and catching errors",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#errors"
+         },
+         {
+            "Title": "Online documentation for error",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-error"
+         }
+      ],
+      "Desc": "Terminates the last protected function called and returns <code>message</code> as the error message. Function <code>error</code> never returns.<br><br>Usually, <code>error</code> adds some information about the error position at the beginning of the message. The <code>level</code> argument specifies how to get the error position. With level 1 (the default), the error position is where the <code>error</code> function was called. Level 2 points the error to where the function that called <code>error</code> was called; and so on. Passing a level 0 avoids the addition of error position information to the message.<br><br><b>Note:</b> Using level = 2 (or higher) is an elegant way of making errors from included modules more visible (no need to switch to the module when debugging)."
+   },
+   "loadfile": {
+      "Title": "loadfile",
+      "SummaryLine": "Loads and runs a chunk from a file (similar to load).",
+      "Parameters": [
+         {
+            "filename": {
+               "Desc": "File to load chunk from <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "loadfile([filename])",
+      "Returns": [
+         {
+            "Desc": "The compiled chunk as a function, otherwise nil <u>function or nil</u>.",
+         },
+         {
+            "Desc": "Error message (only on failure) <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for loadfile",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-loadfile"
+         }
+      ],
+      "Desc": "Similar to <code>load</code>, but gets the chunk from file <code>filename</code> or from the standard input, if no file name is given."
+   },
+   "newproxy": {
+      "Title": "newproxy",
+      "SummaryLine": "<b><u>Undocumented:</b></u> create a zero-size userdata with various options for setting the metatable.",
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Instruction on how to set the metatable  <u>boolean or userdata</u>."
+            }
+         }
+      ],
+      "Usage": "newproxy(value)",
+      "Returns": [
+         {
+            "Desc": "The new empty proxy object <u>userdata</u>.",
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for Lua hidden features.",
+            "Link": "http://lua-users.org/wiki/HiddenFeatures"
+         }
+      ],
+      "Desc": "The Lua C API and standard libraries may contain some undocumented, unsupported, and/or experimental features. They are likely unsupported for a good reason, and may disappear or change at any time - use them at your own risk.<br><br>Remember that <code>newproxy</code> is an <i>unsupported and undocumented</i> function in the Lua base library - <b><u>use it at your own risk</b></u>.<br><br>From Lua code, the setmetatable function may only be used on objects of table type. The newproxy function circumvents that limitation by creating a zero-size userdata and setting either a new, empty metatable on it or using the metatable of another newproxy instance. We are then free to modify the metatable from Lua. This is the only way to create a proxy object from Lua which honors certain metamethods, such as __len. Synopsis:<pre><br>    do<br>      local a = newproxy(true)  -- create proxy object with new metatable<br>      assert(type(a) == 'userdata')<br>      getmetatable(a).__len = function() return 5 end<br>      assert(#a == 5)<br>      local b = newproxy(a)     -- create proxy object with same metatable as another proxy<br>      assert(b ~= a)<br>      assert(getmetatable(b) == getmetatable(a))<br>      assert(#b == 5)<br>      local c = newproxy(false) -- create proxy object with no metatable<br>      assert(not getmetatable(c))<br><br>      local is_collected = false<br>      local o = newproxy(true)<br>      getmetatable(o).__gc = function() is_collected = true end  -- finalizer<br>      o = nil; collectgarbage()  -- clear all references to object and ensure finalizer called<br>      assert(is_collected)<br>    end</pre>"
+   },
+   "gcinfo": {
+      "Title": "gcinfo",
+      "SummaryLine": "<b>Deprecated:</b> use collectgarbage(\"count\") instead.",
+      "Usage": "<b>Deprecated</b>",
+      "SeeAlso": [
+         {
+            "Title": "Global functions - print, pcall, require etc",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+         },
+         {
+            "Title": "Online documentation for Changes in the Libraries",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#7.2"
+         }
+      ],
+      "Desc": "Function gcinfo is <b>deprecated</b> in Lua 5.1; use collectgarbage(\"count\") instead."
+    },
+   "trace": {
+      "Title": "trace",
+      "SummaryLine": "Receives any number of arguments and displays them in annotations.",
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Multiple parameters: values to trace <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "trace(&#60;value&#62;, ...)",
+      "Examples": [
+         "trace('a', 'b', 'c') --&gt; 'a', 'b', and 'c' displayed in annotations",
+         "trace(Msg) --&gt; can now view the Msg object in annotations"
+      ],
+      "Returns": [],
+      "SeeAlso": [
+          {
+             "Title": "Global functions - print, pcall, require etc",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#global"
+          },
+         {
+            "Title": "Using trace() to view data for debugging",
+            "Link": "http://help.interfaceware.com/v6/using-trace-for-debugging?v=6.0.0#trace"
+         },
+         {
+            "Title": "Why you shouldn't use print() for debugging",
+            "Link": "http://help.interfaceware.com/v6/using-trace-for-debugging?v=6.0.0#print"
+         }
+      ],
+      "Desc": "This function is a tool to display annotations for the arguments it receives. It is useful for checking the value of variables at a certain point in your script's execution. When annotations are enabled, <code>trace</code> produces an annotation when called with any number of arguments, or with no arguments, but it does not alter the input data nor does it return any result. <br /><br /> <strong> Note</strong>: Unlike <code>print()</code>, the <code>trace()</code> function does not produce log entries. If you would prefer to have a log entry produced when the script is run as a channel, then use the <code>print()</code> or <code>iguana.logInfo()</code> functions instead."
+   }
+}

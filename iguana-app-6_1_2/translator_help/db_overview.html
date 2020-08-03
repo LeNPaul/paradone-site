@@ -1,0 +1,49 @@
+<p style="line-height: 18px">
+	The db module contains the Iguana Translator script functions that interact with databases. Functions exist to create local database tables, merge them with external databases, and perform queries on external databases.</p>
+<p style="line-height: 18px">
+	All the database functions:</p>
+<ul>
+	<li>
+		<a class="uvb" href="hjtw:db.db_connection" rel="nofollow">db conn:</a><span class="vb"> </span>- new style: database methods using the database connection object.</li>
+	<li>
+		<a class="vb" href="hjtw:db" rel="nofollow">db</a><span class="vb"> </span><span class="uvb">- old </span>style database functions.</li>
+</ul>
+<p>
+	It is recommended best practice to use the new style database methods. They are easier to use and offer improved database transaction handling.</p>
+<h3>
+	Advantages of the new style connection objects:</h3>
+<ul>
+	<li>
+		Connections are not pooled, resulting in safer transactions:
+		<ul>
+			<li>
+				Create dedicated connections using <strong><code>db.connect()</code></strong></li>
+			<li>
+				Legacy connections are pooled so it is possible (rarely) to receive a different connection and rollback a transaction<br />
+				<strong>Note</strong>: If network connectivity to the database is lost, a rollback will occur with new and legacy connections<br />
+				&nbsp;</li>
+		</ul>
+	</li>
+	<li>
+		NEW! The ability to check a connection to confirm that the database is still available:
+		<ul>
+			<li>
+				Use the <strong><code>conn:check()</code></strong> method to test a connection</li>
+		</ul>
+	</li>
+</ul>
+<p>
+	<strong>Note:</strong> it is important to understand the behaviour of the live flag for db.connect&nbsp; and how it affects the execution the new style database methods in the Iguana editor:</p>
+<ul>
+	<li>
+		By default the connection handle returned from db.connect is live (live = true).</li>
+	<li>
+		If db.connect live = true (the default) connection methods will run in the editor (based on their default or live setting).</li>
+	<li>
+		If db.connnect live = false it means that all database operations are <strong>always non-live</strong>.</li>
+	<li>
+		For more information see the <a href="hjtw:db#connect" rel="nofollow">help for db.connect</a>.</li>
+</ul>
+<p>
+	For more information on how Iguana Translator scripts work with databases, see <a class="vb" href="default.asp?W311" rel="nofollow">Mapping To/From Databases</a>.</p>
+

@@ -1,0 +1,149 @@
+/******************************************************************************/
+/* ----------------------- IGUANA LOW COLOR STYLES ---------------------------*/
+
+#header {
+   background-color: #008000;
+   background-image: none;
+}
+   
+#login {
+   color: #003300;
+}
+
+#login a {
+   color: #003300;
+}
+
+#change_skin {
+   color: #003300;
+}
+
+#change_skin a {
+   color: #003300;
+}
+
+#help_button a {
+   background: url("/low_color/images/help_button.gif") 0 0 no-repeat;
+}
+
+#tabs {
+   padding-top: 68px;
+}
+
+body.tableft {
+   background: #CCCCCC; /* Light Beige Background for pages with Tabs on left side */
+}
+
+/* ----- Side Panel Area on Right Side ----- */
+
+h4.side_title, h4.side_title a  {
+   color: #336600;
+}
+
+ul.help_link_icon li {
+   background-image: url("/low_color/images/help_icon.gif");
+}
+
+/******************************************************************************/
+/* ---------------------------- NAVIGATION TABS ------------------------------*/
+
+    #tabs_left a {
+      background:url("/low_color/images/tableft.gif") no-repeat left top;
+      }
+    #tabs_left a span {
+      background:url("/low_color/images/tabright.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#003300; /* Dark Green */
+      }
+    #tabs_left a.current {
+      background:url("/low_color/images/tableft_left_current.gif") no-repeat left top;
+      }
+    #tabs_left a.current span {
+      background:url("/low_color/images/tabright_left_current.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      }      
+    #tabs_left a:hover {
+      background-position:0% -42px;
+      }
+    #tabs_left a:hover span {
+      background-position:100% -42px;
+      }
+      
+    #tabs_right a {
+      background:url("/low_color/images/tableft.gif") no-repeat left top;
+      }
+    #tabs_right a span {
+      background:url("/low_color/images/tabright.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#003300; /* Dark Green */
+      }
+    #tabs_right a.current {
+      background:url("/low_color/images/tableft_right_current.gif") no-repeat left top;
+      }
+    #tabs_right a.current span {
+      background:url("/low_color/images/tabright_right_current.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      }
+      
+    #tabs_right a:hover {
+      background-position:0% -42px;
+      }
+    #tabs_right a:hover span {
+      background-position:100% -42px;
+      }
+
+
+
+/* ----- New Navigation Tab Style - END ----- */
+
+
+/******************************************************************************/
+/* ----------------- STANDARD STYLES FOR COMMONLY USED TAGS ----------------- */
+
+
+/* ----- Tables ----- */
+
+th
+{
+   background-color: #3d8204;
+   background-image: none;
+}
+
+th.sortable_hover
+{
+   background: #66cc00;
+}
+
+table.configuration
+{
+   background: #eeeeee;
+}
+
+tr.first
+{
+   background-color: #eeeeee;
+}
+
+tr.second
+{
+   background-color: #dddddd;
+}
+
+
+
+
+/******************************************************************************/
+/* ------------------------  ADVANCED_SETTINGS.CS ----------------------------*/
+
+/* ----- Rollover Buttons - START ----- */
+
+#button_container {
+   max-width: 665px;
+   width:expression(document.body.clientWidth > 1000? "665px": "auto" );*/
+}
+
+
+
+
+
+/******************************************************************************/

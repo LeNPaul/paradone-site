@@ -1,0 +1,172 @@
+{
+   "send": {
+      "Returns": [
+         {
+            "Desc": "The number of bytes sent <u>integer</u>."
+         }
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The net interface modules - file transfer and email using the FTP, FTPS, HTTP, SFTP and SMTP message protocols",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#net"
+          },
+          {
+             "Title": "LLP Custom Client in the Tools repository",
+             "Link": "http://help.interfaceware.com/v6/llp-client-custom?v=6.0.0"
+          },
+          {
+             "Title": "Streaming and Filtering Data",
+             "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+          },
+          {
+             "Title": "Using tcp",
+             "Link": "http://help.interfaceware.com/code/details/using-tcp?v=6.0.0"
+          }
+      ],
+      "Title": "send",
+      "SummaryLine": "Send data to a remote host via an open socket.",
+      "Parameters": [
+         {
+            "Data": {
+               "Desc": "The data to send <u>string</u>."
+            }
+         },
+         {
+            "Start": {
+               "Desc": "Where in Data to start <u>integer</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "End": {
+               "Desc": "Where in Data to stop <u>integer</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "Socket:send(Data [, Start [, End]])",
+      "Examples": [
+         "<pre>local s = net.tcp.connect('hostname:8086')\ns:send(Data)\nlocal Ack = s:recv()\ns:close()\n\nwhich is shorthand for:\nnet.tcp.send(s)</pre>"
+      ],
+      "Desc": "Send data to a remote host via an open socket.<br><br><b>Note:</b> Use <code>net.tcp.connect{}</code> to open a socket."
+   },
+   "close": {
+      "Returns": [],
+      "SeeAlso": [
+          {
+             "Title": "The net interface modules - file transfer and email using the FTP, FTPS, HTTP, SFTP and SMTP message protocols",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#net"
+          },
+          {
+             "Title": "LLP Custom Client in the Tools repository",
+             "Link": "http://help.interfaceware.com/v6/llp-client-custom?v=6.0.0"
+          },
+          {
+             "Title": "Streaming and Filtering Data",
+             "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+          },
+          {
+             "Title": "Using tcp",
+             "Link": "http://help.interfaceware.com/code/details/using-tcp?v=6.0.0"
+          }
+      ],
+      "Title": "close",
+      "SummaryLine": "Close an open socket.",
+      "Parameters": [],
+      "Usage": "Socket:close()",
+      "Examples": [
+         "<pre>local s = net.tcp.connect('hostname:8086')\ns:send(Data)\nlocal Ack = s:recv()\ns:close()\n\nwhich is shorthand for:\nnet.tcp.close(s)</pre>"
+      ],
+      "Desc": "Close an open socket.<br><br><b>Note:</b> Use <code>net.tcp.connect{}</code> to open a socket."
+   },
+   "recv": {
+      "Returns": [
+         {
+            "Desc": "The data (a string) or nil (connection closed) <u>string or nil</u>."
+         }
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The net interface modules - file transfer and email using the FTP, FTPS, HTTP, SFTP and SMTP message protocols",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#net"
+          },
+          {
+             "Title": "LLP Custom Client in the Tools repository",
+             "Link": "http://help.interfaceware.com/v6/llp-client-custom?v=6.0.0"
+          },
+          {
+             "Title": "Streaming and Filtering Data",
+             "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+          },
+          {
+             "Title": "Using tcp",
+             "Link": "http://help.interfaceware.com/code/details/using-tcp?v=6.0.0"
+          }
+      ],
+      "Title": "recv",
+      "SummaryLine": "Receive data from a remote host via an open socket.",
+      "Parameters": [],
+      "Usage": "Socket:recv()",
+      "Examples": [
+         "<pre>local s = net.tcp.connect('hostname:8086')\ns:send(Data)\nlocal Ack = s:recv()\ns:close()\n\nwhich is shorthand for:\nlocal Ack = net.tcp.recv(s)</pre>"
+      ],
+      "Desc": "Receive data from a remote host via an open socket.<br><br><b>Note:</b> Use <code>net.tcp.connect{}</code> to open a socket."
+   },
+   "connect": {
+      "Desc": "Connect to a remote host with TCP/IP.<br><br><b>Note:</b> you can specify hostname and port as single parameter or in a table (see examples below).",
+      "ParameterTable": true,
+      "Title": "net.tcp.connect",
+      "SummaryLine": "Connect to a remote host with TCP/IP.",
+      "SeeAlso": [
+         {
+            "Title": "The net interface modules - file transfer and email using the FTP, FTPS, HTTP, SFTP and SMTP message protocols",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#net"
+         },
+         {
+            "Title": "LLP Custom Client in the Tools repository",
+            "Link": "http://help.interfaceware.com/v6/llp-client-custom?v=6.0.0"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         },
+         {
+            "Title": "Using tcp",
+            "Link": "http://help.interfaceware.com/code/details/using-tcp?v=6.0.0"
+         }
+      ],
+      "Usage": "net.tcp.connect('hostname:port') <b>alternatively:</b> net.tcp.connect{host=&#60;value&#62;, port=&#60;value&#62;}",
+      "Returns": [
+         {
+            "Desc": "A socket  <u>socket</u>."
+         }
+      ],
+      "Examples": [
+         "<pre>local s = net.tcp.connect('hostname:8086')\ns:send(Data)\nlocal Ack = s:recv()\ns:close()</pre>",
+         "<pre>local s = net.tcp.connect{host=hostname, port=8086}\ns:send(Data)\nlocal Ack = s:recv()\ns:close()</pre>"
+      ],
+      "Parameters": [
+         {
+            "host_port": {
+               "Desc": "(Omit when host + port table is used) a string combining host and port in the form 'hostname:port' <u>string</u>."
+            }
+         },
+         {
+            "host": {
+               "Desc": "(Omit when host_port parameter used) the hostname of the remote site <u>string</u>."
+            }
+         },
+         {
+            "port": {
+               "Desc": "(Omit when host_port parameter used) the port on the remote site <u>integer</u>."
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum wait time, in seconds (default = 5s) <u>integer</u>.",
+               "Opt": true
+            }
+         }
+      ]
+   }
+}

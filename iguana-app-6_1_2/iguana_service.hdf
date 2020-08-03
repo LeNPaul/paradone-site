@@ -1,0 +1,7 @@
+application{
+   service_kill_timeout = 500000 
+   service_display_name = iNTERFACEWARE Iguana
+   service_name         = Iguana
+   service_description  = HL7 Integration Engine
+   command_line_unix    = ./iguana --working_dir "../iguana-config"
+}
