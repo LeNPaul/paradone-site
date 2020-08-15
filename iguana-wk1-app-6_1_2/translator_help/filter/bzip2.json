@@ -1,0 +1,64 @@
+{
+   "deflate": {
+      "Title": "filter.bzip2.deflate",
+      "SummaryLine": "Compress data with BZIP2.",
+      "Returns": [
+         {
+            "Desc": "A compressed string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Usage": "filter.bzip2.deflate(data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to compress <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local zipped = filter.bzip2.deflate(data)</pre>"
+      ],
+      "Desc": "Compress data with BZIP2."
+   },
+   "inflate": {
+      "Title": "filter.bzip2.inflate",
+      "SummaryLine": "Decompress BZIP2 data.",
+      "Returns": [
+         {
+            "Desc": "A decompressed string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Usage": "filter.bzip2.inflate(data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to decompress <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local unzipped = filter.bzip2.inflate(data)</pre>"
+      ],
+      "Desc": "Decompress BZIP2 data."
+   }
+}

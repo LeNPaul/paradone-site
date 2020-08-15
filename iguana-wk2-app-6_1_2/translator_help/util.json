@@ -1,0 +1,100 @@
+{
+   "sleep": {
+      "SummaryLine": "Pause the script for a specified number of milliseconds.",
+      "Usage": "util.sleep(Milliseconds)",
+      "Examples": [
+         "<pre>util.sleep(Milliseconds)</pre>"
+      ],
+      "Returns": [],
+      "SeeAlso": [
+         {
+            "Title": "The util module - utility script functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#util"
+         },
+         {
+            "Title": "Retrying unreliable external resources",
+            "Link": "http://help.interfaceware.com/v6/retrying-unreliable-external-resources?v=6.0.0"
+         },
+         {
+            "Title": "Throttling database inserts and updates",
+            "Link": "http://help.interfaceware.com/throttling-database-inserts-and-updates.html?v=6.0.0"
+         },
+         {
+            "Title": "Throttling during peak hours",
+            "Link": "http://help.interfaceware.com/throttling-during-peak-hours.html?v=6.0.0"
+         }
+      ],
+      "Parameters": [
+         {
+            "Milliseconds": {
+                "Desc": "Time to sleep in milliseconds <u>integer</u>."
+            }
+         }
+      ],
+      "Title": "util.sleep",
+      "Desc": "Pause the script for a specified number of milliseconds <u>integer</u>."
+   },
+   "guid": {
+      "Title": "util.guid",
+      "SummaryLine": "Generate a GUID (Globally Unique ID).",
+      "Desc": "Generate a GUID (Globally Unique ID). <br /><br /><strong>Note</strong>: Size argument must be an integer of at least 128, and divisible by 8.",
+      "Returns": [
+         {
+            "Desc": "The new GUID  <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The util module - utility script functions",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#util"
+          },
+         {
+            "Title": "Foreign Keys for Databases",
+            "Link": "http://help.interfaceware.com/v6/working-with-databases?v=6.0.0#menu4"
+         }
+      ],
+      "Parameters": [],
+      "Usage": "util.guid(Size)",
+      "Examples": [
+         "<pre>local guid = util.guid(Size)</pre>"
+      ],
+      "Parameters": [
+         {
+            "Size": {
+               "Desc": "The size of the GUID in bits <u>integer</u>."
+            }
+         }
+      ]
+   },
+   "md5": {
+      "Title": "util.md5",
+      "SummaryLine": "Compute the MD5 hash of a specified string.",
+      "Returns": [
+         {
+            "Desc": "The MD5 hash <u>string</u>."
+         }
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The util module - utility script functions",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#util"
+          },
+          {
+             "Title": "Streaming and Filtering Data",
+             "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+          },
+      ],
+      "Parameters": [
+         {
+            "Data": {
+                "Desc": "String to be hashed <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "util.md5(Data)",
+      "Examples": [
+         "<pre>local md5 = util.md5(Data)</pre>"
+      ],
+      "Desc": "Compute the MD5 hash of a specified string."
+   }
+}

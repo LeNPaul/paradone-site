@@ -1,0 +1,44 @@
+{
+   "version": {
+      "Returns": [
+         {
+            "Desc": "The builtin OpenSSL library version <u>string</u>."
+         }
+      ],
+      "Title": "crypto.library.version",
+      "SummaryLine": "Returns the OpenSSL library version.",
+      "Parameters": [],
+      "Usage": "crypto.library.version()",
+      "Desc": "Fetches the version string from the builtin OpenSSL library."
+   },
+   "digests": {
+      "Returns": [
+         {
+            "Desc": "The supported digest algorithms, along with their associated metadata <u>table</u>."
+         }
+      ],
+      "Title": "crypto.library.digests",
+      "SummaryLine": "Returns the supported OpenSSL digest algorithms.",
+      "Parameters": [],
+      "Usage": "crypto.library.digests()",
+      "Examples": [
+         "<pre>local Digests = crypto.library.digests()\nlocal MD5info = Digests['MD5']\ntrace(MD5info.size)\n--&gt; 16</pre>"
+      ],
+      "Desc": "Fetches the list of supported/builtin OpenSSL digest algorithms along with information about them. The resulting table uses the algorithm name as keys, and maps to either another string (i.e. the current algorithm name is an alias for the value), or an object containing information about the algorithm.<br />Algorithm information includes the following fields:<ul><li><i>nid</i>: Internal ASN.1 object ID.</li><li><i>size</i>: Digest output size</li><li><i>blocksize</i>: Size of discrete chunks used in digest computation</li></ul><br /><b>WARNING</b>: The return format is subject to change. This is meant to be used for interactive querying and debugging."
+   },
+   "ciphers": {
+      "Returns": [
+         {
+            "Desc": "The supported encryption ciphers, along with their associated metadata <u>table</u>."
+         }
+      ],
+      "Title": "crypto.library.ciphers",
+      "SummaryLine": "Returns the supported OpenSSL ciphers.",
+      "Parameters": [],
+      "Usage": "crypto.library.ciphers()",
+      "Examples": [
+         "<pre>local Ciphers = crypto.library.ciphers()\nlocal AES128CBCinfo = Ciphers['AES-128-CBC']\ntrace(AES128CBCinfo.keysize)\n--&gt; 16</pre>"
+      ],
+      "Desc": "Fetches the list of supported/builtin OpenSSL encryption ciphers along with information about them. The resulting table uses the cipher name as keys, and maps to either another string (i.e. the current cipher name is an alias for the value), or an object containing information about the cipher.<br />Cipher information includes the following fields:<ul><li><i>nid</i>: Internal ASN.1 object ID.</li><li><i>blocksize</i>: Size of discrete chunks used in encryption/decryption</li><li><i>keysize</i>: Size of key used in the cipher</li><li><i>ivsize</i>: Size of the initialization vector (IV) used in the cipher</li></ul><br /><b>WARNING</b>: The return format is subject to change. This is meant to be used for interactive querying and debugging."
+   }
+}

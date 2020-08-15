@@ -1,0 +1,181 @@
+{
+   "parse": {
+      "SummaryLine": "Invokes a legacy (Chameleon style) parse using a VMD file.",
+      "Returns": [
+         {
+            "Desc": "A table node tree populated with the parsed data <u>chm_table node tree</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The name of the VMD file containing the message definitions <u>string</u>."
+            }
+         },
+         {
+            "data": {
+               "Desc": "The message to be parsed (this is usually the message that is passed to the main function) <u>string</u>."
+            }
+         }
+      ],
+      "Title": "chm.parse",
+      "Usage": "chm.parse{vmd=&#60;value&#62;, data=&#60;value&#62;}",
+      "Examples": [
+         "<pre>local Out = chm.parse{vmd='example.vmd', data=Msg}</pre>"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The chm module - Legacy parsing using Chameleon vmd files",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#chm"
+         },
+         {
+            "Title": "Interfaces for invoking legacy Chameleon functionality",
+            "Link": "http://help.interfaceware.com/interfaces-for-legacy-vmd-files.html?v=6.0.0"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         }
+      ],
+      "Desc": "<a href=\"http://help.interfaceware.com/interfaces-for-legacy-vmd-files.html?v=6.0.0#menu2\">Invokes a legacy (Chameleon style) parse using a VMD file.</a> The complete mapping from HL7 to tables is performed, including the execution of the VMD file's Python scripts. <br><br><b>Note:</b> The API is intended to to be used for comparing the output of older Chameleon interfaces to equivalent Lua mapping code. This is useful for regression testing or reusing interfaces implemented with Chameleon."
+   },
+
+
+   "toXml": {
+      "SummaryLine": "Invokes a legacy (Chameleon style) conversion of HL7 into XML using a vmd file.",
+      "Returns": [
+         {
+            "Desc": "A string populated with the XML returned from the conversion.  <u>string</u>"
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The name of the VMD file containing the configuration of the XML conversion <u>string</u>."
+            }
+         },
+         {
+            "data": {
+               "Desc": "The HL7 message to be converted to XML (this is usually the message that is passed to the main function) <u>string</u>."
+            }
+         }
+      ],
+      "Title": "chm.toXml",
+      "Usage": "chm.toXml{vmd=&#60;value&#62;, data=&#60;value&#62;}",
+      "Examples": [
+         "<pre>local Out = chm.toXml{vmd='example.vmd', data=Msg}</pre>"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The chm module - Legacy parsing using Chameleon vmd files",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#chm"
+         },
+         {
+            "Title": "Interfaces for invoking legacy Chameleon functionality",
+            "Link": "http://help.interfaceware.com/interfaces-for-legacy-vmd-files.html?v=6.0.0#intro"
+         }
+      ],
+      "Desc": "Converts an HL7 message into an HL7 version 2.X XML string (the reverse function is chm.fromXml).<br><br>If you need to be able to convert HL7 to and from the official XML formats for HL7 version 2.X this function may be useful.  This function will convert an HL7 message into a XML string. The style of conversion will depend on how the vmd is configured.<br><br><strong>Note</strong>: This exposes Chameleon HL7 to XML conversion functionality."
+   },
+
+
+   "fromXml": {
+      "SummaryLine": "Invokes a legacy (Chameleon style) conversion of XML into HL7 using a vmd file.",
+      "Returns": [
+         {
+            "Desc": "A string populated with the HL7 message returned from the conversion.  <u>string</u>"
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The name of the VMD file containing the configuration of the XML conversion <u>string</u>."
+            }
+         },
+         {
+            "data": {
+               "Desc": "The XML string to be converted to HL7 <u>string</u>.<br><br><strong>Note</strong>: This XML string must conform to the HL7 XML message formats defined in the HL7 version 2 standard."
+            }
+         }
+      ],
+      "Title": "chm.fromXml",
+      "Usage": "chm.fromXml{vmd=&#60;value&#62;, data=&#60;value&#62;}",
+      "Examples": [
+         "<pre>local Data = chm.fromXml{vmd='example.vmd', data=XmlData}</pre>"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The chm module - Legacy parsing using Chameleon vmd files",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#chm"
+         },
+         {
+            "Title": "Interfaces for invoking legacy Chameleon functionality",
+            "Link": "http://help.interfaceware.com/interfaces-for-legacy-vmd-files.html?v=6.0.0"
+         }
+      ],
+      "Desc": "Converts an HL7 version 2.X XML string into an HL7 message (the reverse function is chm.toXml).<br><br>If you need to convert HL7 to and from the official XML formats for HL7 version 2.X this function may be useful. The style of conversion will depend on how the vmd is configured.<br><br><strong>Note</strong>: This exposes the Chameleon XML to HL7 conversion functionality."
+   },
+
+
+   "transform": {
+      "SummaryLine": "Perform a legacy (Chameleon style) VMD transformation.",
+      "Returns": [
+         {
+            "Desc": "The transformed message <u>string</u>."
+         },
+         {
+            "Desc": "The message name <u>string</u>."
+         },
+         {
+            "Desc": "All Python output <u>string</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The VMD to use <u>string</u>."
+            }
+         },
+         {
+            "data": {
+               "Desc": "The message to transform <u>string</u>."
+            }
+         },
+         {
+            "config": {
+               "Desc": "(scripted only) The configuration to use <u>string</u>."
+            }
+         },
+         {
+            "in_config": {
+               "Desc": "(graphical only) The inbound configuration <u>string</u>."
+            }
+         },
+         {
+            "out_config": {
+               "Desc": "(graphical only) The outbound configuration <u>string</u>."
+            }
+         }
+      ],
+      "Title": "chm.transform",
+      "Usage": "chm.transform{vmd=&#60;value&#62;, data=&#60;value&#62;, ...}",
+      "Examples": [
+         "<pre>local msg, msg_type, python_out = chm.transform{\n        vmd='legacy.vmd',\n        data=Data,\n        config='default'\n     }</pre>"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The chm module - Legacy parsing using Chameleon vmd files",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#chm"
+         },
+         {
+            "Title": "Interfaces for invoking legacy Chameleon functionality",
+            "Link": "http://help.interfaceware.com/interfaces-for-legacy-vmd-files.html?v=6.0.0#menu3"
+         }
+      ],
+      "Desc": "<strong>Recommended best practice</strong>: Not intended for use in production code.<br><br><a href=\"http://help.interfaceware.com/interfaces-for-legacy-vmd-files.html?v=6.0.0#menu3\">Performs a legacy (Chameleon style) VMD transformation.</a><br><br><b>Note:</b> The API is intended to to be used for comparing the output of older Chameleon interfaces to equivalent Lua mapping code. This is useful for regression testing against legacy filters implemented with Chameleon."
+   }
+}

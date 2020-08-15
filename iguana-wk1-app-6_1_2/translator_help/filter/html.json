@@ -1,0 +1,33 @@
+{
+   "enc": {
+      "Title": "filter.html.enc",
+      "SummaryLine": "Encode text for HTML.",
+      "Returns": [
+         {
+            "Desc": "An encoded string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Usage": "filter.html.enc(data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to encode <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local Enc = filter.html.enc(data)</pre>"
+      ],
+      "Desc": "Encode text for HTML."
+   }
+}

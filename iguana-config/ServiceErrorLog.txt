@@ -170,3 +170,12 @@ Not enough permissions to load ODBC.
 [2020-08-15 01:58:42] [INFO ] HTTPS channel server has started.
 [2020-08-15 01:58:42] [INFO ] Iguana service has been initialized.
 [2020-08-15 01:58:42] [INFO ] Main event loop is now running.
+[2020-08-15 16:04:59] [INFO ] Received stop signal.
+[2020-08-15 16:04:59] [INFO ] Stopping the web server.
+[2020-08-15 16:04:59] [INFO ] The web server has stopped.
+[2020-08-15 16:05:00] [INFO ] Stopping the Plugin Communication Server.
+[2020-08-15 16:05:00] [INFO ] The Plugin Communication Server has stopped.
+[2020-08-15 16:05:00] [INFO ] Job threads have completed.
+[2020-08-15 16:05:00] [INFO ] Main event loop has finished.
+[2020-08-15 16:05:00] [INFO ] Main iguana service has shut down.
+[2020-08-15 16:05:00] [INFO ] Stopped log heart beat thread.  Last action will be to flush this log.

@@ -1,0 +1,66 @@
+{
+   "loadlib": {
+      "Parameters": [
+         {
+            "libname": {
+               "Desc": "Name of the library to load <u>string</u>."
+            },
+         },
+         {
+            "funcname": {
+               "Desc": "Name of the function to use <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The function <code>funcname</code> as a C function <u>function</u>."
+         }
+      ],
+      "Title": "package.loadlib",
+      "SummaryLine": "Dynamically links the host program with the C library <code>libname</code>",
+      "Usage": "package.loadlib(libname, funcname)",
+      "SeeAlso": [
+         {
+            "Title": "The package module - package functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#package"
+         },
+         {
+            "Title": "Online documentation for package.loadlib",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-package.loadlib"
+         }
+      ],
+      "Desc": "Dynamically links the host program with the C library <code>libname</code>. Inside this library, looks for a function <code>funcname</code> and returns this function as a C function. (So, <code>funcname</code> must follow the protocol (see <code>lua_CFunction</code>)).<br><br>This is a low-level function. It completely bypasses the package and module system. Unlike <code>require</code>, it does not perform any path searching and does not automatically adds extensions. <code>libname</code> must be the complete file name of the C library, including if necessary a path and extension. <code>funcname</code> must be the exact name exported by the C library (which may depend on the C compiler and linker used).<br><br>This function is not supported by ANSI C. As such, it is only available on some platforms (Windows, Linux, Mac OS X, Solaris, BSD, plus other Unix systems that support the <code>dlfcn</code> standard)."
+   },
+   "seeall": {
+      "Parameters": [
+         {
+            "module": {
+               "Desc": "Name of the module <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [],
+      "Title": "package.seeall",
+      "SummaryLine": "Sets a metatable for module with its __index field referring to the global environment.",
+      "Examples": [
+         "module('foo', package.seeall)"
+      ],
+      "Usage": "package.seeall(module)",
+      "SeeAlso": [
+         {
+            "Title": "The package module - package functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#package"
+         },
+         {
+            "Title": "Working with shared modules.",
+            "Link": "http://help.interfaceware.com/v6/project-files?v=6.0.0#modules"
+         },
+         {
+            "Title": "Online documentation for package.seeall.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-package.seeall"
+         }
+      ],
+      "Desc": "Sets a metatable for module with its __index field referring to the global environment, so that this module inherits values from the global environment. To be used as an option to function <code>module</code>.<br><br><b>Note:</b> The <code>module</code> function is deprecated in Lua 5.2 and will be removed in 5.3. Use the <a href=\"http://help.interfaceware.com/v6/recommended-module-structure?v=6.0.0\"> recommended module structure </a> instead."
+   }
+}

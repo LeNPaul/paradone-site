@@ -1,0 +1,583 @@
+iNTERFACEWARE INC.
+SOFTWARE TERMS AND CONDITIONS
+
+
+IMPORTANT: PLEASE READ THE FOLLOWING TERMS AND CONDITIONS RELATING TO
+THE USE BY YOU, THE REGISTRANT WHO ACCEPTS THESE TERMS AND CONDITIONS
+("YOU"), OF THE SOFTWARE AND MATERIALS INSTALLED WITH THIS
+INSTALLATION PROGRAM OR FOR WHICH A REGISTRATION KEY IS BEING OR HAS
+BEEN PURCHASED OR LAWFULLY OBTAINED FROM iNTERFACEWARE
+INC. ("iNTERFACEWARE"), AS WELL AS ANY OTHER ACCOMPANYING WRITTEN
+MATERIALS, (COLLECTIVELY, THE "SOFTWARE") CAREFULLY BEFORE USING THE
+SOFTWARE. YOUR USE OF THE SOFTWARE IS CONDITIONAL UPON YOUR ACCEPTANCE
+OF ALL OF THE TERMS AND CONDITIONS SET FORTH BELOW (THIS
+"AGREEMENT"). BY USING THE SOFTWARE, YOU AGREE TO THE TERMS AND
+CONDITIONS OF THIS AGREEMENT.
+
+YOU ACKNOWLEDGE THAT YOU REPRESENT A COMMERCIAL ENTITY AND THAT THE
+SOFTWARE IS NOT INTENDED FOR, OR TO BE USED BY, CONSUMERS.
+
+Optional Purposes
+
+1. Trial - If you are or will be registering the Software with a trial
+   registration code (a "Trial User") then You acknowledge and agree
+   that the Software is only to be used by You to evaluate the
+   Software (the "Purpose").
+
+2. Development - If you are or will be registering the Software with a
+   development registration code (a "Development User") then You
+   acknowledge and agree that the Software is only to be used by You
+   as follows: (i) to develop applications for your internal business
+   purposes; (ii) by only one individual at any one time; and (iii)
+   except as expressly provided in this Agreement, all such
+   applications must operate within the Software environment and not
+   on a stand-alone or runtime basis (the "Purpose"). Without limiting
+   the generality of the foregoing, You may only use the Licensed
+   Software on this individual computer. You may not install the
+   Software on another computer, unless You first obtain an additional
+   license from iNTERFACEWARE for each such additional computer. You
+   are not permitted to allow the Software to be accessed and used by
+   other users including, without limitation, remote users over a
+   network. An upgrade version of the Software and the Software that
+   is upgraded, constitute a single product and may not be used by two
+   different individuals at the same time.
+
+3. Runtime - If You are or will be registering the Software with a
+   runtime registration code (a "Production User") then you
+   acknowledge and agree that each copy of the Software for which You
+   have purchased a separate registration key is only to be used by
+   You as follows:
+ 
+   (i)  for your own internal business purposes in conjunction with a
+        single copy of the HL7 Visual Message Definition (VMD)
+        configuration file that You created previously in your
+        capacity as a Development User (the "Application"), and all
+        enhancements and customizations to the Application
+        (collectively, the integrated Software and Application are
+        referred in this Agreement as the "Integrated Application");
+        OR
+
+   (ii) for the internal business purposes of an End User as an
+        component of the Integrated Application. For the purposes of
+        this Agreement, the term "End User" means a single hospital,
+        hospital network, clinic or physician's practice that is Your
+        customer or the customer of Your sub-distributor and that has
+        acquired a license to the Integrated Application from You or
+        Your sub-distributor. If you are registering the Software with
+        a runtime registration code for distribution to an End User,
+        then you may also do the following:
+      
+       (a) market and promote the Integrated Application;
+
+       (b) demonstrate the Integrated Application to potential End
+           Users;
+
+       (c) grant sub-licenses to a sub-distributors or End Users in a
+           form consistent with the section below entitled "Other
+           Restrictions";
+       
+       (d) provide first level support to employees, sub-distributors
+           and End Users in accordance with Exhibit A;
+
+       (e) copy and deliver to an End User a single copy of the
+           Integrated Application and install and configure the
+           Integrated Application as reasonably required by the End
+           User;
+
+       (f) grant a sub-license to Your sub-distributor to copy and
+           deliver to an End User a single copy of the Integrated
+           Application and install and configure the Integrated
+           Application as reasonably required by the End User
+           (collectively, subsections (i) and (ii) are referred to in
+           this Agreement as the "Purpose").
+
+If you are a Production User, then you further acknowledge and agree
+that the Integrated Application may only be used on a single computer
+and that it must not be installed on another computer, unless You
+first obtain an additional license from iNTERFACEWARE for each such
+additional computer. You also acknowledge and agree that the
+Integrated Application shall not be accessed or used by anyone other
+than You, Your sub-distributor or the applicable End User. If you are
+a Production User, You may use the Integrated Application on Your own
+computer on behalf of Your End User, provided that in such case the
+End User cannot also use the Integrated Application on its own
+computer. An upgrade version of the Integrated Application and the
+Integrated Application that is upgraded, constitute a single product
+and may not be used by two different users at the same time.
+
+IMPORTANT!!! In order to become a Production User it is first
+necessary for You to become a licensed Development User by purchasing
+a separate development registration key to create the Application
+which will form the basis of the Integrated Application. If You ever
+cease to be a Development User, and if You or Your sub-distributors
+have distributed any Integrated Applications prior to such time, then
+each of Your End Users must purchase their own separate development
+registration keys at the then current rates in order to maintain the
+validity of their sub-licenses. YOU ARE RESPONSIBLE FOR ADVISING YOUR
+SUB-DISTRIBUTORS AND END USERS OF THIS LIMITATION.
+
+Third Party Software
+
+Iguana includes GNU LIBICONV 1.9.1 (as ICONV.DLL), for character-set
+conversions. GNU LIBICONV is free software, copyright (c) 1999-2003 Free
+Software Foundation, Inc., and is distributed under Version 2 of the GNU
+Library General Public License, WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+For details, please read ICONV.TXT.
+
+Iguana includes LuaCOM 1.4 (as luacom.dll), for Lua / COM interop.
+For details, please read luacom.txt.
+
+License
+
+Subject to the terms and conditions contained in this Agreement, You
+are granted a revocable, limited, non-exclusive, non-transferable
+license to use the Software only for the Purpose. iNTERFACEWARE and
+its Affiliates are free to enter into similar licenses with Your
+competitors. For the purpose of this Agreement, the term "Affiliates"
+means any company in which iNTERFACEWARE has, either directly or
+indirectly, a controlling interest.
+
+Non-Transferable
+
+You are not permitted to assign this Agreement and any purported
+assignment by You shall be null and void and of no force or
+effect. Without limiting the generality of the foregoing, You may not
+use the Software for any other form of use except the Purpose and you
+may not rent, lease, loan, or otherwise distribute the Software.
+
+Ownership
+
+None of the Software is being sold.  Except for those non-exclusive
+licenses granted by iNTERFACEWARE to You in this Agreement, all
+ownership, license, intellectual property, and other rights and
+interests in, and to, the Software shall remain solely with Licensor.
+
+Other Restrictions
+
+You will not, directly or indirectly, do any of the following: (i)
+transfer, assign, resell, sublicense, use, copy, distribute or modify
+the Software, in whole or in part; (ii) disassemble, reverse assemble
+or otherwise reverse engineer the Software or attempt to reveal any
+trade secret or confidential information concerning its operation;
+(iii) use the Software to design, develop or market a competing
+product or service; (iv) use the Software for any illegal purpose; and
+(v) remove or alter any of the copyright notices or other proprietary
+markings on any copies of the Software. You will comply fully with all
+relevant export laws and regulations of Canada and the United States
+("Export Laws") to ensure that the Software is not exported, directly
+or indirectly, in violation of the Export Laws, or is intended to be
+used for any purposes prohibited by the Export Laws.
+
+You agree not to sub-license or otherwise distribute the Integrated
+Application except pursuant to a written agreement that will contain
+at least the following contractual restrictions and requirements of
+the sub-distributor or End User, as the case may be:
+
+   i.  restrict use of the Integrated Application to object code;
+
+   ii. prohibit the copying of the Integrated Application, except
+       that: (i) the sub-distributors will be entitled to make a
+       reasonable number of copies for their distribution purposes;
+       and (ii) the End User will be entitled to make a single copy in
+       object code for back-up or archival purposes;
+
+   iii.prohibit the assignment, lease, sublicense (excluding your
+       sub-distributors) or transfer of the Integrated Application,
+       except for temporary installation in the event of a computer
+       malfunction;
+
+   iv. prohibit the modification, creation of derivative work, reverse
+       engineering, disassembly or de-compilation of the Integrated
+       Application;
+
+   v.  prohibit the removal or obscuring of any copyright, trade-mark
+       notice or restrictive legend and requiring your
+       sub-distributors to ensure that all proprietary rights notices
+       on the Integrated Application are reproduced and applied to any
+       copies; and
+
+   vi. comply with any export or import regulations existing in any
+       country, such as, but not limited to, US export control laws.
+
+Fees
+
+The Licenses granted under this Agreement are conditional upon You
+first making complete payment to iNTERFACEWARE of all licenses fees
+and other amounts due to iNTERFACEWARE, including all applicable
+taxes, as invoiced by iNTERFACEWARE.
+
+The use of the Software requires that You first obtain a registration
+code from iNTERFACEWARE. If You are a Development User or a Production
+User, You will first have to pay to iNTERFACEWARE, and iNTERFACEWARE
+will have to have received, the invoiced amount for the registration
+code before the code will be sent to You to unlock the Software.
+
+No Maintenance or Technical Support 
+
+iNTERFACEWARE is under no obligation to provide any maintenance,
+technical support or updates to You, although it may decide to do so
+if you purchase the annual maintenance and support program set out in
+Exhibit A to this Agreement.  Any updates provided to You under this
+Agreement will be part of the Software and will be subject to the same
+terms and restrictions applicable to the Software.  iNTERFACEWARE also
+has no obligation to make the Software commercially available, or to
+provide You with any runtime licenses for the Software merely because
+of Your use of the Software.
+
+If You purchase maintenance and support, You must first make complete
+payment to iNTERFACEWARE of all annual maintenance and support fees
+and other amounts due to iNTERFACEWARE, including all applicable
+taxes, as invoiced by iNTERFACEWARE before You can receive the annual
+maintenance and support services.
+
+If Your annual maintenance and support services lapses and You would
+like to reinstate it, You must pay all previous unpaid maintenance and
+support services at the then current prices for the period dating from
+the beginning of the lapse through one year from the date of such
+reinstatement.
+
+Other Distribution Requirements
+
+If you are a Production User that chooses to distribute an Integrated
+Application then you must do the following:
+
+   vii.  add significant primary functionality to the Software with
+         the Integrated Application;
+
+   viii. require Your sub-distributors and End Users to agree to terms
+         that protect the Software at least as much as this Agreement;
+         and
+
+   ix.   display Your valid copyright notice on the Integrated
+         Applications.
+
+If You are a Production User that chooses to distribute an Integrated
+Application then you must not do the following:
+
+   i.  use iNTERFACEWARE's trade-marks within the Application and/or
+       the Integrated Application or in a way that suggests that the
+       Application or the Integrate Application, as the case may be,
+       come from or are endorsed by iNTERFACEWARE;
+ 
+   ii. integrate the Software with an Application that is malicious,
+       deceptive or unlawful;
+
+   iii.permit the Software be disclosed or distributed in source code
+       form; or
+
+   iv.permit others to modify the Integrated Application.
+
+Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY REPRESENTATIONS,
+WARRANTIES OR CONDITIONS OF ANY KIND WHATSOEVER. TO THE MAXIMUM EXTENT
+PERMITTED BY APPLICABLE LAW, iNTERFACEWARE AND ITS SUPPLIERS AND ITS
+AND THEIR RESPECTIVE OFFICERS, DIRECTORS, SHAREHOLDERS, EMPLOYEES,
+AGENTS AND CONTRACTORS DISCLAIM ANY REPRESENTATIONS, WARRANTIES AND
+CONDITIONS, EXPRESS, IMPLIED, COLLATERAL OR ARISING BY STATUTE OR
+OTHERWISE, REGARDING THE SOFTWARE, INCLUDING WITHOUT LIMITATION ANY
+REPRESENTATIONS, WARRANTIES OR CONDITIONS OF MERCHANTABILITY OR
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, COMPATIBILITY, SECURITY,
+ACCURACY OR NON-INFRINGEMENT.
+
+NEITHER iNTERFACEWARE NOR ITS SUPPLIERS WARRANTS THAT THE SOFTWARE
+WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED,
+OR THAT THE SOFTWARE IS FREE OF VIRUSES OR OTHER HARMFUL
+COMPONENTS. ANY USE OF THE SOFTWARE IS DONE AT YOUR SOLE RISK AND YOU
+WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOU, YOUR COMPUTER SYSTEM
+OR LOSS OF DATA THAT RESULTS FROM THE USE OF THE SOFTWARE.  NEITHER
+iNTERFACEWARE NOR ANY OF ITS SUPPLIERS WARRANTS OR MAKE ANY
+REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE
+SOFTWARE IN TERMS OF ITS CORRECTNESS, ACCURACY, RELIABILITY, OR
+OTHERWISE.  FURTHER, PLEASE NOTE THAT NO ADVICE OR INFORMATION
+OBTAINED BY YOU FROM PERSONNEL OF iNTERFACEWARE OR ITS SUPPLIERS SHALL
+CREATE ANY CONDITION OR WARRANTY NOT EXPRESSLY PROVIDED FOR IN THIS
+AGREEMENT.
+
+Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL iNTERFACEWARE
+OR ITS SUPPLIERS OR ITS OR THEIR RESPECTIVE OFFICERS, DIRECTORS,
+SHAREHOLDERS, EMPLOYEES, AGENTS AND CONTRACTORS BE LIABLE FOR DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE
+DAMAGES, OR ANY OTHER DAMAGES WHATSOEVER, INCLUDING BUT NOT LIMITED
+TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER
+INTANGIBLE LOSSES (EVEN IF iNTERFACEWARE HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES), ARISING OUT OF, OR RESULTING FROM, (A)
+THE USE OR THE INABILITY TO USE THE SOFTWARES; OR (B) ANY OTHER MATTER
+RELATING TO THE THE SOFTWARE. IN NO EVENT SHALL iNTERFACEWARE'S OR ITS
+SUPPLIERS TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, AND CAUSES
+OF ACTION (WHETHER IN CONTRACT, TORT (INCLUDING, BUT NOT LIMITED TO,
+NEGLIGENCE), OR OTHERWISE) EXCEED THE AMOUNT PAID BY YOU, IF ANY, FOR
+USING THE SOFTWARE. IF YOU ARE DISSATISFIED WITH ANY PORTION OF THE
+SOFTWARE, OR WITH ANY OF THE PROVISIONS OF THIS AGREEMENT, YOUR SOLE
+AND EXCLUSIVE REMEDY IS THE DISCONTINUATION OF YOUR USE OF THE
+SOFTWARE.
+
+Indemnification
+
+You agree to indemnify, hold harmless and, at our option, defend
+iNTERFACEWARE, its Affiliates and its sub-distributors, and its and
+their respective officers, directors, shareholders, employees, agents
+and contractors from any and all third party claims, liability,
+damages and/or costs (including, but not limited to, reasonable legal
+fees and expenses) arising from Your use, or the use of Your
+sub-distributors or any End User, of the Software or any of the
+Integrated Applications, Your violation of this Agreement, or Your
+infringement of any intellectual property or other right of any person
+or entity.
+
+Term and Termination
+
+If You are a Trial User, iNTERFACEWARE may terminate this Agreement at
+any time without notice. Following termination, You will immediately
+cease using the Software.
+
+If You are a Development User or a Productions User, this Agreement
+shall continue in full force until terminated pursuant to this
+section. iNTERFACEWARE may terminate this Agreement for default if
+You: (a) become insolvent; (b) files any proceeding in bankruptcy or
+acquires the status of a bankrupt; (c) have a receiver or receiver
+manager appointed with respect to it or any of Your assets; (d) seek
+the benefit of any statute providing protection from
+creditors. iNTERFACEWARE may also terminate this Agreement for default
+if You breach any provision of this Agreement provided iNTERFACEWARE
+provides You with written notice of termination. Any termination of
+this Agreement shall be without prejudice to each right and/or remedy
+which iNTERFACEWARE may possess against You under this Agreement, at
+law, in equity, and/or otherwise.  Upon any termination of this
+Agreement: (a) all licenses granted by iNTERFACEWARE herein shall
+immediately terminate; and (b) You shall immediately cease all use of
+the Software and return all of the Software (including all copies
+thereof made by, or for, You) to iNTERFACEWARE. The rights and
+obligations of the parties which by their terms require performance
+after the termination of this Agreement or by their nature must
+survive termination or expiration of this Agreement in order to
+achieve its fundamental purposes. iNTERFACEWARE may, from time to
+time, audit Your records and computer systems to ensure that You have
+complied with Your obligations to iNTERFACEWARE under this
+Agreement. Without limiting the generality of the foregoing, if You
+are Production User then You and Your sub-distributors must maintain
+adequate records of Your activities in connection with this Agreement.
+Such records shall include, without limitation, executed sub-license
+agreements and sub-distribution agreements and the number of copies of
+the Integrated Application sub-licensed by You and Your
+sub-distributors. Upon written request and after reasonable notice,
+but not more than once per calendar year, You must permit a
+representative selected by iNTERFACEWARE to audit such records to
+determine compliance with the terms of the Agreement. Such audits will
+be conducted during normal business hours and will not interfere
+unreasonably with Your business activities.
+
+Notwithstanding termination of this Agreement, all sub-licenses which
+have been properly granted by You or Your sub-distributors to End
+Users pursuant to this Agreement prior to its termination shall
+survive said termination in accordance with their respective terms,
+provided that the license for each such End User will be conditional
+on the End User first purchasing a separate development license from
+iNTERFACEWARE at the then current rates.
+
+Confidentiality
+ 
+You will: (a) receive and maintain the Software in confidence; (b) use
+the same degree of care with respect to the Software as You employ to
+protect Your own confidential and/or trade secret information from
+unauthorized use, duplication and/or disclosure, being, in any event,
+a high degree of care; and (c) use, duplicate, and disclose the
+Software solely in accordance with the provisions of this Agreement.
+
+Dispute Resolution
+
+Any claim, dispute or controversy (whether in contract or tort,
+pursuant to statute or regulation, or otherwise, and whether
+pre-existing, present or future, arising out of or relating to: (i)
+this Agreement; (ii) the Software; (iii) oral or written statements or
+advertisements or promotions relating to this Agreement (collectively,
+the "Claim") will he determined by arbitration to the exclusion of the
+courts. You agree to waive any right You may have to commence or
+participate in any class action against iNTERFACEWARE. Arbitration
+will be conducted by one arbitrator pursuant to the laws and rules
+relating to commercial arbitration in Ontario. The obligations to
+arbitrate shall not apply to claims for misuse or infringement of
+iNTERFACEWARE's intellectual property rights.
+
+Governing Law and Jurisdiction
+
+The validity, construction and interpretation of this Agreement, and
+the rights and duties of the parties hereunder, shall be governed by
+and construed in accordance with the laws of the Province of Ontario
+and the federal laws of Canada applicable therein. You agree and
+hereby submit to the non-exclusive jurisdiction of the courts of the
+Province of Ontario with respect to all matters relating to this
+Agreement.
+
+General
+
+This Agreement embodies the entire agreement of the parties with
+respect to the subject matter hereof and supersedes and cancels any
+and all prior understandings or agreements, verbal or otherwise, in
+relation hereto which may exist between the parties including ,
+without limitation, any prior software license agreements and terms
+and conditions.  No oral explanation or information by either of the
+parties hereto shall alter the meaning or interpretation of this
+Agreement. All preprinted terms contained in any document used by the
+You to order software and/or user licenses from iNTERFACEWARE are
+hereby fully rejected by iNTERFACEWARE and shall have no legal
+effect. Neither the Agreement, nor any rights, licenses or obligations
+hereunder, may be assigned by the You, in whole or in part, without
+iNTERFACEWARE's prior written consent.  Any attempted assignment in
+violation of this Section shall be void and without effect.  Subject
+to the foregoing, this agreement will benefit and bind the parties'
+successors and assigns. Except for payment obligations pursuant to
+this Agreement (including applicable taxes) or any obligations
+relating to the protection of or restrictions applicable to the
+iNTERFACEWARE's confidential information or intellectual property,
+neither party shall be liable to the other or in breach of this
+Agreement by reason of any failure or delay in performance of its
+obligations to the extent such failure or delay arises (and only for
+the duration that the affected party is precluded from performing) as
+a result of acts of God, fire, disaster, explosion, vandalism, storm,
+adverse weather conditions, strikes, labor disputes or disruptions,
+epidemics, wars, national emergencies, riots, civil disturbances,
+shortages of materials, actions or inactions of government
+authorities, terrorist acts, lockout, work stoppages or other labor
+difficulties, border delays, failures or interruptions of utilities or
+telecommunications equipment or services, system failures or any other
+cause or event that is beyond the reasonable control of that
+party. The failure by iNTERFACEWARE to require or enforce the
+performance of any provision of this Agreement shall not be construed
+as a waiver of any provision or right. Each provision of this
+Agreement is severable from the other provisions and if any of the
+provisions contained in this Agreement are determined to be void,
+invalid or otherwise unenforceable by a court of competent
+jurisdiction, the other provisions will continue to have full force
+and effect. All provisions of the United Nations Convention On
+Contracts For The International Sale of Goods are hereby rejected by
+the parties and excluded from this Agreement in their entirety. The
+Uniform Computer Information Transactions Act, or any version thereof,
+adopted by any state located in the United States, in any form
+("UCITA") shall not apply to this Agreement. To the extent that UCITA
+is applicable, the parties agree to opt out of the applicability of
+UCITA pursuant to the opt-out provisions contained therein.
+
+
+EXHIBIT A
+
+MAINTENANCE AND SUPPORT PROGRAM
+
+During the term of this Agreement, and subject to paying the
+applicable annual maintenance and support fee, iNTERFACEWARE will
+provide maintenance and support services to You for each instance of
+the Software for which You have purchased maintenance and support
+services. Maintenance and support is not available for Trial Users and
+is not transferable amongst instances of the Software for which You
+have obtained separate registration keys. For example, if You have
+purchased one development registration key and one runtime
+registration key, but only purchased maintenance and support service
+in connection with one of the registration keys, then You cannot get
+maintenance and support services for the instance of the Software
+associated with the other registration key unless You purchase a
+separate maintenance and support program for that instance of the
+Software.
+
+The term of the maintenance and support services shall begin on the
+date that You purchase such services in connection with a particular
+registration key and shall continue for a period of one (1) year (the
+"Initial Term"). The maintenance and support services shall
+automatically renew at the end of the one (1) year period (each a
+"Renewal Term) and You will automatically be invoiced for each such
+Renewal Term, unless You give notice of Your intent to terminate the
+maintenance and support services within 90 days of the end of the then
+current term.
+
+If You are a Development User then maintenance and support services
+shall consist of error correction, upgrades and permitted transfers as
+further described below.
+
+a) Error Correction. During the first thirty (30) days of the Initial
+   Term, iNTERFACEWARE will provide unlimited telephone support
+   relating to Minor Support Incidents, installation of the Software
+   and other issues as deemed appropriate by iNTERFACEWARE. During the
+   Initial term and during each Renewal Term of the Agreement,
+   iNTERFACEWARE will provide support for up to 10 Minor Support
+   Incidents.  Allowance for unused Minor Support Incidents during the
+   Initial Term or a particular Renewal Term cannot be accumulated for
+   use in subsequent Renewal Terms .If iNTERFACEWARE provides support
+   for an issue that is not a Minor Support Incident will not be taken
+   as acquiescence to providing further support for the issue or other
+   issues that are not Minor Support Incidents. For the purposes of
+   this Agreement, the term "Minor Support Incident" means a technical
+   issue that can be resolved in less than twenty (20) minutes, as
+   determined solely be iNTERFACEWARE.  Each attempt to resolve such
+   an issue will be a separate Minor Support Incident.  For example,
+   two telephone calls to iNTERFACEWARE support to resolve the same
+   issue will count as two Minor Support Incidents. In no
+   circumstances does iNTERFACEWARE represent or warrant that Minor
+   Support Incidents or other problems with the Software will not
+   occur or that any or all of such problems can or will be remedied.
+
+b) Upgrades. During the term of the maintenance and support services,
+   iNTERFACEWARE may at its sole discretion provide upgrade versions
+   of the Software.  At any time, iNTERFACEWARE will provide support
+   only for its current version of the Software.  iNTERFACEWARE does
+   not warrant that future versions of the Software will include the
+   features of all previous versions.
+
+c) Transfers. During the term of the maintenance and support services,
+   iNTERFACEWARE will accommodate reasonable requests to transfer an
+   installation of the Software from the computer system on which it
+   is initially installed to a replacement computer system in case of
+   hardware failure or replacement.  Following such a transfer, You,
+   Your sub-distributors or the End Users, as the case may be, will
+   only use the installation on the replacement computer system in
+   accordance with all of the restrictions set out herein in respect
+   of the initial computer system. iNTERFACEWARE will be entitled to
+   decline to accommodate more than one (1) transfer in any ninety
+   (90) day period or more than two (2) transfers in any 365 day
+   period.
+
+Second Level Support.  If You are a Production User then maintenance
+and support services shall consist error correction, upgrades and
+permitted transfers as described above and, in addition, You or Your
+support personnel shall provide First Level Support to End Users for
+the Integrated Applications distributed by You or Your
+sub-distributors.  Problems encountered with Integrated Applications
+requiring Second Level Support will be submitted to iNTERFACEWARE
+through Your first level support personnel.  Second Level Support to
+be provided by iNTERFACEWARE consists of e-mail and toll-free (in
+North America) telephone consultation on use of the Software
+(including assistance with Error diagnosis, isolation, and correction)
+during iNTERFACEWARE's standard support hours. For the purposes of
+this Agreement, the term "First Level Support" means basic or initial
+support and includes responding to routine inquiries logging calls and
+messages, initial problem determination and providing known
+work-arounds and solutions.
+
+LIMITATION OF LIABILITY.  TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN
+NO EVENT WILL iNTERFACEWARE OR ITS SUPPLIERS OR ITS OR THEIR
+RESPECTIVE OFFICERS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, AGENTS AND
+CONTRACTORS BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES, OR ANY OTHER DAMAGES
+WHATSOEVER, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS,
+GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF iNTERFACEWARE
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), ARISING OUT OF,
+OR RESULTING FROM, THE MAINTENANCE AND SUPPORT SERVICES IN NO EVENT
+SHALL iNTERFACEWARE'S OR ITS SUPPLIERS' TOTAL LIABILITY FOR THE
+MAINTENANCE OR SUPPORT SERVICES TO YOU FOR ALL DAMAGES, LOSSES, AND
+CAUSES OF ACTION (WHETHER IN CONTRACT, TORT (INCLUDING, BUT NOT
+LIMITED TO, NEGLIGENCE), OR OTHERWISE) EXCEED THE AMOUNT PAID BY YOU
+FOR THE MAINTENANCE AND SUPPORT SERVICES IN THE THREE MONTHS PRIOR TO
+THE INCIDENT GIVING TO THE CLAIM. IF YOU ARE DISSATISFIED WITH ANY
+PORTION OF THE MAINTENANCE OR SUPPORT SERVICES, YOUR SOLE AND
+EXCLUSIVE REMEDY IS THE DISCONTINUATION OF ITS USE OF SUCH SERVICES.
+
+You may purchase an additional support service from iNTERFACEWARE on a
+per-incident or an annual basis.  Further information about
+iNTERFACEWARE's support services for the Software is available at
+www.interfaceware.com.
+
+You may contact iNTERFACEWARE support by using the contact information
+at www.interfaceware.com.
+
+Last Updated: September 2009

@@ -1,0 +1,154 @@
+div#EDTeditor{
+ position : absolute;
+ top : 40px;
+ bottom : 32px;
+ left : 0px;
+ right : 0px;
+ padding : 0px;
+ margin : 0px;
+ border-top : 1px solid rgba(0,0,0,0.15);
+ background-color: #ffffff;
+}
+
+div.CodeMirror-wrapping{
+ position: absolute !important; /* override codemirror's default of 'relative' - #16706 */
+ right: 100px;
+ left: 225px;
+}
+
+.CodeMirror-selected.current_search_match{
+   background-color: #B5D5FF !important;
+   color: black !important;
+}
+
+div.EDTstatus_bar{
+ position: absolute;
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
+ padding: 5px 15px;
+ height: 21px;
+ white-space: nowrap;
+ border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+div#EDTprojectManager{
+ width:224px;
+ float:left;
+ height:100%;
+ border-right: 1px solid #c6c6c6;
+ position: relative;
+ background: /*url("/js/mapper/images/shadow.png") repeat-y right top*/ #F0F7F9;
+}
+
+div#EDTprojectManager .ui-resizable-e {
+   /*
+   background-color: #f7f7f7;
+   border-color: -moz-use-text-color rgba(0, 0, 0, 0.1);
+   border-style: none solid;
+   border-width: medium 0 medium 3px;
+   width: 2px;
+   */
+   background: #DDD;
+   width: 3px;
+   right: -2px;
+}
+
+.ui-resizable-e, .ui-resizable-n{
+ z-index: 1;
+}
+
+div#EDTthumbnailScroll{
+ background-color:#DDDDDD;
+ width:100px;
+ float:right;
+ height:100%;
+ cursor:default;
+}
+
+div#EDTthumbnailScroll svg{
+ background-color: white;
+ cursor: pointer;
+}
+
+a.EDTreloadLink, a.EDTreloadLink:visited{
+ color: blue;
+}
+
+div.EDTiframeDialogFix{
+ position: absolute;
+ z-index: 999; /* just under a jQuery UI dialog */
+ top: 0px;
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
+}
+
+.searched{
+ background-color: #FFFFB7;
+}
+
+.searched_current {
+ background: none !important;
+}
+
+div.EDTloading{
+ z-index: 1000;
+ position: absolute;
+ /* 'top' is defined in iguana_editor.css, since it depends on the header height */
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
+ background: white url(/js/mapper/images/spinner_big_green.gif) no-repeat fixed center center;
+ opacity: 0.7;              /* Standard style for transparency */
+ -moz-opacity: 0.7;         /* Transparency for older Mozillas */
+ filter: alpha(opacity=70); /* For IE */
+}
+
+/* #20660 - prevent clipping in Chrome when "zoomed in". */
+input[type="file"]{
+ padding-top: 2px; /* override default of 1px */
+}
+
+/* #24689 - this could be the start of a new diff controller  */
+/* most diff styling is in source_control.css */
+
+div.diffboxWrap {
+ display: inline-block;
+ width: 49%;
+ height: 400px;
+}
+
+div.diffbox {
+ font-family: monospace;
+ white-space: pre;
+ height: 100%;
+ width: 100%;
+ overflow: auto;
+ background-color: white;
+ border: 1px solid #d4ccb0;
+}
+
+
+/* Dialog for files (project manager) */
+#PRJaddFileTabs li {
+   border: 1px solid #D4CCB0;
+   background: transparent;
+}
+
+#PRJaddFileTabs li a {
+   color: #949494;
+   font-size: 11px;
+}
+#PRJaddFileTabs li.ui-tabs-active.ui-state-active {
+   background: #fafaf4 url(images/ui-bg_highlight-hard_100_fafaf4_1x100.png) 50% 50% repeat-x;
+}
+
+#PRJaddFileTabs li.ui-tabs-active.ui-state-active a {
+   color: #2F4F4F;
+}
+
+#PRJaddFileDialog fieldset input[type=text] {
+   width: 98%;
+}
+

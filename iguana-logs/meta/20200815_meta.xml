@@ -1,9 +1,9 @@
-<!--6DFB533D98C09C9C826ECFFFAB12C609-->
+<!--E6332C8955C72CE4E3D2219B280C3F3C-->
 <queue_file_meta
    version="1.13"
    name="20200815"
    queue_file_guid="CBC0628E933EB0E289C5516A5EA7F8C9"
-   meta_read_position="9564">
+   meta_read_position="37266">
    <queue_meta>
       <queue
          name="Iguana"
@@ -12,7 +12,7 @@
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="53"/>
+            all_log_entries_total="142"/>
       </queue>
       <queue
          name="HealthCheck"
@@ -21,7 +21,7 @@
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="6"/>
+            all_log_entries_total="23"/>
       </queue>
       <queue
          name="Poller Manager"
@@ -30,7 +30,7 @@
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="14"/>
+            all_log_entries_total="36"/>
       </queue>
       <queue
          name="Sync Manager"
@@ -42,22 +42,22 @@
             all_log_entries_total="8"/>
       </queue>
       <queue
-         name="Tutorial: HL7 to Database"
+         name="HL7 Test Listener"
          queue_guid="4BE66A9ABB327DDCEDD5AC61A44C21F4"
          queue_id="4">
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="7"/>
+            all_log_entries_total="34"/>
       </queue>
       <queue
          name="Test Poller"
          queue_guid="824FEBA5DFB67E5803934AF28F2BBED9"
          queue_id="5">
          <statistics
-            total_messages="0"
-            total_message_size="0"
-            all_log_entries_total="0"/>
+            total_messages="67"
+            total_message_size="1340"
+            all_log_entries_total="190"/>
       </queue>
    </queue_meta>
    <channel_positions>

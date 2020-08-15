@@ -1,0 +1,637 @@
+{
+   "connect": {
+      "Desc": "Opens a database connection and returns a connection handle. By default the returned connection is live and allows database methods to run in the editor. <ul>  <li>If db.connect live = false then database operations do not execute in the editor.</li> <li>If live = true (the default) database operations will execute in the editor, based on the method default or specified live setting.</li></ul>",
+      "Returns": [
+         {
+            "Desc": "A new database connection handle <u>db_connection object</u>."
+         }
+      ],
+      "SummaryLine": "Returns a database connection handle.",
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "user name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "if true, the connection is opened in the editor (default = true) <u>boolean</u>",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "if true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": " maximum time in seconds allowed for the query (0 for infinite). <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+// #30678
+//        ,
+//         {
+//            "encryption_key": {
+//               "Desc": " if used, will create an encrypted database, or open an existing one (only supported for db.SQLITE). <u>string</u>.",
+//               "Opt": true
+//            }
+//         }
+      ],
+      "Title": "db.connect",
+      "Usage": "db.connect{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Examples": [
+         "<pre>local Conn = db.connect{\n   api=db.MY_SQL, name='test@localhost',\n   user='fred', password='secret'}</pre>"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         }
+      ]
+   },
+   "begin": {
+      "Examples": [
+         "<pre>db.begin{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}</pre>"
+      ],
+      "Usage": "db.begin{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Title": "db.begin",
+      "Returns": [],
+      "SummaryLine": "<b>Deprecated:</b> begins a transaction on the database.",
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the begin transaction will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         }
+      ],
+      "Desc": "<b>Deprecated:</b> use <code>conn:begin{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:begin{}</pre>Begins a transaction on the database (if transactions are supported by the database engine). If a transaction is already in progress, the behaviour is database specific.<br/><br/>Probably the most commonly used database that does not support transactions is MySQL <em>when it used with the MyISAM database engine</em> (the newer InnoDB engine for MySQL has transaction support).<br/><br/><strong>Note</strong>: If transactions are not supported, then <code>db.begin{}</code>, <code>db.commit{}<code> and </code>db.rollback{}</code> have <em>no effect</em>. This is not regarded as an error condition, so no error is raised in the Translator. When transactions are not supported, then each individual SQL statement is committed separately. For example: A call to <code>db.execute{}</code> that contains three SQL statements, will be run as three independent commands (one for each SQL statement)."
+   },
+   "close": {
+      "Examples": [
+         "<pre>db.close{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}</pre>"
+      ],
+      "Usage": "db.close{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Title": "db.close",
+      "Returns": [],
+      "SummaryLine": "<b>Deprecated:</b> close the connection identified by the given parameters, if it exists.",
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the close will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         }
+      ],
+      "Desc": "<b>Deprecated: </b> use <code>conn:close{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:close{}</pre>Close the connection identified by the given parameters, if it exists."
+   },
+   "rollback": {
+      "Examples": [
+         "<pre>db.rollback{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}</pre>"
+      ],
+      "Usage": "db.rollback{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Title": "db.rollback",
+      "Returns": [],
+      "SummaryLine": "<b>Deprecated: </b> rollback a transaction, if one has begun.",
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the rollback will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         }
+      ],
+      "Desc": "<b>Deprecated:</b> use <code>conn:rollback{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:rollback{}</pre>Rollback a transaction, if one has begun (if transactions are supported by the database engine).<br/><br/>Probably the most commonly used database that does not support transactions is MySQL <em>when it used with the MyISAM database engine</em> (the newer InnoDB engine for MySQL has transaction support).<br/><br/><strong>Note</strong>: If transactions are not supported, then <code>db.begin{}</code>, <code>db.commit{}<code> and </code>db.rollback{}</code> have <em>no effect</em>. This is not regarded as an error condition, so no error is raised in the Translator. When transactions are not supported, then each individual SQL statement is committed separately. For example: A call to <code>db.execute{}</code> that contains three SQL statements, will be run as three independent commands (one for each SQL statement)."
+   },
+   "query": {
+      "SummaryLine": "Executes an ad hoc SQL query against a database.",
+      "Returns": [
+         {
+            "Desc": "The first result set <u>result_set node tree</u>."
+         },
+         {
+            "Desc": "An array containing all the result sets <u>table</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "sql": {
+               "Desc": "The SQL select statement <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the statement will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ],
+      "Title": "db.query",
+      "Usage": "db.query{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Examples": [
+         "<pre>local Results = db.query{\n   api=db.MY_SQL, name='test@localhost',\n   user='fred', password='secret',\n   sql='SELECT * FROM Patient WHERE Flag = \"F\"'\n}</pre>",
+         "-- Return an array containing multiple results sets, one for each query<br>-- Note: Some DBs do not support multiple queries in a single \"sql\" string<br><br>local Results = db.query{<br>   api=db.MY_SQL, name='test@localhost',<br>   user='fred', password='secret'<br>   sql = 'SELECT * FROM Patient; SELECT * FROM Kin'<br>}",
+
+      "-- trap the database error thrown by <code>db.query</code><br>local Success, Error = pcall(<br>   db.query,{<br>      api=db.MY_SQL, name='test@localhost',<br>      user='fred', password='secret', <br>      sql = 'Select * from Not_a_table'<br>   }<br>)<br><br>trace(Success)                 -- false in this case<br>trace(Error)                   -- view the pcall Error return as a table<br>local DbError = Error.message  -- copy the DB error message string from Error<br>trace(DbError)                 -- view the DB error message"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         }
+      ],
+      "Desc": "<b>Recommended best practice</b> - use <code>conn:query{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:query{}</pre>Executes an ad hoc SQL query against a database. Insert or update statements are not allowed (for these, use <code>db.execute</code>).<br><br>Both <code>db.execute()</code> and <code>db.query()</code> throw errors if a database error is encountered. The errors are regular Lua errors and will cause the execution of the script to halt, unless they are caught by Lua error handling using <code>pcall</code> or <code>xpcall</code>. The error thrown is a table with two fields:<ul><li><b>message</b>: a string with the description of the error</li><li><b>code</b>: an integer error code returned by the database.</li></ul>Currently, error codes from ODBC sources and MySQL databases are supported."
+   },
+   "execute": {
+      "SummaryLine": "Executes an ad hoc SQL statement that can alter the database.",
+      "Returns": [
+         {
+            "Desc": "For queries: the first result set <u>result_set node tree</u>."
+         },
+         {
+            "Desc": "An array containing all the result sets <u>table</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "sql": {
+               "Desc": "The SQL statement <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the statement will be executed in the editor (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ],
+      "Title": "db.execute",
+      "Usage": "db.execute{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Examples": [
+         "<pre>db.execute{\n   api=db.MY_SQL, name='test@localhost',\n   user='fred', password='secret',\n   sql='INSERT INTO Patient (FirstName, LastName) VALUES(\"Fred\", \"Smith\")'\n}</pre>",
+         "-- Return an array containing multiple results sets, one for each query<br>-- Note: Some DBs do not support multiple queries in a single \"sql\" string<br><br>local Result = db.execute{<br>   api=db.MY_SQL, name='test@localhost',<br>   user='fred', password='secret', live = true,<br>   sql = 'SELECT * FROM Patient; SELECT * FROM Kin'<br>}",
+      "-- trap the database error thrown by <code>db.execute</code><br><br>-- try to insert a duplicate key = \"Primary Key Violation\" error<br>local Success, Error = pcall(<br>   db.execute,{<br>      api=db.MY_SQL, name='test@localhost',<br>      user='fred', password='secret', live = true, <br>      sql = 'INSERT INTO [dbo].[Patient] (Id,FirstName, LastName) VALUES (1, \"Fred\", \"Smith\")'<br>   }<br>)<br><br>trace(Success)                 -- false in this case<br>trace(Error)                   -- view the pcall Error return as a table<br>local DbError = Error.message  -- copy the DB error message string from Error<br>trace(DbError)                 -- view the DB error message"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "db conn execute{} - Writing to a Database (<code>db.execute</code> return values and error handling work in the same way)",
+            "Link": "http://help.interfaceware.com/v6/database-fundamentals?v=6.0.0#menu3"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         }
+      ],
+      "Desc": "<b>Recommended best practice</b> - use <code>conn:execute{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:execute{}</pre>Executes an ad hoc SQL statement that can alter the database.<br><br>Both <code>db.execute()</code> and <code>db.query()</code> throw errors if a database error is encountered. The errors are regular Lua errors and will cause the execution of the script to halt, unless they are caught by Lua error handling using <code>pcall</code> or <code>xpcall</code>. The error thrown is a table with two fields:<ul><li><b>message</b>: a string with the description of the error</li><li><b>code</b>: an integer error code returned by the database.</li></ul>Currently, error codes from ODBC sources and MySQL databases are supported."
+   },
+   "commit": {
+      "Examples": [
+         "<pre>db.commit{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret'\n}</pre>"
+      ],
+      "Usage": "db.commit{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Title": "db.commit",
+      "Returns": [],
+      "SummaryLine": "<b>Deprecated:</b> commits a transaction, if one has begun.",
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the commit will be executed in the editor (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         }
+      ],
+      "Desc": "<b>Deprecated:</b> use <code>conn:commit{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:commit{}</pre>Commits a transaction, if one has begun (if transactions are supported by the database engine).<br/><br/>Probably the most commonly used database that does not support transactions is MySQL <em>when it used with the MyISAM database engine</em> (the newer InnoDB engine for MySQL has transaction support).<br/><br/><strong>Note</strong>: If transactions are not supported, then <code>db.begin{}</code>, <code>db.commit{}<code> and </code>db.rollback{}</code> have <em>no effect</em>. This is not regarded as an error condition, so no error is raised in the Translator. When transactions are not supported, then each individual SQL statement is committed separately. For example: A call to <code>db.execute{}</code> that contains three SQL statements, will be run as three independent commands (one for each SQL statement)."
+   },
+   "tables": {
+      "Desc": "Creates a set of empty record tables, which can be used with db.merge.",
+      "Usage": "db.tables{vmd=&#60;value&#62;, name=&#60;value&#62;}",
+      "Examples": [
+         "<pre>local Out = db.tables{vmd='tables.vmd', name='Message'}</pre>"
+      ],
+      "Title": "db.tables",
+      "SummaryLine": "Creates a set of empty record tables, which can be used with db.merge.",
+      "ParameterTable": true,
+      "Returns": [
+         {
+            "Desc": "The set of empty record tables <u>table_collection node tree</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         },
+         {
+            "Title": "Node types for Iguana node trees",
+            "Link": "http://help.interfaceware.com/v6/node-types-for-iguana-node-trees?v=6.0.0"
+         }
+      ],
+      "Parameters": [
+         {
+            "vmd": {
+               "Desc": "The name of the VMD file containing the table schema <u>string</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "The name of a message in that schema <u>string</u>."
+            }
+         }
+      ]
+   },
+   "merge": {
+      "Examples": [
+         "<pre>db.merge{\n   api=db.MY_SQL, name='test@localhost',\n   user='root', password='secret',\n   data=Out, bulk_insert=true, transaction=false\n}</pre>"
+      ],
+      "Usage": "db.merge{api=&#60;value&#62;, name=&#60;value&#62;, ...}",
+      "Title": "db.merge",
+      "Returns": [],
+      "SummaryLine": "Merges table records into the database.",
+      "Desc": "<b>Recommended best practice</b> - use <code>conn:merge{}</code> instead:<pre>\n   conn = db.connect{api=db.MY_SQL, name='test@localhost',user='root', password='secret'}\n   conn:merge{}</pre>Merges the database tables created by db.tables() into the specified database.",
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The db_connection module - new database methods",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db_db_connection"
+         },
+         {
+            "Title": "The db module - old style database functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#db"
+         },
+         {
+            "Title": "See our Database documentation",
+            "Link": "http://help.interfaceware.com/category/building-interfaces/interfaces/database?v=6.0.0"
+         }
+      ],
+      "Parameters": [
+         {
+            "api": {
+               "Desc": "Set to the database type (e.g. db.MY_SQL or db.SQL_SERVER) <u>integer constant</u>."
+            }
+         },
+         {
+            "name": {
+               "Desc": "Database name/address. For db.SQLITE, this is the database file name <u>string</u>."
+            }
+         },
+         {
+            "user": {
+               "Desc": "User name (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "password": {
+               "Desc": "Password (neither required nor used for db.SQLITE) <u>string</u>."
+            }
+         },
+         {
+            "data": {
+               "Desc": "A set of tables created using db.tables <u>table node tree</u>."
+            }
+         },
+         {
+            "bulk_insert": {
+               "Desc": "Set to true to use bulk insert logic (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "transaction": {
+               "Desc": "Set to false to disable inserting/updating all rows as a transaction (default = true) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "live": {
+               "Desc": "If true, the merge will be executed in the editor (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "use_unicode": {
+               "Desc": "If true, Unicode will be used when communicating with the database (default = false) <u>boolean</u>.",
+               "Opt": true
+            }
+         },
+         {
+            "timeout": {
+               "Desc": "Maximum time in seconds allowed for the query (0 for infinite) <u>integer</u>.<br><b>Note:</b> Timeout is supported only for ODBC based connections (default = 5 minutes).",
+               "Opt": true
+            }
+         }
+      ]
+   }
+}

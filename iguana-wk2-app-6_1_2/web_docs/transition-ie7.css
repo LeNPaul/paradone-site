@@ -1,0 +1,20 @@
+div.tabs_and_contents
+{ 
+   height:100%;
+   margin:0px;
+}
+
+div.link_left
+{
+   width:70px;
+}
+
+div.link_right
+{
+   width:95px;
+}
+
+div.link_right_larger
+{
+   width:100px;
+}

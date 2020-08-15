@@ -1,0 +1,51 @@
+{
+   "push": {
+      "SummaryLine": "Pushes a message for the channel into the Iguana queue.",
+      "Returns": [
+         {
+            "Desc": "A unique Message ID string in the format \"YYYYMMDD-NNNNNNN\" <u>string</u>."
+         }
+      ],
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The message to be pushed into the queue <u>string</u>."
+            }
+         }
+      ],
+      "Title": "queue.push",
+      "Usage": "queue.push{data=&#60;value&#62;} <b>or</b> queue.push(&#60;value&#62;)",
+      "Examples": [
+         "local Id = queue.push{data=Data}<br>iguana.logInfo('Message queued', Id)",
+         "-- split a large message into several parts and queue them separately<br>queue.push('Message part one')<br>queue.push('Message part two')<br>queue.push('Message part three')"
+      ],
+      "ParameterTable": true,
+      "SeeAlso": [
+         {
+            "Title": "The queue module - working with the Iguana message queue",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#queue"
+         },
+         {
+            "Title": "The Importance of queue.push{}",
+            "Link": "http://help.interfaceware.com/v6/using-the-translator?v=6.0.0#queue-push"
+         },
+         {
+            "Title": "HL7: Scrub Data  in the Protocols repository",
+            "Link": "http://help.interfaceware.com/v6/hl7-scrub?v=6.0.0"
+         },
+         {
+            "Title": "Random ADT Generator",
+            "Link": "http://help.interfaceware.com/getting-sample-hl7-data.html?v=6.0.0#menu2"
+         },
+         {
+            "Title": "Polling a database, and generating CSV files",
+            "Link": "http://help.interfaceware.com/v6/working-with-databases?v=6.0.0#menu6"
+         },
+         {
+            "Title": "Connecting to web services",
+            "Link": "http://help.interfaceware.com/v6/connecting-to-web-services?v=6.0.0"
+         }
+      ],
+      "Desc": "Pushes a message for the channel into the Iguana queue when the channel is running. Be aware that <code>queue.push()</code> does not push messages into the queue when using the editor (test mode). <br><br><code>queue.push()</code> works in three types of component: Filter, From Translator, and From HTTPS. You can call <code>queue.push()</code> multiple times in any of these components, an example where this is useful is when splitting a complex message into several smaller messages.<br><br>The <code>queue.push()</code> function returns the message ID of the current message being processed. This is a unique message ID from Iguana's internal logging system, formatted as a string containing today's date followed by seven digits \"YYYYMMDD-NNNNNNN\". See the <code>iguana.messageId</code> help for more information. <br><br> <b>Note</b>: When being used in the editor (test mode) a return of \"0-0\" is displayed in annotations as a placeholder (IDs are only generated when a channel is running)."
+   }
+}

@@ -1,0 +1,64 @@
+{
+   "deflate": {
+      "Title": "filter.gzip.deflate",
+      "SummaryLine": "Compress data with GZIP.",
+      "Returns": [
+         {
+            "Desc": "A compressed string (or stream <u>string or stream</u>)."
+         }
+      ],
+      "Usage": "filter.gzip.deflate(data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to compress <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local zipped = filter.gzip.deflate(data)</pre>"
+      ],
+      "Desc": "Compress data with GZIP."
+   },
+   "inflate": {
+      "Title": "filter.gzip.inflate",
+      "SummaryLine": "Decompress GZIP data.",
+      "Returns": [
+         {
+            "Desc": "A decompressed string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Usage": "filter.gzip.inflate(data)",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to decompress <u>string or stream</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local unzipped = filter.gzip.inflate(data)</pre>"
+      ],
+      "Desc": "Decompress GZIP data."
+   }
+}

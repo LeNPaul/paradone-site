@@ -1,0 +1,292 @@
+{
+   "foreach": {
+      "Title": "table.foreach",
+      "Usage": "<b>Deprecated:</b> use a for loop with pairs or ipairs instead.",
+      "SeeAlso": [ 
+         {
+            "Title": "The table module - table operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+         },
+         {
+            "Title": "Online documentation for Changes in the Libraries",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#7.2"
+         }
+      ],
+      "SummaryLine": "Function table.foreach is <b>deprecated</b>, use a for loop with pairs or ipairs instead.",
+      "Desc": "Functions table.foreach and table.foreachi are <b>deprecated</b>. You can use a for loop with pairs or ipairs instead. "
+   },
+   "foreachi": {
+      "Title": "table.foreachi",
+      "Usage": "<b>Deprecated:</b> use a for loop with pairs or ipairs instead.",
+      "SeeAlso": [
+         {
+            "Title": "The table module - table operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+         },
+         {
+            "Title": "Online documentation for Changes in the Libraries",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#7.2"
+         }
+      ],
+      "SummaryLine": "Function table.foreachi is <b>deprecated</b>, use a for loop with pairs or ipairs instead.",
+      "Desc": "Functions table.foreach and table.foreachi are <b>deprecated</b>. You can use a for loop with pairs or ipairs instead."
+   },
+   "getn": {
+      "Title": "table.getn",
+      "SummaryLine": "<b>Deprecated:</b> use the # operator instead.",
+      "Usage": "<b>Deprecated</b>",
+      "SeeAlso": [
+         {
+            "Title": "The table module - table operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+         },
+         {
+            "Title": "Online documentation for Changes in the Libraries",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#7.2"
+         }
+      ],
+      "Desc": "<b>Deprecated:</b> use # operator instead. Function table.getn corresponds to the new length operator (#); use the operator instead of the function."
+   },
+   "setn": {
+      "Title": "table.setn",
+      "SummaryLine": "<b>Deprecated</b>.",
+      "Usage": "<b>Deprecated</b>",
+      "SeeAlso": [
+         {
+            "Title": "The table module - table operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+         },
+         {
+            "Title": "Online documentation for Changes in the Libraries",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#7.2"
+         }
+      ],
+      "Desc": "<b>Deprecated</b>."
+   },
+   "maxn": {
+      "Returns": [
+         {
+            "Desc": "The the largest positive numerical index of the given table, or zero if there are no positive numerical indices <u>number</u>."
+         }
+      ],
+      "Title": "table.maxn",
+      "SummaryLine": "Returns the <b>value</b> of the largest positive numerical index of a table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to process <u>table</u>."
+            }
+         }
+      ],
+      "Usage": "table.maxn(table)",
+      "Examples": [
+         "<pre>t = {[-10]='A',[-1]='B',[33]='C'}\nvalue = table.maxn(t)\ntrace(value) --&gt; 33</pre>",
+         "<pre>t = {[-10]='A',[-1]='B',[0]='C'}\nvalue = table.maxn(t)\ntrace(value) --&gt; 0</pre>",
+         "<pre>t = {['x']='A',['y']='B',['z']='C'}\nvalue = table.maxn(t)\ntrace(value) --&gt; 0</pre>"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The table module - table operations",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+         },
+         {
+            "Title": "Online documentation for table.maxn",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-table.maxn"
+         }
+      ],
+      "Desc": "Returns the  <b>value</b> of the largest positive numerical index of the given table, or zero if the table has no positive numerical indices. (To do its job this function does a linear traversal of the whole table.)"
+   },
+   "remove": {
+      "Returns": [
+         {
+            "Desc": "The value of the removed element <u>type varies: same as the removed element</u>."
+         }
+      ],
+      "Title": "table.remove",
+      "SummaryLine": "Removes an element from a table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to process <u>table</u>."
+            },
+         },
+         {
+            "pos": {
+               "Desc": "Position of the element to remove <u>integer</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "table.remove(table [, pos])",
+      "Examples": [
+         "<pre>-- remove the last element in the table\nt = {[1]='one',[2]='two',[3]='three'}\ntable.remove(t)\ntrace(t[3]) --&gt; nil</pre>",
+         "<pre>-- remove the impostor (second element)\nt = {[1]='one',[2]='I am an impostor',[3]='two'}\ntable.remove(t,2)\ntrace(t[2]) --&gt; \"two\"</pre>"
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The table module - table operations",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+          },
+          {
+             "Title": "Delete a table element",
+             "Link": "http://help.interfaceware.com/code/details/delete-a-table-element?v=6.0.0"
+          },
+          {
+             "Title": "Handling broken MSH segments",
+             "Link": "http://help.interfaceware.com/handling-broken-msh-segments.html?v=6.0.0"
+          },
+         {
+            "Title": "Online documentation for table.remove",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-table.remove"
+         }
+      ],
+      "Desc": "Removes from <code>table</code> the element at position <code>pos</code>, shifting down other elements to close the space, if necessary. Returns the value of the removed element. The default value for <code>pos</code> is <code>n</code>, where <code>n</code> is the length of the table, so that a call <code>table.remove(t)</code> removes the last element of table <code>t</code>."
+   },
+   "concat": {
+      "Returns": [
+         {
+            "Desc": "The concatenated values from within the table <u>string</u>."
+         }
+      ],
+      "Title": "table.concat",
+      "SummaryLine": "Concatenates the values in a table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to process <u>table</u>."
+            },
+         },
+         {
+            "sep": {
+               "Desc": "Position of the element to remove <u>string</u>.",
+               "Opt": true
+            },
+         },
+         {
+            "i": {
+               "Desc": "Start position <u>integer</u>.",
+               "Opt": true
+            },
+         },
+         {
+            "j": {
+               "Desc": "End position <u>integer</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "table.concat(table [, sep [, i [, j]]])",
+      "Examples": [
+         "<pre>t = {'A','B','C'}\nresult = table.concat(t)\ntrace(result) --&gt; 'ABC'</pre>",
+         "<pre>-- using separator and start/end\nt = {'junk','A','B','C','more junk'}\nresult = table.concat(t,',',2,4)\ntrace(result) --&gt; 'A,B,C'</pre>"
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The table module - table operations",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+          },
+          {
+             "Title": "Reformat Report",
+             "Link": "http://help.interfaceware.com/v6/reformat-report?v=6.0.0"
+          },
+          {
+             "Title": "custom_merge.lua",
+             "Link": "http://help.interfaceware.com/code/details/custom_merge-lua?v=6.0.0"
+          },
+         {
+            "Title": "Online documentation for table.concat",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-table.concat"
+         }
+      ],
+      "Desc": "Given an array where all elements are strings or numbers, returns <code>table[i]..sep..table[i+1] &middot;&middot;&middot; sep..table[j]</code>. The default value for <code>sep</code> is the empty string, the default for <code>i</code> is 1, and the default for <code>j</code> is the length of the table. If <code>i</code> is greater than <code>j</code>, returns the empty string."
+   },
+   "insert": {
+      "Returns": [],
+      "Title": "table.insert",
+      "SummaryLine": "Inserts an element into a table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to process <u>table</u>."
+            },
+         },
+         {
+            "pos": {
+               "Desc": "Position to insert the element <u>integer</u>.",
+               "Opt": true
+            },
+         },
+         {
+            "value": {
+               "Desc": "Data to insert <u>any type</u>."
+            }
+         }
+      ],
+      "Usage": "table.insert(table [, pos], value)",
+      "Examples": [
+         "<pre>-- insert at the end of the table\nt = {[1]='one',[2]='two'}\ntable.insert(t,'three')\ntrace(t[3]) --&gt; \"three\"</pre>",
+         "<pre>-- insert in the middle of the table\nt = {[1]='one',[2]='three'}\ntable.insert(t,2,'two')\ntrace(t[2]) --&gt; \"two\"</pre>"
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The table module - table operations",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+          },
+          {
+             "Title": "Generating HL7 messages with non-standard delimiters",
+             "Link": "http://help.interfaceware.com/generating-hl7-messages-with-non-standard-delimiters.html?v=6.0.0"
+          },
+          {
+             "Title": "urlcode.lua",
+             "Link": "http://help.interfaceware.com/code/details/urlcode-lua?v=6.0.0"
+          },
+         {
+            "Title": "Online documentation for table.insert",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-table.insert"
+         }
+      ],
+      "Desc": "Inserts element <code>value</code> at position <code>pos</code> in <code>table</code>, shifting up other elements to open space, if necessary. The default value for <code>pos</code> is <code>n+1</code>, where <code>n</code> is the length of the table, so that a call <code>table.insert(t,x)</code> inserts <code>x</code> at the end of table <code>t</code>."
+   },
+   "sort": {
+      "Returns": [
+         {
+            "Desc": "The concatenated values from within the table <u>string</u>."
+         }
+      ],
+      "Returns": [],
+      "Title": "table.sort",
+      "SummaryLine": "Sorts elements in a table.",
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "Table to sort <u>table</u>."
+            },
+         },
+         {
+            "comp": {
+               "Desc": "Sorting function <u>function</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Usage": "table.sort(table [, comp])",
+      "Examples": [
+         "<pre>t = {3,2,1}\ntable.sort(t)\ntrace(t) --&gt; table with values {1,2,3}</pre>"
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The table module - table operations",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#table"
+          },
+          {
+             "Title": "Simple Oauth 1.0 Implementation in Iguana",
+             "Link": "http://help.interfaceware.com/interfacing-to-xero-using-oauth-1-0-without-a-big-wrapper.html/3?v=6.0.0"
+          },
+         {
+            "Title": "Online documentation for table.sort",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-table.sort"
+         }
+      ],
+      "Desc": "Sorts table elements in a given order, in-place, from table[1] to table[n], where n is the length of the table. If comp is given, then it must be a function that receives two table elements, and returns true when the first is less than the second (so that not comp(a[i+1],a[i]) will be true after the sort). If comp is not given, then the standard Lua operator < is used instead.<br><br><b>Note:</b> The sort algorithm is not stable; that is, elements considered equal by the given order may have their relative positions changed by the sort."
+   }
+}

@@ -1,0 +1,25 @@
+.cm-s-ifware span.cm-keyword {color: #3D3DE0; font-weight: 600;}
+.cm-s-ifware span.cm-atom {color: #219;}
+.cm-s-ifware span.cm-number {color: #3A3; font-weight: 600;}
+.cm-s-ifware span.cm-def {color: #00f;}
+.cm-s-ifware span.cm-variable {color: black;}
+.cm-s-ifware span.cm-variable-2 {color: #05a;}
+.cm-s-ifware span.cm-variable-3 {color: #0a5;}
+.cm-s-ifware span.cm-property {color: black;}
+.cm-s-ifware span.cm-operator {color: black;}
+.cm-s-ifware span.cm-comment {color: #BB9977; font-style: italic;}
+.cm-s-ifware span.cm-string {color: #AA2222;}
+.cm-s-ifware span.cm-string-2 {color: #f50;}
+.cm-s-ifware span.cm-meta {color: #555;}
+.cm-s-ifware span.cm-error {color: #f00;}
+.cm-s-ifware span.cm-qualifier {color: #555;}
+.cm-s-ifware span.cm-builtin {color: #077;}
+.cm-s-ifware span.cm-bracket {color: #cc7;}
+.cm-s-ifware span.cm-tag {color: #170;}
+.cm-s-ifware span.cm-attribute {color: #00c;}
+.cm-s-ifware div.CodeMirror-selected {background: #B5D5FF;}
+
+/* Force jQuery dialog to not show it's scrollbars in the Sample Data Editor
+ * floating dialog */
+.editor-wrapper .ui-dialog-content { overflow: hidden !important; }
+

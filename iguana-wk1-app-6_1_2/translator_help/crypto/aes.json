@@ -1,0 +1,76 @@
+{
+   "encrypt": {
+      "Returns": [
+         {
+            "Desc": "The encrypted message, in binary encoding <u>string</u> or <u>stream</u>."
+         }
+      ],
+      "Title": "crypto.aes.encrypt",
+      "SummaryLine": "Encrypts data using AES.",
+      "ParameterTable": true,
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The input to encrypt <u>string</u> or <u>stream</u>."
+            }
+         },
+         {
+            "key": {
+               "Desc": "The shared secret key, in binary-encoding <u>string</u>."
+            }
+         },
+         {
+            "iv": {
+               "Desc": "The randomly-generated initialization vector, in binary-encoding <u>string</u>."
+            }
+         },
+         {
+            "blockcipher": {
+               "Desc": "The AES block-cipher mode, one of: <i>ecb</i>, <i>cbc</i>, <i>cfb</i>, <i>ofb</i>, or <i>ctr</i> <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "crypto.aes.encrypt{data=&lt;data&gt;, key=&lt;secret&gt;, iv=&lt;random&gt;, blockcipher=&lt;blockcipher&gt;}",
+      "Examples": [
+         "<pre>local Encrypted = crypto.aes.encrypt{data='hello world', key='1234567890123456', iv='1234567890123456', blockcipher='cbc'}\nlocal EncryptedHex = filter.hex.enc(Encrypted)\ntrace(EncryptedHex)\n--&gt; 6C0C78D1E15455FFE12316DA57CFC669</pre>"
+      ],
+      "Desc": "Encrypts data using AES encryption. The encrypted data can only be decrypted with the same key, IV, and block-cipher mode.<br />The key size determines the block-size. Assuming the key is binary-encoded, the key size, in bits, correspond directly to the AES block-size, in bits. Use a key size of 16 bytes (binary characters) for AES-128, 24 bytes for AES-192, and 32 bytes for AES-256.<br />The initialization vector (IV) can be treated as salt. It should be randomized for each input to make it harder to detect patterns between encrypted outputs. Like salts, the IV does not need to be kept secure."
+   },
+   "decrypt": {
+      "Returns": [
+         {
+            "Desc": "The decrypted message, in binary encoding <u>string</u> or <u>stream</u>."
+         }
+      ],
+      "Title": "crypto.aes.decrypt",
+      "SummaryLine": "Decrypts data using AES.",
+      "ParameterTable": true,
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The input to decrypt <u>string</u> or <u>stream</u>."
+            }
+         },
+         {
+            "key": {
+               "Desc": "The shared secret key, in binary-encoding <u>string</u>."
+            }
+         },
+         {
+            "iv": {
+               "Desc": "The randomly-generated initialization vector, in binary-encoding <u>string</u>."
+            }
+         },
+         {
+            "blockcipher": {
+               "Desc": "The AES block-cipher mode, one of: <i>ecb</i>, <i>cbc</i>, <i>cfb</i>, <i>ofb</i>, or <i>ctr</i> <u>string</u>."
+            }
+         }
+      ],
+      "Usage": "crypto.aes.decrypt{data=&lt;data&gt;, key=&lt;secret&gt;, iv=&lt;random&gt;, blockcipher=&lt;blockcipher&gt;}",
+      "Examples": [
+         "<pre>local Decrypted = crypto.aes.decrypt{data=filter.hex.dec('6C0C78D1E15455FFE12316DA57CFC669'), key='1234567890123456', iv='1234567890123456', blockcipher='cbc'}\ntrace(Decrypted)\n--&gt; hello world</pre>"
+      ],
+      "Desc": "Decrypts data generated using AES encryption. The supplied key, IV, and block-cipher mode must match what was used when encrypting the original data.<br />Depending on the block-cipher mode, a failure can result in either an error, or an incorrect result string (with no error)."
+   }
+}

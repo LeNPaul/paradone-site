@@ -1,0 +1,286 @@
+div.SPDnavPane{
+ text-align: center;
+ position: relative;
+ top:30px;
+ height:40px;
+ margin-top: 10px;
+}
+
+div.SPDnavPanePadding{
+ height:15px;
+}
+
+span.SPDnavText{
+ margin-left: 7px;
+ margin-right: 7px;
+ cursor: pointer;
+}
+
+div.SPDnavPaneBlocker{
+ position: absolute;
+ top: -10px;
+ bottom: -10px;
+ left: 0px;
+ right: 0px;
+ text-align: center;
+ z-index: 1;
+ padding-top: 10px;
+}
+
+div.SPDnavPaneBlocker img{
+ display: none;
+ opacity: 0.8;              /* Standard style for transparency */
+ -moz-opacity: 0.8;         /* Transparency for older Mozillas */
+ filter: alpha(opacity=80); /* For IE */
+}
+
+a.SPDdisabled{
+ color: #AAAAAA;
+ cursor: default;
+}
+
+a.SPDdeleteBTN {
+ margin: -1px 0px 0px 5px;
+ float: left;
+}
+
+a.SPDaddBTN{
+/* border: 1px solid #CCC; */
+ margin: -1px 5px 0px 0px;
+ float: right;
+}
+
+ a.SPDimportBTN{
+ margin: -1px 5px 0px 0px;
+ float: right;
+}
+
+input.DeleteAll{
+ margin-left: 46px;
+ float: left;
+ cursor: default;
+}
+
+input.SPDdeleteBox{
+ cursor: default;
+}
+
+/*
+a.SPDdeleteBTN:hover , a.SPDaddBTN:hover, a.SPDimportBTN:hover{
+ background-color:#dff4ff;
+ border:1px solid #c2e1ef;
+ color:#336699;
+}
+*/
+
+.SPDrowHover {
+ background-color: #FFF8C6;
+}
+
+div.SPDgoto{
+ position: absolute;
+ background: #DEDEDE url(/js/mapper/images/th_bg.gif) repeat-x 0% 100%;
+ vertical-align: middle;
+ border: 1px solid #B1B1B1;
+ width: auto;
+ padding: 3px;
+}
+
+div.SPDgoto input.SPDgotoInput{
+ width: 64px;
+ margin: 0;
+ padding: 0;
+}
+
+div.SPDgoto img{
+ cursor: pointer;
+ margin-left: 8px;
+ vertical-align: middle;
+}
+
+div.SPDdataTable{
+ margin: 15px -15px 15px -15px;
+}
+
+table.SPDdataTable{
+ vertical-align:middle;
+ border-collapse:collapse;
+ font-size:14px;
+ background-color: #ffffff;
+ width: 100%;
+ table-layout: fixed;
+}
+
+table.SPDdataTable th{
+/* background-color:#dedede;*/
+ background: #dedede url('/js/mapper/images/th_bg.gif') repeat-x left bottom;
+ border:1px solid #bbbbbb;
+ border-bottom: 1px solid #b1b1b1;
+ color: #666;
+ padding:6px;
+ padding-left:10px;
+ padding-right:10px;
+ vertical-align:top;
+ font-size: 11px;
+ font-weight: normal;
+ text-shadow: 0 1px 1px #F7F7F7;
+}
+
+table.SPDdataTable tr{
+ background-color: #fdfdfd;
+}
+
+table.SPDdataTable td {
+ /*background: #fdfdfd url('/js/mapper/images/tr_bg.gif') repeat-x left bottom;*/
+ border: 1px solid #d5d5d5;
+ padding:5px;
+ padding-left: 10px;
+ font-size: 10px;
+ color: #555;
+ white-space: nowrap;
+ font-family: Monospace,Verdana,Arial,Helvetica,Geneva,Lucida,sans-serif;
+ font-size: 11px;
+ overflow: hidden;
+}
+
+table.SPDdataTable td:last-child {
+   padding-left: 0;
+   width: 7%;   
+   text-align: center;
+}
+
+table.SPDdataTable td:last-child a {
+   color: #666;
+   text-decoration: none;
+}
+
+table.SPDdataTable td:last-child a:hover {
+      color: #009de8;
+}
+
+table.SPDdataTable td.SPDop, table.SPDdataTable th.SPDop, table.SPDdataTable td.SPDdeleteRow {
+ width: 30px;
+ text-align: center;
+ padding-left: 0;
+ padding-right: 0;
+}
+
+table.SPDdataTable td.SPDindex, table.SPDdataTable th.SPDindex{
+ width: 50px;
+ text-align: right;
+ padding-left: 0;
+ padding-right: 0;
+}
+
+span.SPDerrorMessage{
+ color: red;
+}
+
+span.SPDsuccessMessage{
+ color: green;
+}
+
+img.SPDdeleteButton, img.SPDeditButton{
+ cursor: pointer;
+ border: 0;
+}
+
+form.SPDuploadForm{
+ display: inline;
+}
+
+div.SPDwarning{
+ background-color: #f9fdcb;
+ background-image: url('/js/mapper/images/icon_warning_large.gif');
+ background-repeat: no-repeat;
+ background-position: 15px 12px;
+ padding-left: 58px;
+ padding-right: 15px;
+ height: 50px;
+ border: 1px solid #d5a95d;
+ display: table;
+ position:absolute;
+ top:40px;
+ right:10px;
+ left:10px;
+}
+
+/* We use display:table above and display:table-cell here to accomplish
+ * vertical centering. */
+div.SPDwarning div{
+ display: table-cell;
+ vertical-align: middle;
+}
+
+div.SPDeditorWrapper{
+ position: absolute;
+ top: 40px;
+ left: 10px;
+ right: 10px;
+ bottom: 30px;
+}
+
+div.SPDajaxError{
+ position: absolute;
+ left: 10px;
+ right: 10px;
+ bottom: 10px;
+ color:red;
+}
+
+.SPDeditor{
+ resize: none;
+ width: 100%;
+ height: 100%;
+ white-space: pre;
+ overflow : auto;
+ font-family : monospace;
+}
+
+#SPDmessageEditorWrapper {
+   position: absolute;
+   top: 141px;
+   left: 0px;
+   bottom: 43px;
+   right: 0px;
+}
+
+div.SPDeditorWrapper .heading {
+   color: #4caf50;
+   font-size: 12px;
+   text-transform: uppercase;
+   font-weight: 600;
+   letter-spacing: 0.105em;
+   margin-top: 15px;
+   display: block;
+}
+
+/* The buttons need to be absolutely positioned so that they will be displayed
+after the textarea. */
+div.SPDeditorWrapper div.BTNbuttons {
+   position: absolute;
+   bottom: -10px;
+}
+
+table.import_table th {
+	text-align: left;
+	vertical-align: top;
+	padding-top: 7px;
+	padding-right: 10px;
+	font-size: 12px;
+	color: #444;
+}
+
+table.import_table td {
+	font-size: 12px;
+	color: #555;
+	padding-top: 6px;
+}
+
+hr {
+	color: #ddd;
+	background-color: #ddd;
+	height: 1px;
+	border: none;
+	margin-bottom: 10px;
+}

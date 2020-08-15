@@ -1,0 +1,303 @@
+{
+   "lines": {
+      "Title": "file:lines",
+      "SummaryLine": "Reads the file one line at a time.",
+      "Usage": "file:lines()",
+      "Examples": [
+         "<pre>local iterator = myFile:lines()</pre>",
+         "<pre>-- read the Iguana configuration file<br>local configFile = io.open('IguanaConfiguration.xml')<br>for line in configFile:lines() do<br>   trace(line)<br>   -- add processing here<br>end<br>configFile:close()</pre>"
+      ],
+      "Parameters": [         
+      ],
+      "Returns": [
+         {
+            "Desc": "The next line of data from the file, or nil when eof reached <u>string or nil</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Load and Save a File.",
+            "Link": "http://help.interfaceware.com/v6/load-and-save-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Read from a file.",
+            "Link": "http://help.interfaceware.com/code/details/read-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:lines.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:lines"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Returns an iterator function that, each time it is called, returns a new line from the file. Therefore, the construction<pre>   for line in file:lines() do <em>body</em> end</pre> will iterate over all lines of the file. When the iterator function detects the end of file, it returns <b>nil</b> (to finish the loop) and automatically closes the file.<br><br>(Unlike <code>io.lines</code>, this function does not close the file when the loop ends.)"
+   },
+   "close": {
+      "Title": "file:close",
+      "SummaryLine": "Closes the file.",
+      "Usage": "file:close()",
+      "Examples": [
+         "<pre>-- close \"myFile\"<br>myFile:close()</pre>",
+      ],
+      "Parameters": [         
+      ],
+      "Returns": [
+         {
+            "Desc": "True if file is closed, false is never returned as an error is raised instead <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Load and Save a File.",
+            "Link": "http://help.interfaceware.com/v6/load-and-save-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Read from a file.",
+            "Link": "http://help.interfaceware.com/code/details/read-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:close.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:close"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Closes <code>file</code>.<br><br><b>Note:</b> that files are automatically closed when their handles are garbage collected, but that takes an unpredictable amount of time to happen. It is usually best to call close() explicitly."
+   },   
+   "write": {
+      "Title": "file:write",
+      "SummaryLine": "Writes to the file.",
+      "Usage": "file:write(&#60;value&#62; [, &#60;value&#62;] [, &#60;value&#62;] [, ...])",
+      "Examples": [
+         "<pre>local status = file:write('Write some ', strings and numbers', 1, 2, 3, 'to a file')</pre>"
+      ],
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Multiple parameters: Values to write to the file <u>string or integer</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "True if file is written, false is never returned as an error is raised instead <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with the translator.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Documenting an HL7 interface.",
+            "Link": "http://help.interfaceware.com/documenting-an-hl7-interface.html?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:write.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:write"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Writes the value of each of its arguments to <code>file</code>. The arguments must be strings or numbers. To write other values, use tostring or string.format before write."
+   },
+   "flush": {
+      "Title": "file:flush",
+      "SummaryLine": "Flushes the file to disk.",
+      "Usage": "file:flush()",
+      "Examples": [
+         "<pre>local status = myFile:flush() </pre>"
+      ],
+      "Parameters": [],
+      "Returns": [
+         {
+            "Desc": "True if file is written, false is never returned as an error is raised instead <u>boolean</u>."
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Write to a file.",
+            "Link": "http://help.interfaceware.com/code/details/writeappend-data-to-a-file?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:flush.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:flush"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc": "Causes any data written to <code>file</code> to be saved to disk.<br><br><b>Note:</b> data written to a file may be cached for performance, the <code>flush</code> command saves it to disk."
+   },
+   "read": {
+      "Title": "file:read",
+      "SummaryLine": "Read from the file.",
+      "Usage": "file:read(format)",
+      "Parameters": [
+         {
+            "value": {
+               "Desc": "Format <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A string (or a number) with the characters read, or nil if it cannot read data using the specified format <u>string, number or nil</u>."
+         }
+      ],
+      "Examples": [
+         "<pre>local result = myFile:read('*a')</pre>",
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Streaming File Operations.",
+            "Link": "http://help.interfaceware.com/v6/streaming-file-operations?v=6.0.0"
+         },
+         {
+            "Title": "Create a SQLite database and tables.",
+            "Link": "http://help.interfaceware.com/code/details/channel-create-a-sqlite-database-and-tables?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:read.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:read"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc":  "Reads <code>file</code>, according to the given format, which specify what to read. For each format, the function returns a string (or a number) with the characters read, or nil if it cannot read data with the specified format. When called without formats, it uses a default format that reads the entire next line (see below).<br><br>The available formats are:<table class=\"Basic\" style=\"width:100%\"> <tr><th>Format</th><th>Description</th></tr> <tr><td>\"*n\"</td><td>reads a number: this is the only format that returns a number instead of a string.</td></tr> <tr><td>\"*a\"</td><td>reads the whole file, starting at the current position. On end of file, it returns the empty string.</td></tr> <tr><td>\"*l\"</td><td>reads the next line (skipping the end of line), returning nil on end of file. This is the default format.</td></tr> <tr><td>number</td><td>reads a string with up to this number of characters, returning nil on end of file. If number is zero, it reads nothing and returns an empty string, or nil on end of file.</td></tr> </table>"
+   },
+   "seek": {
+      "Title": "file:seek",
+      "SummaryLine": "Sets and gets the file position.",
+      "Usage": "file:seek([whence] [, offset])",
+      "Parameters": [
+         {
+            "whence": {
+               "Desc": "Base for the position."
+            },
+            "offset": {
+               "Desc": "Offset from the base."
+            },
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The final file position, measured in bytes from the beginning of the file. If this function fails, it returns nil, plus a string describing the error."
+         }
+      ],
+      "Examples": [
+         "<pre>myFile:seek(\"end\",-100)</pre>",
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:seek.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:seek"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks?v=6.0.0#colon"
+         }
+      ],
+      "Desc":  "Sets and gets the file position, measured from the beginning of the file, to the position given by <code>offset</code> plus a base specified by the string <code>whence</code>, as follows: <table class=\"Basic\" style=\"width:100%\"> <tr><th>Offset</th><th>Description</th></tr> <tr><td>\"set\"</td><td>base is position 0 (beginning of the file).</td></tr> <tr><td>\"cur\"</td><td>base is current position.</td></tr> <tr><td>\"end\"</td><td>base is end of file.</td></tr> </table><br>In case of success, function <code>seek</code> returns the final file position, measured in bytes from the beginning of the file. If this function fails, it returns <b>nil</b>, plus a string describing the error.<br><br>The default value for <code>whence</code> is <code>\"cur\"</code>, and for <code>offset</code> is 0. Therefore, the call <code>file:seek()</code> returns the current file position, without changing it; the call <code>file:seek(\"set\")</code> sets the position to the beginning of the file (and returns 0); and the call <code>file:seek(\"end\")</code> sets the position to the end of the file, and returns its size."
+   },
+   "setvbuf": {
+      "Title": "file:setvbuf",
+      "SummaryLine": "Sets the buffering mode for the file.",
+      "Usage": "file:setvbuf(mode [, size])",
+      "Parameters": [
+         {
+            "mode": {
+               "Desc": "Buffering mode."
+            },
+            "size": {
+               "Desc": "Size of buffer."
+            }
+         }
+      ],
+      "Returns": [         
+      ],
+      "Examples": [
+         "<pre>myFile:setvbuf(\"line\",80)</pre>",
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The io.filehandle module - methods for the file object",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#io_filehandle"
+         },
+         {
+            "Title": "File and FTP interfaces with Iguana.",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for file:setvbuf.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-file:setvbuf"
+         },
+         {
+            "Title": "Understanding Lua OO syntax: what the colon operator means",
+            "Link": "http://help.interfaceware.com/v6/eliots-tips-and-tricks#colon"
+         }
+      ],
+      "Desc":  "Sets the buffering mode for an output file. There are three available modes:<table class=\"Basic\" style=\"width:100%\"> <tr><th>Offset</th><th>Description</th></tr> <tr><td>\"no\"</td><td>no buffering: the result of any output operation appears immediately.</td></tr> <tr><td>\"full\"</td><td>full buffering: output operation is performed only when the buffer is full (or when you explicitly <code>flush</code> the file (see <code>file:flush</code>)).</td></tr> <tr><td>\"line\"</td><td>line buffering: output is buffered until a newline is output or there is any input from some special files (such as a terminal device).</td></tr> </table><br>For the last two cases, <code>size</code> specifies the size of the buffer, in bytes. The default is an appropriate size."
+   },
+}

@@ -1,0 +1,88 @@
+{
+   "dec": {
+      "Returns": [
+         {
+            "Desc": "A string (or stream) re-encoded in UTF-8 <u>string or stream</u>."
+         }
+      ],
+      "Title": "iconv.ascii.dec",
+      "SummaryLine": "Convert character encoding from ASCII to UTF-8.",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string or stream in ASCII encoding. <u>string or stream</u>."
+            }
+         }
+      ],
+      "Usage": "iconv.ascii.dec(data)",
+      "Examples": [
+         "<pre>local Utf8Data = iconv.ascii.dec(\"Hello\")\ntrace(Utf8Data)\n--&gt; Hello</pre>"
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The iconv modules - convert character strings between different character encoding",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#iconv"
+          },
+          {
+             "Title": "The filter modules - encoding, encryption and compression",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+          },
+          {
+             "Title": "Streaming and Filtering Data",
+             "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+          },
+          {
+             "Title": "Additional information on iconv",
+             "Link": "http://help.interfaceware.com/v6/use-iconv-to-change-character-string-encoding?v=6.0.0"
+          },
+          {
+             "Title": "Wikipedia iconv entry",
+             "Link": "https://en.wikipedia.org/wiki/Iconv"
+          }
+      ],
+      "Desc": "Convert the character encoding of the supplied data from ASCII to UTF-8."
+   },
+   "enc": {
+      "Returns": [
+         {
+            "Desc": "A string (or stream) re-encoded in ASCII <u>string or stream</u>."
+         }
+      ],
+      "Title": "iconv.ascii.enc",
+      "SummaryLine": "Convert character encoding from UTF-8 to ASCII.",
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string or stream in UTF-8 encoding. <u>string or stream</u>."
+            }
+         }
+      ],
+      "Usage": "iconv.ascii.enc(data)",
+      "Examples": [
+         "<pre>local AsciiData = iconv.ascii.enc(\"Hello\")\ntrace(AsciiData)\n--&gt; Hello</pre>"
+      ],
+      "SeeAlso": [
+          {
+             "Title": "The iconv modules - convert character strings between different character encoding",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#iconv"
+          },
+          {
+             "Title": "The filter modules - encoding, encryption and compression",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+          },
+          {
+             "Title": "Streaming and Filtering Data",
+             "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+          },
+          {
+             "Title": "Additional information on iconv",
+             "Link": "http://help.interfaceware.com/v6/use-iconv-to-change-character-string-encoding?v=6.0.0"
+          },
+          {
+             "Title": "Wikipedia iconv entry",
+             "Link": "https://en.wikipedia.org/wiki/Iconv"
+          }
+      ],
+      "Desc": "Convert the character encoding of the supplied data from UTF-8 to ASCII."
+   }
+}

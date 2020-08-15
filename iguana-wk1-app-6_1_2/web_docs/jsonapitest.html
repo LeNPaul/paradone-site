@@ -1,0 +1,93 @@
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <title>Jsonapitest</title>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+   </head>
+   <body>
+      <div id="result"></div>
+
+      <script type="text/javascript" charset="utf-8">
+      
+         // New User
+         function newUser(){
+            return  { 
+               name: 'allan',
+               password: 'allanpw',
+               email: 'allan@yahoo.ca',
+               sms: '905-444-9998',
+               enabled: true,
+               roles: {Operator: true}
+            }
+         }
+
+         function newRole()
+         // All Channels: Object
+         // admin: false
+         // export: false
+         // ide: true
+         // reconfigure: true
+         // startstop: false
+         // view: true
+         // viewlogs: false{
+            return {
+               name: "Operator",
+               description: "Daily operations. Non-developer",
+               channelGroups: 
+               {
+                  "Super Secret": {
+                     edit: true,
+                     startStop: true,
+                     exportLogs: true,
+                     viewLogs: true,
+                     ide: true
+                  },
+                  "Super Important": {
+                     edit: true,
+                     startStop: true,
+                     exportLogs: true,
+                     viewLogs: true,
+                     ide: true
+                  }
+               }
+            }
+         }
+
+         function newChannelGroup(){
+            return {
+               name: "Demo Channels",
+               description: "The demo channels, all together.",
+               channels: [
+                  "01-File to Socket",
+                  "02-Socket to Database"]}
+         }
+
+         function deleteChannelGroup(){
+            return { name: "Demo Channels" }
+         }
+
+
+         // Data = {name:"Demo Channels"};
+         // Data = {name: "Dwynde"}
+         // Data = {data: JSON.stringify(Data)};
+         
+         $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1:6549/role/delete",
+            data: {data: JSON.stringify({"name": "Operator"})},
+            dataType: "json",
+            success: function(Data){
+               console.log(Data);
+               $('#result').html("<p><pre>" + JSON.stringify(Data, undefined, 2) + "</pre></p>");
+            },
+            error: function(Data){
+               console.log(Data);
+               $('#result').html("<p><pre>" + JSON.stringify(Data.responseText, undefined, 2) + "</pre></p>");
+            }
+         });
+      
+      </script>
+
+   </body>
+</html>
+

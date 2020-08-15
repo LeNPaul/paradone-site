@@ -1,0 +1,815 @@
+{
+   "log": {
+      "Title": "math.log",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the logarithm from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The natural logarithm of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates a natural logarithm.",
+      "Usage": "math.log(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.log.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.log"
+         }
+      ],
+      "Desc": "Calculates a natural logarithm."
+   },
+   "exp": {
+      "Title": "math.exp",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the exponent from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "Exponential value of <em>e<sup>x</sup></em> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates an exponential value.",
+      "Usage": "math.exp(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.exp.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.exp"
+         }
+      ],
+      "Desc": "Calculates an exponential value."
+   },
+   "ldexp": {
+      "Title": "math.ldexp",
+      "Parameters": [
+         {
+            "m": {
+               "Desc": "The number to calculate the exponent from <u>number</u>."
+            },
+         },
+         {
+            "e": {
+               "Desc": "The integer to use as the exponent <u>integer</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The calculated value of <em>m2<sup>e</sup></em> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Multiplies a number by an <b>integer</b> power of two.",
+      "Usage": "math.ldexp(m, e)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.ldexp.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.ldexp"
+         }
+      ],
+      "Desc": "Multiplies a number <code>m</code> by an <b>integer</b> power of two, i.e., <em>m2<sup>e</sup></em> (where <code>e</code> is an integer)."
+   },
+   "acos": {
+      "Title": "math.acos",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to generate the arc cosine from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The arc cosine of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the arc cosine (in radians) of a number.",
+      "Usage": "math.acos(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.acos.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.acos"
+         }
+      ],
+      "Desc": "Calculates the arc cosine (in radians) of a number."
+   },
+   "cos": {
+      "Title": "math.cos",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The angle to calculate the cosine from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The cosine of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the cosine of an angle (in radians).",
+      "Usage": "math.cos(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.cos.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.cos"
+         }
+      ],
+      "Desc": "Calculates the cosine of an angle (in radians)."
+   },
+   "ceil": {
+      "Title": "math.ceil",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the ceiling from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The smallest integer larger than or equal to <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the smallest integer larger than or equal to a number.",
+      "Usage": "math.ceil(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.ceil.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.ceil"
+         }
+      ],
+      "Desc": "Calculates the smallest integer larger than or equal to a number."
+   },
+   "atan": {
+      "Title": "math.atan",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the arc tangent from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The arc tangent of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates an arc tangent (in radians) of a number.",
+      "Usage": "math.atan(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.atan.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.atan"
+         }
+      ],
+      "Desc": "Calculates an arc tangent (in radians) of a number."
+   },
+   "rad": {
+      "Title": "math.rad",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The angle (in degrees) to convert to radians <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The angle <code>x</code> in radians (converted from degrees) <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Converts an angle from degrees to radians.",
+      "Usage": "math.rad(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.rad.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.rad"
+         }
+      ],
+      "Desc": "Converts an angle from degrees to radians."
+   },
+   "tan": {
+      "Title": "math.tan",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The angle to calculate the tangent from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The tangent of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates a tangent of an angle (in radians).",
+      "Usage": "math.tan(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.tan.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.tan"
+         }
+      ],
+      "Desc": "Calculates a tangent of an angle (in radians)."
+   },
+   "cosh": {
+      "Title": "math.cosh",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the hyperbolic cosine from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The hyperbolic cosine of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates an hyperbolic cosine.",
+      "Usage": "math.cosh(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.cosh.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.cosh"
+         }
+      ],
+      "Desc": "Calculates an hyperbolic cosine."
+   },
+   "atan2": {
+      "Title": "math.atan2",
+      "Parameters": [
+         {
+            "y": {
+               "Desc": "The first number used to calculate the arc tangent <u>number</u>."
+            }
+         },
+         {
+            "x": {
+               "Desc": "The second number used to calculate the arc tangent <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The arc tangent of <code>y/x</code> (in radians) <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates an arc tangent(in radians) and its quadrant.",
+      "Usage": "math.atan2(y, x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.atan2.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.atan2"
+         }
+      ],
+      "Desc": "Calculates an arc tangent(in radians) of <code>y/x</code>, but uses the signs of both parameters to find the quadrant of the result. It also correctly handles the case when the second parameter (<code>x</code>) is zero."
+   },
+   "random": {
+      "Title": "math.random",
+      "Parameters": [
+         {
+            "m": {
+               "Desc": "An integer representing the end of the range (or the start of range if the 2nd param \"m\" is supplied) <u>integer</u>.",
+               "Opt": true
+            },
+         },
+         {
+            "n": {
+               "Desc": "An integer representing the end of the range <u>integer</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A pseudo-random number <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Generate a psuedo-random number.",
+      "Usage": "math.random([m [, n]])",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.random.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.random"
+         }
+      ],
+      "Desc": "This function is an interface to the simple pseudo-random generator function <code>rand</code> provided by ANSI&nbsp;C. (No guarantees can be given for its statistical properties.) <br><br> When called without arguments, returns a uniform pseudo-random real number in the range <em>[0,1)</em>.   When called with an integer number <code>m</code>, <code>math.random</code> returns a uniform pseudo-random integer in the range <em>[1, m)</em>. When called with two integer numbers <code>m</code> and <code>n</code>, <code>math.random</code> returns a uniform pseudo-random integer in the range <em>[m, n)</em>."
+   },
+   "tanh": {
+      "Title": "math.tanh",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the hyperbolic tangent from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The hyperbolic tangent of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates an hyperbolic tangent.",
+      "Usage": "math.tanh(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.tanh.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.tanh"
+         }
+      ],
+      "Desc": "Calculates an hyperbolic tangent."
+   },
+   "frexp": {
+      "Title": "math.frexp",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The number <code>m</code> to be multiplied by <em>2<sup>e</sup></em> (i.e., <em>m2<sup>e</sup></em>) <u>number</u>."
+         },
+         {
+            "Desc": "A number <code>e</code> to be used as the power of 2 (i.e., <em>m2<sup>e</sup></em>) <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates <code>m</code> and <code>e</code> such that <em>x = m2<sup>e</sup></em>.",
+      "Usage": "math.frexp(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.frexp.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.frexp"
+         }
+      ],
+      "Desc": "Calculates <code>m</code> and <code>e</code> such that <em>x = m2<sup>e</sup></em>, <code>e</code> is an integer and the absolute value of <code>m</code> is in the range <em>[0.5, 1)</em> (or zero when <code>x</code> is zero)."
+   },
+   "log10": {
+      "Title": "math.log10",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the base-10 logarithm from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The base-10 logarithm of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates a base-10 logarithm.",
+      "Usage": "math.log10(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.log10.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.log10"
+         }
+      ],
+      "Desc": "Calculates a base-10 logarithm."
+   },
+   "floor": {
+      "Title": "math.floor",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the floor from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The largest integer smaller than or equal to <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the largest integer smaller than or equal to a number.",
+      "Usage": "math.floor(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.floor.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.floor"
+         }
+      ],
+      "Desc": "Calculates the largest integer smaller than or equal to a number." 
+   },
+   "modf": {
+      "Title": "math.modf",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the integral and the fractional parts from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The integral part of <code>x</code> <u>integer</u>."
+         },
+         {
+            "Desc": "The fractional part of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the integral and the fractional parts of a number.",
+      "Usage": "math.modf(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.modf.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.modf"
+         }
+      ],
+      "Desc": "Calculates the integral and the fractional parts of a number."
+   },
+   "abs": {
+      "Title": "math.abs",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the absolute value from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The absolute value of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the absolute value of a number <u>number</u>.",
+      "Usage": "math.abs(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.abs.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.abs"
+         }
+      ],
+      "Desc": "Calculates the absolute value of a number."
+   },
+   "sqrt": {
+      "Title": "math.sqrt",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the square root from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The square root of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates a square root.",
+      "Usage": "math.sqrt(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.sqrt.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.sqrt"
+         }
+      ],
+      "Desc": "Calculates the square root of a number. (You can also use the expression <code>x^0.5</code> to compute this value.)"
+   },
+   "sinh": {
+      "Title": "math.sinh",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the hyperbolic sine from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The hyperbolic sine of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates a hyperbolic sine.",
+      "Usage": "math.sinh(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.sinh.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.sinh"
+         }
+      ],
+      "Desc": "Calculates a hyperbolic sine."
+   },
+   "asin": {
+      "Title": "math.asin",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to calculate the arc sine from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The arc sine of <code>x</code> (in radians) <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the arc sine (in radians) of a number.",
+      "Usage": "math.asin(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.asin.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.asin"
+         }
+      ],
+      "Desc": "Calculates an arc sine."
+   },
+   "min": {
+      "Title": "math.min",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "Multiple parameters: the numbers to calculate the minimum from <u>number</u>." 
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The minimum value <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the minimum value among its arguments.",
+      "Usage": "math.min(x, ...)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.min.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.min"
+         }
+      ],
+      "Desc": "Calculates the minimum value among its arguments."
+   },
+   "fmod": {
+      "Title": "math.fmod",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The first number used to calculate the remainder <u>number</u>."
+            }
+         },
+         {
+            "y": {
+               "Desc": "The second number used to calculate the remainder <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The remainder of the division of <code>x</code> by <code>y</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates a remainder and rounds down.",
+      "Usage": "math.fmod(x, y)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.fmod.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.fmod"
+         }
+      ],
+      "Desc": "Calculates a remainder of the division of two numbers and rounds the quotient towards zero. <br><br><b>Note:</b> math.mod was renamed to math.fmod in Lua 5.1"
+   },
+   "max": {
+      "Title": "math.max",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "Multiple parameters: the numbers to calculate the maximum from <u>number</u>." 
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The maximum value <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the maximum value among its arguments.",
+      "Usage": "math.max(x, ...)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.max.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.max"
+         }
+      ],
+      "Desc": "Calculates the maximum value among its arguments."
+   },
+   "pow": {
+      "Title": "math.pow",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to be raised to a power <u>number</u>."
+            }
+         },
+         {
+            "y": {
+               "Desc": "The number to be used as the power <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The calculated value of <em>x<sup>y</sup></em> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Raises a number to a power.",
+      "Usage": "math.pow(x, y)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.pow.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.pow"
+         }
+      ],
+      "Desc": "Raises a number to a power. (You can also use the expression <code>x^y</code> to compute this value.)"
+   },
+   "randomseed": {
+      "Title": "math.randomseed",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The number to use as the \"seed\" for the pseudo-random generator <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [ ],
+      "SummaryLine": "Sets the \"seed\" for the pseudo-random generator.",
+      "Usage": "math.randomseed(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.randomseed.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.randomseed"
+         }
+      ],
+       "Desc": "Sets the \"seed\" for the pseudo-random generator: equal seeds produce equal sequences of numbers."
+   },
+   "sin": {
+      "Title": "math.sin",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The angle (in radians) to calculate the sine from <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The sine of <code>x</code> <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Calculates the sine of an angle (in radians).",
+      "Usage": "math.sin(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.sin.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.sin"
+         }
+      ],
+      "Desc": "Calculates the sine of an angle (in radians)."
+   },
+   "deg": {
+      "Title": "math.deg",
+      "Parameters": [
+         {
+            "x": {
+               "Desc": "The  angle (in radians) to convert to degrees <u>number</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The angle <code>x</code> in degrees (converted from radians) <u>number</u>."
+         }
+      ],
+      "SummaryLine": "Converts an angle from radians to degrees.",
+      "Usage": "math.deg(x)",
+      "SeeAlso": [
+         {
+            "Title": "The math module - mathematical functions",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#math"
+         },
+         {
+            "Title": "Online documentation for math.deg.",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-math.deg"
+         }
+      ],
+      "Desc": "Converts an angle from radians to degrees."
+   }
+}

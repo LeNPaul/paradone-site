@@ -1,0 +1,387 @@
+{
+   "date": {
+      "Parameters": [
+         {
+            "format": {
+               "Desc": "Format string <u>string</u>."
+            },
+         },
+         {
+            "time": {
+               "Desc": "Time object to be formatted <u>custom format (userdata)</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "Date and time as a string <u>string</u>. <strong>OR</strong> date and time as a table <u>table</u>."
+         }
+      ],
+      "Title": "os.date",
+      "SummaryLine": "Returns a string or a table containing date and time.",
+      "Examples": [
+         "-- today's date and time<br/>local todayDateTime = os.date('%c')",
+         "-- today's date and time (default format = '%c')<br/>local todayDateTime = os.date()",
+         "-- today's date returned in a table<br/>local todayDateTime = os.date('*t')",
+         "--  using custom (userdata) input generated from os.time()<br/>os.date('%c',os.time{year=1999, month=12, day=1}) -- date returned as formatted string<br>os.date('*t',os.time{year=1999, month=12, day=1}) -- date returned as a table<br>os.date(_,os.time{year=1999, month=12, day=1})    -- date returned as formatted string<br>os.date('',os.time{year=1999, month=12, day=1})   -- returns '' (an empty string)"
+      ],
+      "Usage": "os.date([format [, time]])",
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "The evolution of Iguana Date and Time functions",
+            "Link": "http://help.interfaceware.com/the-evolution-of-iguana-date-and-time-functions.html?v=6.0.0"
+         },
+         {
+            "Title": "Parse any date time value ",
+            "Link": "http://help.interfaceware.com/v6/dateparse?v=6.0.0"
+         },
+         {
+            "Title": "Date/time conversion: Using the fuzzy date/time parser ",
+            "Link": "http://help.interfaceware.com/datetime-conversion-using-the-fuzzy-datetime-parser.html?v=6.0.0"
+         },
+         {
+            "Title": "Get time and date ",
+            "Link": "http://help.interfaceware.com/code/details/get-time-and-date?v=6.0.0"
+         },
+         {
+            "Title": "Using os.date to output arbitrary date/time formats",
+            "Link": "http://help.interfaceware.com/datetime-conversion-using-the-fuzzy-datetime-parser.html?v=6.0.0#menu9"
+         },
+         {
+            "Title": "Lua 5.0 online documentation for os.date and os.time(with strftime codes)",
+            "Link": "http://www.lua.org/pil/22.1.html"
+         }
+      ],
+      "Desc": "Returns a string or a table containing date and time, formatted according to the given string <code>format</code>.   <br><br><strong>Note</strong>: <code>os.date</code> is identical to <code>os.ts.date</code>, except that <code>os.ts.date</code>  takes a Unix Epoch Time for the \"time\" parameter.<br><br> If the <code>time</code> argument is present, this is the custom time format (userdata) returned from <code>os.time</code> (see the <code>os.time</code> function for a description of this value). Otherwise, <code>os.date</code> formats the current time.<br><br>If format starts with '!', then the date is formatted in Coordinated Universal Time (UTC). <br><br>If <code>format</code> is the string '<code>*t</code>', then <code>os.date</code> returns a table with the following fields: <code>year</code> (four digits), <code>month</code> (1--12), <code>day</code> (1--31), <code>hour</code> (0--23), <code>min</code> (0--59), <code>sec</code> (0--61), <code>wday</code> (weekday, Sunday is&nbsp;1), and <code>yday</code> (day of the year).   <br><br> If <code>format</code> is not '<code>*t</code>', then <code>os.date</code> returns the date as a string, formatted according to the same rules as the C&nbsp;function <code>strftime</code>.   <br><br> When called without arguments, <code>os.date</code> returns a reasonable date and time representation that depends on the host system and on the current locale (that is, <code>os.date()</code> is equivalent to <code>os.date('%c')</code>).<br><br> This table gives the strftime codes that are accepted. <br><br> <table class=\"Basic\" style=\"width:100%\"> <tbody> <tr> <th style='width: 4em' scope='col'> Code</th> <th scope='col'> Replaced by</th> <th scope='col'> Example</th> </tr> <tr> <td> %a</td> <td> Abbreviated weekday name&nbsp;</td> <td> Thu</td> </tr> <tr> <td> %A</td> <td> Full weekday name&nbsp;</td> <td> Thursday</td> </tr>  <tr> <td> %b</td> <td> Abbreviated month name&nbsp;</td> <td> Aug</td> </tr> <tr> <td> %B</td> <td> Full month name&nbsp;</td> <td> August</td> </tr> <tr> <td> %c</td> <td> Date and time representation&nbsp;</td> <td> Thu Aug 23 14:55:02 2001</td> </tr> <tr> <td> %d</td> <td> Day of the month (01-31)</td> <td> 23</td> </tr> <tr> <td> %H</td> <td> Hour in 24h format (00-23)</td> <td> 14</td> </tr> <tr> <td> %I</td> <td> Hour in 12h format (01-12)</td> <td> 02</td> </tr> <tr> <td> %j</td> <td> Day of the year (001-366)</td> <td> 235</td> </tr> <tr> <td> %m</td> <td> Month as a decimal number (01-12)</td> <td> 08</td> </tr> <tr> <td> %M</td> <td> Minute (00-59)</td> <td> 55</td> </tr> <tr> <td> %p</td> <td> AM or PM designation</td> <td> PM</td> </tr> <tr> <td> %S</td> <td> Second (00-61)</td> <td> 02</td> </tr> <tr> <td> %U</td> <td> Week number with the first Sunday as the first day of week one (00-53)</td> <td> 33</td> </tr> <tr> <td> %w</td> <td> Weekday as a decimal number with Sunday as&nbsp;0&nbsp;(0-6)</td> <td> 4</td> </tr> <tr> <td> %W</td> <td> Week number with the first Monday as the first day of week one (00-53)</td> <td> 34</td> </tr> <tr> <td> %x</td> <td> Date representation *</td> <td> 08/23/01</td> </tr> <tr> <td> %X</td> <td> Time representation *</td> <td> 14:55:02</td> </tr> <tr> <td> %y</td> <td> Year, last two digits (00-99)</td> <td> 01</td> </tr> <tr> <td> %Y</td> <td> Year</td> <td> 2001</td> </tr> <tr> <td> %%</td> <td> A&nbsp;%&nbsp;sign</td> <td> %<br> &nbsp;</td> </tr> </tbody> </table>"
+   },
+   "getenv": {
+      "Parameters": [
+         {
+            "varname": {
+               "Desc": "Name of the environment variable you want to retrieve <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "Either the value of the process environment variable <code>varname</code> <u>string</u>. <strong>OR</strong> nil if the variable is not defined <u>nil</u>."
+         }
+      ],
+      "Title": "os.getenv",
+      "SummaryLine": "Returns the value of the process environment variable.",
+      "Examples": [
+         "local Path = os.getenv('PATH')"
+      ],
+      "Usage": "os.getenv(varname)",
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "Altering environmental variables using the Settings page",
+            "Link": "http://help.interfaceware.com/v6/environment-variables?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for os.getenv",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-os.getenv"
+         }
+      ],
+      "Desc": "Returns the value of the process environment variable <code>varname</code>, or <b>nil</b> if the variable is not defined.  Combined with the ability to set environmental variables within Iguana this can be a powerful technique for customizing the behavior of scripts based the server they are sitting in."
+   },
+   "remove": {
+      "Parameters": [
+         {
+            "filename": {
+               "Desc": "The file or directory to be deleted <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "If this function fails, it returns <b>nil</b> <u>nil</u>."
+         },
+         {
+            "Desc": "If this function fails, it also returns a string describing the error <u>string</u>."
+         }
+      ],
+      "Title": "os.remove",
+      "SummaryLine": "Deletes the file or directory with the given name.",
+      "Examples": [
+         "-- create and delete a directory<br/>os.fs.mkdir('MyTempDir')<br/>os.fs.stat('MyTempDir')<br/><br/>os.remove('MyTempDir')  -- remove (delete) the directory<br/><br/>os.fs.stat('MyTempDir') -- stats no longer available"
+      ],
+      "Usage": "os.remove(filename)",
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "File and FTP Interfaces",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Delete a file or directory",
+            "Link": "http://help.interfaceware.com/code/details/delete-a-file-or-directory?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for os.remove",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-os.remove"
+         }
+      ],
+      "Desc": "Deletes the file or directory with the given name. Directories must be empty to be removed. If this function fails, it returns <b>nil</b>, plus a string describing the error."
+   },
+   "time": {
+      "Parameters": [
+         {
+            "table": {
+               "Desc": "A table containing the the date and time to be formatted <u>table</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "Date and Time <u>custom format (userdata)</u>."
+         }
+      ],
+      "Title": "os.time",
+      "SummaryLine": "Returns the current time when called without arguments,",
+      "Usage": "os.time([table])",
+      "Examples": [
+         "get the current date/time<br/>os.time()",
+         "specify date/time in a table (mandatory fields)<br/>os.time{year=1999, month=12, day=01}",
+         "specify date/time in a table (all fields)<br/>os.time{year=1999, month=12, day=1, hour=22, min=23, sec=24}"
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "The evolution of Iguana Date and Time functions",
+            "Link": "http://help.interfaceware.com/the-evolution-of-iguana-date-and-time-functions.html?v=6.0.0"
+         },
+         {
+            "Title": "Date/time conversion: Using the fuzzy date/time parser ",
+            "Link": "http://help.interfaceware.com/datetime-conversion-using-the-fuzzy-datetime-parser.html?v=6.0.0"
+         },
+         {
+            "Title": "Get time and date ",
+            "Link": "http://help.interfaceware.com/code/details/get-time-and-date?v=6.0.0"
+         },
+         {
+            "Title": "How to build milliseconds value for timestamp from os.clock() reading ",
+            "Link": "http://help.interfaceware.com/how-to-build-milliseconds-value-for-timestamp-from-os-clock-reading.html?v=6.0.0"
+         },
+         {
+            "Title": "Lua 5.0 online documentation for os.date and os.time(with strftime codes)",
+            "Link": "http://www.lua.org/pil/22.1.html"
+         }
+      ],
+      "Desc": "Returns the current time when called without arguments, or a time representing the date and time specified by the given table.<br><br><strong>Note</strong>: <code>os.time</code> is identical to <code>os.ts.time</code>, except that <code>os.ts.time</code>  returns a <a href=\"http://en.wikipedia.org/wiki/Unix_time\">Unix Epoch time</a> as an integer.<br><br>If specified the table must have fields <code>year</code>, <code>month</code>, and <code>day</code>, and may have fields <code>hour</code>, <code>min</code>, and <code>sec</code> (for a description of these fields, see the <code>os.date</code> function). The value returned by <code>os.time</code> <i>can only be used as an argument</i> to <code>os.date</code> and <code>os.difftime</code>.<br><br> <strong>Note</strong>: To find the difference duration between two times use <code>os.difftime</code> function, which takes into account time zones and daylight saving."
+   },
+   "clock": {
+      "Parameters": [],
+      "Returns": [
+         {
+            "Desc": "An approximation of the amount in seconds of CPU time used by the program <u>number</u>."
+         }
+      ],
+      "Title": "os.clock",
+      "SummaryLine": "Returns an approximation of the amount in seconds of CPU time used by the program.",
+      "Usage": "os.clock()",
+      "Examples": [
+         "local duration = os.clock()<br>trace(duration)<br><br>-- the sub-second portion of the clock time can be useful<br>local _,subsec = math.modf(os.clock())<br>local msec=tostring(subsec):sub(3,5)<br><br>trace (subsec) -- as a number<br>trace (msec)   -- as a millisecond string",
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "How to build milliseconds value for timestamp from os.clock() reading",
+            "Link": "http://help.interfaceware.com/how-to-build-milliseconds-value-for-timestamp-from-os-clock-reading.html?v=6.0.0"
+         },
+         {
+            "Title": "Improving Iguana Editor performance",
+            "Link": "http://help.interfaceware.com/v6/improving-iguana-editor-performance?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for os.clock",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-os.clock"
+         }
+      ],
+      "Desc": "Returns an approximation of the amount in seconds of CPU time used by the program."
+   },
+   "difftime": {
+      "Parameters": [
+         {
+            "t2": {
+               "Desc": "End time <u>custom format (userdata)</u>."
+            }
+         },
+         {
+            "t1": {
+               "Desc": "Start time <u>custom format (userdata)</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "The number of seconds from time <code>t1</code> to time <code>t2</code> <u>integer</u>."
+         }
+      ],
+      "Title": "os.difftime",
+      "SummaryLine": "Returns the number of seconds from time <code>t1</code> to time <code>t2</code>.",
+      "Usage": "os.difftime(t2, t1)",
+      "Examples": [
+         "-- get the difference between the current time and another time<br>os.difftime(os.time(), os.time{year=1999, month=12, day=01, hour=22})",
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "The evolution of Iguana Date and Time functions",
+            "Link": "http://help.interfaceware.com/the-evolution-of-iguana-date-and-time-functions.html?v=6.0.0"
+         },
+         {
+            "Title": "Get the seconds between two times",
+            "Link": "http://help.interfaceware.com/code/details/get-the-seconds-between-two-times?v=6.0.0"
+         },
+         {
+            "Title": " Calculate Age From DOB",
+            "Link": "http://help.interfaceware.com/v6/age-example-channel?v=6.0.0"
+         },
+         {
+            "Title": "Date/time conversion: Using the fuzzy date/time parser ",
+            "Link": "http://help.interfaceware.com/datetime-conversion-using-the-fuzzy-datetime-parser.html?v=6.0.0"
+         }
+      ],
+      "Desc": "Returns the number of seconds from time <code>t1</code> to time <code>t2</code>.  It is important to use this function rather than comparing dates directly, since this function will take into account time zones and daylight saving.<br><br><strong>Note</strong>: <code>os.difftime</code> is identical to <code>os.ts.difftime</code>, except that <code>os.ts.difftime</code>  takes a Unix Epoch Times for the \"t2\" and \"t1\" parameters.<br><br><b>Note:</b> the time parameters must be supplied in the custom time format (userdata) returned from <code>os.time</code>, dates formatted as strings do not work."
+   },
+   "execute": {
+      "Parameters": [
+         {
+            "command": {
+               "Desc": "Command to run <u>string</u>.",
+               "Opt": true
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "A status code, which is system-dependent <u>integer</u>."
+         }
+      ],
+      "Title": "os.execute",
+      "SummaryLine": "Execute an external application - usually a command line.",
+      "Examples": [
+         "local Success = os.execute('dir &gt; out.temp')",
+         "os.execute('net start Iguana')",
+         "os.execute('\"C:/Program files/iNTERFACEWARE/Chameleon/Simulator.exe\"')"
+      ],
+      "Usage": "os.execute([command])",
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "Invoking external programs(covers io.popen)",
+            "Link": "http://help.interfaceware.com/v6/invoking-external-programs?v=6.0.0"
+         },
+         {
+            "Title": "Run a program under Windows",
+            "Link": "http://help.interfaceware.com/v6/run-a-program-under-windows?v=6.0.0"
+         },
+         {
+            "Title": "Run a command line process",
+            "Link": "http://help.interfaceware.com/code/details/run-a-command-line-process?v=6.0.0"
+         }
+      ],
+      "Desc": "Execute an external application - usually a command line. It passes <code>command</code> to be executed by an operating system shell. It returns a status code, which is system-dependent. If <code>command</code> is absent, then it returns nonzero if a shell is available and zero otherwise.<br><br>You might want to consider using io.popen instead of os.execute since it allows you to see the output of a command line program."
+   },
+   "tmpname": {
+      "Parameters": [],
+      "Returns": [
+         {
+            "Desc": "A file name for a temporary file <u>string</u>."
+         }
+      ],
+      "Title": "os.tmpname",
+      "SummaryLine": "Creates a temporary file and returns the name of the file.",
+      "Examples": [
+         "-- create and write to a temporary file<br>local tmp = os.tmpname()<br>trace(tmp)<br>local f=io.open(tmp, 'w')<br>f:write('Hello World!')<br>f:close()<br><br>os.remove(tmp) -- remove (delete) the file<br>io.open(tmp)   -- trying to open again fails"
+      ],
+      "Usage": "os.tmpname()",
+      "SeeAlso": [
+          {
+             "Title": "The os modules - operating system utilities",
+             "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+          },
+          {
+             "Title": " File and FTP Interfaces",
+             "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+          },
+         {
+            "Title": "Online documentation for os.tmpname",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-os.tmpname"
+         }
+      ],
+      "Desc": "Returns a string with a file name that can be used for a temporary file. The file must be explicitly opened before its use and explicitly removed when no longer needed.<br><br>  On some systems (POSIX), this function also creates a file with that name, to avoid security risks. (Someone else might create the file with wrong permissions in the time between getting the name and creating the file.) You still have to open the file to use it and to remove it (even if you do not use it)."
+   },
+   "rename": {
+      "Parameters": [
+         {
+            "oldname": {
+               "Desc": "Old file or directory name/path <u>string</u>."
+            },
+         },
+         {
+            "newname": {
+               "Desc": "New file or directory name/path <u>string</u>."
+            }
+         }
+      ],
+      "Returns": [
+         {
+            "Desc": "If this function fails, it returns <b>nil</b> <u>nil</u>."
+         },
+         {
+            "Desc": "If this function fails, it also returns a string describing the error <u>string</u>."
+         }
+      ],
+      "Title": "os.rename",
+      "SummaryLine": "Renames a file or directory.",
+      "Examples": [
+         "-- create and create and rename a directory<br>os.fs.mkdir('MyTempDir')<br>os.fs.stat('MyTempDir')<br><br>os.rename('MyTempDir','YourTempDir') -- rename the directory<br><br>os.fs.stat('MyTempDir')              -- stats no longer available<br>os.remove('YourTempDir')"
+      ],
+      "Usage": "os.rename(oldname, newname)",
+      "SeeAlso": [
+         {
+            "Title": "The os modules - operating system utilities",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#os"
+         },
+         {
+            "Title": "File and FTP Interfaces",
+            "Link": "http://help.interfaceware.com/v6/file-and-ftp-interfaces?v=6.0.0"
+         },
+         {
+            "Title": "Rename a file or directory",
+            "Link": "http://help.interfaceware.com/code/details/rename-a-file-or-directory?v=6.0.0"
+         },
+         {
+            "Title": "Online documentation for os.rename",
+            "Link": "http://www.lua.org/manual/5.1/manual.html#pdf-os.rename"
+         }
+      ],
+      "Desc": "Renames a file or directory. If this function fails, it returns <b>nil</b>, plus a string describing the error."
+   }
+}

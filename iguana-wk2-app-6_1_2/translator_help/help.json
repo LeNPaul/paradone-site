@@ -1,0 +1,162 @@
+{
+   "set": {
+      "Title": "help.set",
+      "SummaryLine": "Sets the help data used for interactive help.",
+      "Parameters": [
+         {
+            "input_function": {
+               "Desc": "The function the help data will be attached to <u>function</u>."
+            }
+         },
+         {
+            "help_data": {
+               "Desc": "A table containing the help data. <u>table</u>.",
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The help module - customizing the Iguana help",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#help"
+         },
+         {
+            "Title": "Help functions for customized help",
+            "Link": "http://help.interfaceware.com/v6/help-functions-for-customized-help?v=6.0.0"
+         },
+         {
+            "Title": "Parsing information from a PDF file: Scroll down to the code for a simple help example.",
+            "Link": "http://help.interfaceware.com/parsing-information-from-a-pdf-file.html?v=6.0.0"
+         },
+         {
+            "Title": "See the Store module in the Tools repository.",
+            "Link": "http://help.interfaceware.com/v6/store-example?v=6.0.0"
+         }
+      ],
+      "Usage": "help.set{input_function=&#60;value&#62;, help_data=&#60;value&#62;}",
+      "Examples": [
+         "<pre>help.set{input_function=myfunc, help_data=myhelp}</pre>",
+         "<pre>-- create help for a custom function\nlocal h=help.example()\nh.Title = 'customerModule.customerFunction'\nh.Desc = 'Example customer function - add custom description'\nh.Usage = 'Add custom usage'\nh.Parameters[1].parameter_name_1.Desc = 'Custom parameter description &lt;u&gt;function&lt;/u&gt;.'\n-- set other values\nhelp.set{input_function=customerModule.customerFunction, help_data=h}\n-- confirm changes\nhelp.get(customerModule.customerFunction)</pre>" 
+      ],
+      "Returns": [],
+      "ParameterTable": true,
+      "Desc": "Sets the help data used for interactive help, you can set the help for built-in and custom functions. This API allows you to add help for your own library code.<br><br><b>Note:</b> Use <code>help.example()</code> to get an example of a suitably formatted help table"
+   },
+   "get": {
+      "Title": "help.get",
+      "SummaryLine": "Get the help data for a function.",
+      "Parameters": [
+         {
+            "input_function": {
+               "Desc": "The function that you wish to retrieve help data for <u>function</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The help module - customizing the Iguana help",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#help"
+         },
+         {
+            "Title": "Help functions for customized help",
+            "Link": "http://help.interfaceware.com/v6/help-functions-for-customized-help?v=6.0.0"
+         },
+         {
+            "Title": "Parsing information from a PDF file: Scroll down to the code for a simple help example.",
+            "Link": "http://help.interfaceware.com/parsing-information-from-a-pdf-file.html?v=6.0.0"
+         },
+         {
+            "Title": "See the Store module in the Tools repository.",
+            "Link": "http://help.interfaceware.com/v6/store-example?v=6.0.0"
+         }
+      ],
+      "Usage": "help.get(input_function)",
+      "Examples": [
+         "<pre>-- get the help data for this function\nhelp.get(help.get)</pre>",
+         "<pre>-- get the help data for a custom function\nhelp.get(customerModule.customerFunction)</pre>",
+      ],
+      "Returns": [
+         {
+            "Desc": "A table containing the help data <u>table</u>. <strong>OR</strong> nil if no help was found <u>nil</u>."
+         }
+      ],
+      "Desc": "Get the help data associated with the input function."
+   },
+   "toHtml": {
+      "Title": "help.toHtml",
+      "SummaryLine": "Renders the given help data as HTML.",
+      "Parameters": [
+         {
+            "help_data": {
+               "Desc": "The help data that you wish to render as HTML <u>table</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The help module - customizing the Iguana help",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#help"
+         },
+         {
+            "Title": "Help functions for customized help",
+            "Link": "http://help.interfaceware.com/v6/help-functions-for-customized-help?v=6.0.0"
+         }
+      ],
+      "Usage": "help.toHtml(help_data)",
+      "Examples": [
+         "<pre>-- get the help HTML for the example help data\nhelp.toHtml(help.example())</pre>",
+         "<pre>-- get the help HTML for a custom function\nhelp.toHtml(help.get(customerModule.customerFunction))</pre>",
+      ],
+      "Returns": [
+         {
+            "Desc": "A string containing the HTML help, or an empty string if the help data given is invalid <u>string</u>."
+         }
+      ],
+      "Desc": "Renders the given help data as HTML."
+   },
+   "example": {
+      "Title": "help.example",
+      "SummaryLine": "Returns an example of a table that is compatible with the interactive help system.",
+      "Parameters": [],
+      "SeeAlso": [
+         {
+            "Title": "The help module - customizing the Iguana help",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#help"
+         },
+         {
+            "Title": "Help functions for customized help",
+            "Link": "http://help.interfaceware.com/v6/help-functions-for-customized-help?v=6.0.0"
+         }
+      ],
+      "Usage": "help.example()",
+       "Examples": [
+         "<pre>local h = help.example()</pre>",
+      ],
+     "Returns": [
+         {
+            "Desc": "An example help data table <u>table</u>."
+         }
+      ],
+      "Desc": "Returns an example of a table that is compatible with the interactive help system."
+   },
+   "reset": {
+      "SummaryLine": "Clears all custom help data, and loads the default help.",
+      "Parameters": [],
+      "SeeAlso": [
+         {
+            "Title": "The help module - customizing the Iguana help",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#help"
+         },
+         {
+            "Title": "Help functions for customized help",
+            "Link": "http://help.interfaceware.com/v6/help-functions-for-customized-help?v=6.0.0"
+         }
+      ],
+      "Usage": "help.reset()",
+       "Examples": [
+         "<pre>help.reset()</pre>"
+      ],
+      "Returns": [],
+      "Title": "help.reset",
+      "Desc": "Clears all custom help data, and loads the base help for Iguana and Lua modules. <br><br> <b>Note:</b> help added with help.set will be removed."
+   }
+}

@@ -1,0 +1,76 @@
+{
+   "enc": {
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to process. <u>string or stream</u>."
+            }
+         },
+         {
+            "key": {
+               "Desc": "The shared encryption key <u>string</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local Enc = filter.aes.enc{data=Data,key=Key}</pre>"
+      ],
+      "Title": "filter.aes.enc",
+      "SummaryLine": "Encrypt data using AES encryption.",
+      "ParameterTable": true,
+      "Usage": "filter.aes.enc {data=&#60;value&#62;, key=&#60;value&#62;}",
+      "Returns": [
+         {
+            "Desc": "An encrypted string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Desc": "Encrypt data using AES encryption. Input which is not a multiple of 16 bytes in length will be padded with ASCII NUL characters."
+   },
+   "dec": {
+      "Parameters": [
+         {
+            "data": {
+               "Desc": "The string (or stream) to process <u>string or stream</u>."
+            }
+         },
+         {
+            "key": {
+               "Desc": "The shared encryption key <u>string</u>."
+            }
+         }
+      ],
+      "SeeAlso": [
+         {
+            "Title": "The filter modules - encoding, encryption and compression",
+            "Link": "http://help.interfaceware.com/api/?v=6.0.0#filter"
+         },
+         {
+            "Title": "Streaming and Filtering Data",
+            "Link": "http://help.interfaceware.com/streaming-and-filtering-data.html?v=6.0.0"
+         }
+      ],
+      "Examples": [
+         "<pre>local Dec = filter.aes.dec{data=Data,key=Key}</pre>"
+      ],
+      "Title": "filter.aes.dec",
+      "SummaryLine": "Decrypts data encoded using AES encryption.",
+      "ParameterTable": true,
+      "Usage": "filter.aes.dec {data=&#60;value&#62;, key=&#60;value&#62;}",
+      "Returns": [
+         {
+            "Desc": "A decrypted string (or stream) <u>string or stream</u>."
+         }
+      ],
+      "Desc": "Decrypts data encoded using AES encryption."
+   }
+}

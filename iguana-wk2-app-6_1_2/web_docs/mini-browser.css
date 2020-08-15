@@ -1,0 +1,25 @@
+#mini-browser {
+   max-width: 700px;
+   font-size: 9px;
+}
+
+#mini-browser #mb-divider {
+   border-top: 1px solid #b1b1b1;
+   margin: 3px -5px 3px -5px;
+}
+
+#mini-browser div.mb-entry {
+   overflow: hidden;
+   padding: 2px;
+   white-space: nowrap;
+   cursor: pointer;
+}
+
+#mini-browser div.mb-entry:hover {
+   background: #aaccff;
+}
+
+/* This is for highlighting matches in messages. */
+#mini-browser span.search {
+   background: yellow;
+}
