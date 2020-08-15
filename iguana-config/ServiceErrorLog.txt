@@ -1,0 +1,99 @@
+[2020-08-11 00:54:13] [INFO ] Starting the Iguana Service.
+Version: 6.1.2-release
+Source DateTime: n/a
+Source Tag: n/a
+Build_ID: centos7.ifware.dynip.com/2018-10-11_19-51-04.build_Iguana_6_1_2
+
+[2020-08-11 00:54:14] [INFO ] Loading default SSL options...
+[2020-08-11 00:54:14] [INFO ] SSL options loaded successfully!
+[2020-08-11 00:54:14] [INFO ] Initializing source control...
+[2020-08-11 00:54:14] [INFO ] Using existing Git main repository: /home/ifw/aws/iguana-config/IguanaMainRepo/
+[2020-08-11 00:54:14] [INFO ] No configuration repository found at /home/ifw/aws/iguana-config/IguanaConfigurationRepo/. Creating from main repository...
+[2020-08-11 00:54:14] [INFO ] Git configuration repository successfully created.
+[2020-08-11 00:54:14] [INFO ] Checking that the configuration repo and the main repo are valid and in sync...
+[2020-08-11 00:54:14] [INFO ] Success!
+[2020-08-11 00:54:14] [INFO ] Checking the import repository...
+[2020-08-11 00:54:14] [INFO ] Doesn't exist yet. Creating...
+[2020-08-11 00:54:14] [INFO ] Successfully created!
+[2020-08-11 00:54:14] [INFO ] Optimizing Git repositories. This may take a few minutes...
+[2020-08-11 00:54:14] [INFO ] Optimization complete.
+[2020-08-11 00:54:14] [INFO ] Source control initialization done.
+[2020-08-11 00:54:14] [INFO ] Initializing configuration. This may take several minutes...
+[2020-08-11 00:54:14] [INFO ] Initializing the remotes repository. This may take a few minutes...
+[2020-08-11 00:54:14] [INFO ] Doesn't exist yet. Creating, this may take a few minutes...
+[2020-08-11 00:54:14] [INFO ] Successfully created.
+[2020-08-11 00:54:14] [INFO ] Remotes repository initialization complete.
+[2020-08-11 00:54:14] [INFO ] Web server starting on http://10.211.55.51:6543/.
+[2020-08-11 00:54:14] [INFO ] Web server has started.
+[2020-08-11 00:54:14] [INFO ] Listening on UDP port 6543 for Webserver restart signal
+[2020-08-11 00:54:14] [ERROR] Log initialization failed due to invalid license! 
+ Logs will be initialized once your license is validated after startup.
+[2020-08-11 00:54:14] [INFO ] About to load IguanaConfiguration.xml.
+Loaded IguanaConfiguration.xml successfully.
+Configuration initialization done.
+Moving demonstration files into place.
+...complete.
+
+[2020-08-11 00:54:14] [INFO ] Iguana service has started.
+Version: 6.1.2-release
+Source DateTime: n/a
+Source Tag: n/a
+Build_ID: centos7.ifware.dynip.com/2018-10-11_19-51-04.build_Iguana_6_1_2
+
+[2020-08-11 00:54:14] [INFO ] The working directory is '/home/ifw/aws/iguana-config/'.
+[2020-08-11 00:54:14] [INFO ] Automatically detecting and loading database interfaces present on this machine.
+Trying to load MySQL compliant library... NO (mysql compliant support not enabled)
+Not enough permissions to load MySQL compliant library.
+Trying to load Oracle... NO (Oracle OCI support not present)
+Not enough permissions to load OCI.
+Trying to load ODBC... NO (ODBC support not present)
+Not enough permissions to load ODBC.
+[2020-08-11 00:54:14] [INFO ] Automatically detecting and loading database interfaces present on this machine.
+Trying to load MySQL compliant library... NO (mysql compliant support not enabled)
+Not enough permissions to load MySQL compliant library.
+Trying to load Oracle... NO (Oracle OCI support not present)
+Not enough permissions to load OCI.
+Trying to load ODBC... NO (ODBC support not present)
+Not enough permissions to load ODBC.
+
+[2020-08-11 00:54:14] [ERROR] Not auto-starting channels due to invalid license.
+All configured channels will be auto-started once this is fixed after initial startup.
+[2020-08-11 00:54:14] [INFO ] HTTPS channel server starting on https://10.211.55.51:6544/.
+[2020-08-11 00:54:14] [INFO ] HTTPS channel server has started.
+[2020-08-11 00:54:14] [INFO ] Iguana service has been initialized.
+[2020-08-11 00:54:14] [INFO ] Main event loop is now running.
+[2020-08-11 00:54:58] [INFO ] License updated by user "admin".
+
+New License Entitlement:
+Product Type: iNTERFACEWARE Iguana
+Maximum Number of Concurrently Running Channels: No Limit
+License Expiry Date: No Expiry
+Maintenance Expiry Date: No Expiry
+
+[2020-08-11 00:54:58] [INFO ] Checking log files and indexes to make sure they are valid and version compatible with current license...
+[2020-08-11 00:54:58] [INFO ] All valid!
+[2020-08-11 00:54:58] [INFO ] Starting log initialization...
+[2020-08-11 00:54:58] [INFO ] Checking index information for queue files...
+[2020-08-11 00:54:58] [INFO ] Index check finished.
+[2020-08-11 00:54:58] [INFO ] Log directory is ../iguana-logs
+Creating data file: ../iguana-logs/20200811.log
+Meta file '../iguana-logs/meta/channel_positions_meta.xml' is invalid/does not exist and will be rebuilt.
+[2020-08-11 00:54:58] [INFO ] Begin initializing statistics...
+   0%..50%..100%
+[2020-08-11 00:54:58] [INFO ] Initializing statistics done.
+[2020-08-11 00:54:58] [INFO ] Log initialization completed.
+[2020-08-11 00:54:58] [INFO ] Checking for channels to start automatically.
+[2020-08-11 00:54:58] [INFO ] Plugin Communication Server starting to listen on port 6123 (6123).
+[2020-08-11 00:54:58] [INFO ] Plugin Communication Server has started.
+[2020-08-11 00:54:58] [INFO ] Starting channel [0] AWS Health Check.
+[2020-08-11 00:54:58] [INFO ] Automated channel startup sequence has been completed.
+Creating data file: ../iguana-logs/20200815.log
+[2020-08-15 01:30:37] [INFO ] Received stop signal.
+[2020-08-15 01:30:37] [INFO ] Stopping the web server.
+[2020-08-15 01:30:37] [INFO ] The web server has stopped.
+[2020-08-15 01:30:37] [INFO ] Stopping the Plugin Communication Server.
+[2020-08-15 01:30:37] [INFO ] The Plugin Communication Server has stopped.
+[2020-08-15 01:30:38] [INFO ] Job threads have completed.
+[2020-08-15 01:30:38] [INFO ] Main event loop has finished.
+[2020-08-15 01:30:38] [INFO ] Main iguana service has shut down.
+[2020-08-15 01:30:38] [INFO ] Stopped log heart beat thread.  Last action will be to flush this log.
