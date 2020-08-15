@@ -1,5 +1,10 @@
-<!--2BEF32347D06581DEE06ED2E60FE99DE-->
+<!--DFC4D0C21EF5813CE9C207A2CB679E23-->
 <channel_positions_meta
    version="1.1"
    channel_positions_guid="CBC0628E933EB0E289C5516A5EA7F8C9">
+   <dequeue
+      guid="C80DC1B640B662F35CFA32D37B219610"
+      queue_file="20200815"
+      queue_position="8315"
+      total_sent_current_file="0"/>
 </channel_positions_meta>

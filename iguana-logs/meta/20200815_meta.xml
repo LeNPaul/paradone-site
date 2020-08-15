@@ -1,9 +1,9 @@
-<!--F68C6B9CFF305E4779DF51667B041D17-->
+<!--6DFB533D98C09C9C826ECFFFAB12C609-->
 <queue_file_meta
    version="1.13"
    name="20200815"
    queue_file_guid="CBC0628E933EB0E289C5516A5EA7F8C9"
-   meta_read_position="3085">
+   meta_read_position="9564">
    <queue_meta>
       <queue
          name="Iguana"
@@ -12,16 +12,16 @@
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="22"/>
+            all_log_entries_total="53"/>
       </queue>
       <queue
-         name="AWS Health Check"
+         name="HealthCheck"
          queue_guid="3E4B2BFD02E3CCB960A556E38F8C6E4A"
          queue_id="1">
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="3"/>
+            all_log_entries_total="6"/>
       </queue>
       <queue
          name="Poller Manager"
@@ -30,7 +30,7 @@
          <statistics
             total_messages="0"
             total_message_size="0"
-            all_log_entries_total="5"/>
+            all_log_entries_total="14"/>
       </queue>
       <queue
          name="Sync Manager"
@@ -39,10 +39,32 @@
          <statistics
             total_messages="0"
             total_message_size="0"
+            all_log_entries_total="8"/>
+      </queue>
+      <queue
+         name="Tutorial: HL7 to Database"
+         queue_guid="4BE66A9ABB327DDCEDD5AC61A44C21F4"
+         queue_id="4">
+         <statistics
+            total_messages="0"
+            total_message_size="0"
+            all_log_entries_total="7"/>
+      </queue>
+      <queue
+         name="Test Poller"
+         queue_guid="824FEBA5DFB67E5803934AF28F2BBED9"
+         queue_id="5">
+         <statistics
+            total_messages="0"
+            total_message_size="0"
             all_log_entries_total="0"/>
       </queue>
    </queue_meta>
    <channel_positions>
+      <dequeue_info
+         dequeue_id="C80DC1B640B662F35CFA32D37B219610"
+         position_file="20200815"
+         position_offset="8315"/>
    </channel_positions>
    <file_consumer_indices>
    </file_consumer_indices>

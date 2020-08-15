@@ -1,7 +1,7 @@
 -- Primary
-local server1 = "http://<PRIMARY IGUANA HOSTNAME>:6543/"
+local server1 = os.getenv('iguana_wk1')
 -- Failover
-local server2 = "http://<FAILOVER IGUANA HOSTNAME>:6543/"
+local server2 = os.getenv('iguana_wk2')
 
 local poller_manager = {
    weights = {

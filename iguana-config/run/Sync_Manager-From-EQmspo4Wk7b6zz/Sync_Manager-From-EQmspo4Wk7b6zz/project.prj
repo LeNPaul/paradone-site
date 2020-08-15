@@ -1,7 +1,8 @@
 {
     "LocalDependencies": [
+        "channel_utils.lua",
         "conf.lua",
-        "poller_manager.lua"
+        "event_utils.lua"
     ],
     "LuaDependencies": [
         "ha.conf",
@@ -11,7 +12,7 @@
         "store2"
     ],
     "OtherDependencies": [],
-    "timestamp": "1597471449",
+    "timestamp": "1597431831",
     "version_info": {
         "build": 0,
         "major": 6,
