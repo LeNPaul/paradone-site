@@ -3,3 +3,5 @@ learning:
     children:
       - title: "Learning Curve is S-Shaped"
         url: /learning-curve-s-shaped
+      - title: "Plateau of Latent Potential"
+        url: /plateau-latent-potential
