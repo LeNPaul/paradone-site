@@ -1,7 +1,5 @@
 learning:
-  - title: The Learning Curve
+  - title: Background
     children:
-      - title: "Learning Curve is S-Shaped"
-        url: /learning-curve-s-shaped
-      - title: "Plateau of Latent Potential"
-        url: /plateau-latent-potential
+      - title: "The Learning Curve"
+        url: /learning-curve
