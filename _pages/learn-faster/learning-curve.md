@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "The Learning Curve"
-permalink: "/learn-faster/the-learning-curve"
+permalink: "/learn-faster/learning-curve"
 toc: true
 toc_sticky: true
 sidebar:
