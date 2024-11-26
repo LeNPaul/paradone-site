@@ -1,5 +1,31 @@
-learning:
+learn-faster:
   - title: Background
     children:
+      - title: "Introduction"
+        url: /learn-faster
+      - title: "What is Learning?"
+        url: /learn-faster
       - title: "The Learning Curve"
-        url: /learning-curve
+        url: /learn-faster/the-learning-curve
+      - title: "What is the Goal?"
+        url: /learn-faster
+      - title: "Choosing a Skill to Learn"
+        url: /learn-faster
+  - title: Navigating the Learning Curve
+    children:
+      - title: "Principles for Effective Learning"
+        url: /learn-faster
+      - title: "Breaking Through the Learning Barrier"
+        url: /learn-faster
+      - title: "Accelerated Learning"
+        url: /learn-faster
+      - title: "Becoming a Master"
+        url: /learn-faster
+  - title: Tools
+    children:
+      - title: "How to Build Habits"
+        url: /learn-faster
+      - title: "How to Set Goals"
+        url: /learn-faster
+      - title: "How to Learn Knowledge"
+        url: /learn-faster

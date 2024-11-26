@@ -1,11 +1,11 @@
 ---
 layout: single
 title:  "The Learning Curve"
-permalink: "/learning-curve"
+permalink: "/learn-faster/the-learning-curve"
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "learning"
+  nav: "learn-faster"
 ---
 
 The learning curve is the relationship between proficiency and experience (i.e. ability as a function of time spent learning). In other words, how long it takes to acquire new skills or knowledge.
